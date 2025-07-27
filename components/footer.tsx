@@ -56,8 +56,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info - Always visible */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-3">
+          <div className="space-y-6 text-center md:text-left">
+            <div className="flex items-center space-x-3 justify-center md:justify-start">
               <img 
                 src="/Logo-400.png" 
                 alt="Praxis für Osteopathie u. Naturheilkunde Logo" 
@@ -72,7 +72,7 @@ export default function Footer() {
               Gewidmet der Bereitstellung außergewöhnlicher osteopathischer und naturheilkundlicher Versorgung 
               mit personalisierten Behandlungsplänen, um Ihnen zu optimaler Gesundheit und Wohlbefinden zu verhelfen.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-start">
               <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
@@ -97,7 +97,12 @@ export default function Footer() {
                 onOpenChange={() => toggleSection('services')}
               >
                 <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
-                  <span>Unsere Leistungen</span>
+                  <img 
+                    src="/Logo-400.png" 
+                    alt="Logo" 
+                    className="w-4 h-4 object-contain brightness-0 invert"
+                  />
+                  <span className="flex-1 text-center">Unsere Leistungen</span>
                   {openSections.services ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                 </CollapsibleTrigger>
                 <CollapsibleContent>
@@ -144,7 +149,12 @@ export default function Footer() {
                 onOpenChange={() => toggleSection('quickLinks')}
               >
                 <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
-                  <span>Schnelllinks</span>
+                  <img 
+                    src="/Logo-400.png" 
+                    alt="Logo" 
+                    className="w-4 h-4 object-contain brightness-0 invert"
+                  />
+                  <span className="flex-1 text-center">Schnelllinks</span>
                   {openSections.quickLinks ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                 </CollapsibleTrigger>
                 <CollapsibleContent>
@@ -191,7 +201,12 @@ export default function Footer() {
                 onOpenChange={() => toggleSection('contact')}
               >
                 <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
-                  <span>Kontaktinformationen</span>
+                  <img 
+                    src="/Logo-400.png" 
+                    alt="Logo" 
+                    className="w-4 h-4 object-contain brightness-0 invert"
+                  />
+                  <span className="flex-1 text-center">Kontaktinformationen</span>
                   {openSections.contact ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                 </CollapsibleTrigger>
                 <CollapsibleContent>
@@ -261,7 +276,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400">© 2024 Melanie Bretscher. Alle Rechte vorbehalten.</div>
+            <div className="text-sm text-gray-400 text-center md:text-left">© 2024 Melanie Bretscher. Alle Rechte vorbehalten.</div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
               {legalLinks.map((link, index) => (
                 <a key={index} href={link.href} className="text-sm text-gray-400 hover:text-green-400 transition-colors">
