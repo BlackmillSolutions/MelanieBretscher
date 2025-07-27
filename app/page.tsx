@@ -9,6 +9,7 @@ import React from "react"
 import PracticeSlider from "@/components/practice-slider"
 import HistoryTimeline from "@/components/history-timeline"
 import AnimatedCounter from "@/components/animated-counter"
+import { InitialsAvatar } from "@/components/ui/avatar"
 
 export default function HomePage() {
   const services = [
@@ -84,7 +85,6 @@ export default function HomePage() {
       credentials: "Heilpraktikerin, Osteopathin, Physiotherapeutin",
       experience: "15+ Jahre",
       specialties: ["Osteopathie", "Naturheilkunde", "Physiotherapie", "Ohrakupunktur"],
-      image: "/placeholder.svg?height=400&width=400",
     },
   ]
 
@@ -117,7 +117,6 @@ export default function HomePage() {
       name: "Maria Schmidt",
       condition: "Chronische Rückenschmerzen",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
       testimonial:
         "Nach jahrelangen Rückenschmerzen hat mich die osteopathische Behandlung von Frau Bretscher endlich schmerzfrei gemacht. Ihre ganzheitliche Herangehensweise war der Schlüssel zum Erfolg.",
       treatment: "Osteopathische Behandlung & Manuelle Therapie",
@@ -126,7 +125,6 @@ export default function HomePage() {
       name: "Hans Weber",
       condition: "Migräne",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
       testimonial:
         "Die Ohrakupunktur hat meine Migräneattacken deutlich reduziert. Frau Bretscher hat eine ruhige Hand und viel Erfahrung. Ich kann sie nur empfehlen.",
       treatment: "Ohrakupunktur & Phytotherapie",
@@ -135,7 +133,6 @@ export default function HomePage() {
       name: "Anna Müller",
       condition: "Lymphödem",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
       testimonial:
         "Die manuelle Lymphdrainage hat mir bei meinem Lymphödem sehr geholfen. Frau Bretscher ist sehr einfühlsam und kompetent. Die Behandlung ist angenehm und wirksam.",
       treatment: "Manuelle Lymphdrainage",
@@ -362,24 +359,10 @@ export default function HomePage() {
                 key={index}
                 className="overflow-hidden glass-card-light border-gray-200/50 hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200">
-                  <Image
-                    src={
-                      member.image ||
-                      "/placeholder.svg?height=400&width=400&query=professional osteopath portrait" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg"
-                    }
-                    alt={member.name}
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover"
+                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                  <InitialsAvatar
+                    name={member.name}
+                    size="xl"
                   />
                 </div>
                 <CardContent className="p-6">
@@ -427,15 +410,10 @@ export default function HomePage() {
                 das meine Erkrankung wirklich verstanden und die Versorgung bereitgestellt hat, die ich brauchte, um wieder vollständig zu leben."
               </blockquote>
               <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-white/20 to-white/10">
-                  <Image
-                    src="/placeholder.svg?height=64&width=64"
-                    alt="Hervorgehobener Patient"
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <InitialsAvatar
+                  name="Maria Gonzalez"
+                  size="lg"
+                />
                 <div className="text-center">
                   <div className="flex justify-center mb-2">
                     {[...Array(5)].map((_, i) => (
@@ -455,15 +433,10 @@ export default function HomePage() {
               <Card key={index} className="glass-card border-white/20 hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-white/20 to-white/10">
-                      <Image
-                        src={testimonial.image || "/placeholder.svg?height=48&width=48&query=patient portrait"}
-                        alt={testimonial.name}
-                        width={48}
-                        height={48}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    <InitialsAvatar
+                      name={testimonial.name}
+                      size="md"
+                    />
                     <div>
                       <h4 className="font-semibold text-white">{testimonial.name}</h4>
                       <p className="text-sm text-white/70">{testimonial.condition}</p>

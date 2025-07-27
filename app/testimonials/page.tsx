@@ -3,6 +3,7 @@ import { Star, Quote, ArrowRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import AnimatedCounter from "@/components/animated-counter"
+import { InitialsAvatar } from "@/components/ui/avatar"
 
 export default function TestimonialsPage() {
   const testimonials = [
@@ -10,7 +11,6 @@ export default function TestimonialsPage() {
       name: "Maria Schmidt",
       condition: "Chronische Rückenschmerzen",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
       testimonial:
         "Nach jahrelangen Rückenschmerzen hat mich die osteopathische Behandlung von Frau Bretscher endlich schmerzfrei gemacht. Ihre ganzheitliche Herangehensweise war der Schlüssel zum Erfolg. Ich kann wieder schmerzfrei schlafen und meinen Alltag genießen.",
       treatment: "Osteopathische Behandlung & Manuelle Therapie",
@@ -20,7 +20,6 @@ export default function TestimonialsPage() {
       name: "Hans Weber",
       condition: "Migräne",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
       testimonial:
         "Die Ohrakupunktur hat meine Migräneattacken deutlich reduziert. Frau Bretscher hat eine ruhige Hand und viel Erfahrung. Die Behandlung ist angenehm und die Wirkung hält lange an. Ich kann sie nur empfehlen.",
       treatment: "Ohrakupunktur & Phytotherapie",
@@ -30,7 +29,6 @@ export default function TestimonialsPage() {
       name: "Anna Müller",
       condition: "Lymphödem",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
       testimonial:
         "Die manuelle Lymphdrainage hat mir bei meinem Lymphödem sehr geholfen. Frau Bretscher ist sehr einfühlsam und kompetent. Die Behandlung ist angenehm und wirksam. Meine Beine fühlen sich viel leichter an.",
       treatment: "Manuelle Lymphdrainage",
@@ -40,7 +38,7 @@ export default function TestimonialsPage() {
       name: "Michael Rodriguez",
       condition: "Stress und Schlafstörungen",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
+
       testimonial:
         "Die Kombination aus Phytotherapie und Fußreflexzonenmassage hat meine Schlafstörungen und Stresssymptome deutlich verbessert. Frau Bretscher nimmt sich viel Zeit und erklärt alles sehr verständlich.",
       treatment: "Phytotherapie & Fußreflexzonenmassage",
@@ -50,7 +48,7 @@ export default function TestimonialsPage() {
       name: "Lisa Wang",
       condition: "Verdauungsprobleme",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
+
       testimonial:
         "Die Schröpftherapie und Phytotherapie haben meine Verdauungsprobleme komplett gelöst. Frau Bretscher hat eine natürliche und sanfte Herangehensweise. Ich fühle mich viel besser und energiegeladener.",
       treatment: "Schröpfen & Phytotherapie",
@@ -60,7 +58,7 @@ export default function TestimonialsPage() {
       name: "David Johnson",
       condition: "Erschöpfung und Vitaminmangel",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
+
       testimonial:
         "Die Infusionstherapie hat mir bei meiner Erschöpfung und meinem Vitaminmangel sehr geholfen. Frau Bretscher ist sehr professionell und die Behandlung war angenehm. Ich fühle mich wieder voller Energie.",
       treatment: "Infusionen und Injektionen",
@@ -70,7 +68,7 @@ export default function TestimonialsPage() {
       name: "Emma Foster",
       condition: "Sportverletzung",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
+
       testimonial:
         "Nach meiner Sportverletzung hat die Kombination aus Physiotherapie und Osteopathie mir geholfen, schnell wieder fit zu werden. Frau Bretscher ist sehr kompetent und motivierend.",
       treatment: "Physiotherapie & Osteopathie",
@@ -80,7 +78,7 @@ export default function TestimonialsPage() {
       name: "James Wilson",
       condition: "Chronische Schmerzen",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
+
       testimonial:
         "Die ganzheitliche Behandlung mit verschiedenen naturheilkundlichen Methoden hat meine chronischen Schmerzen deutlich reduziert. Frau Bretscher ist sehr einfühlsam und findet immer die richtige Therapie.",
       treatment: "Ganzheitliche Naturheilkunde",
@@ -137,15 +135,10 @@ export default function TestimonialsPage() {
                 das meine Erkrankung wirklich verstanden und die Versorgung bereitgestellt hat, die ich brauchte, um wieder vollständig zu leben."
               </blockquote>
               <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-green-100 to-green-200">
-                  <Image
-                    src="/placeholder.svg?height=64&width=64"
-                    alt="Hervorgehobener Patient"
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <InitialsAvatar
+                  name="Maria Gonzalez"
+                  size="lg"
+                />
                 <div className="text-center">
                   <div className="flex justify-center mb-2">
                     {[...Array(5)].map((_, i) => (
@@ -177,15 +170,10 @@ export default function TestimonialsPage() {
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-green-100 to-green-200">
-                      <Image
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        width={48}
-                        height={48}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    <InitialsAvatar
+                      name={testimonial.name}
+                      size="md"
+                    />
                     <div>
                       <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
                       <p className="text-sm text-gray-600">{testimonial.condition}</p>
