@@ -98,7 +98,7 @@ export default function Footer() {
               >
                 <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
                   <img 
-                    src="/Logo-400.png" 
+                    src="/green_spiral.svg" 
                     alt="Logo" 
                     className="w-4 h-4 object-contain brightness-0 invert"
                   />
@@ -150,7 +150,7 @@ export default function Footer() {
               >
                 <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
                   <img 
-                    src="/Logo-400.png" 
+                    src="/green_spiral.svg" 
                     alt="Logo" 
                     className="w-4 h-4 object-contain brightness-0 invert"
                   />
@@ -202,9 +202,9 @@ export default function Footer() {
               >
                 <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
                   <img 
-                    src="/Logo-400.png" 
+                    src="/green_spiral.svg" 
                     alt="Logo" 
-                    className="w-4 h-4 object-contain brightness-0 invert"
+                    className="w-4 h-5 object-contain brightness-0 invert"
                   />
                   <span className="flex-1 text-center">Kontaktinformationen</span>
                   {openSections.contact ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
