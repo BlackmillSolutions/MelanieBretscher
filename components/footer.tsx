@@ -1,8 +1,16 @@
 "use client"
 
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, ChevronDown, ChevronUp } from "lucide-react"
+import { useState } from "react"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 
 export default function Footer() {
+  const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
+    services: false,
+    quickLinks: false,
+    contact: false
+  })
+
   const services = [
     "Osteopathische Behandlung",
     "Ohrakupunktur",
@@ -36,11 +44,18 @@ export default function Footer() {
     }
   }
 
+  const toggleSection = (section: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }))
+  }
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
+          {/* Company Info - Always visible */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <img 
@@ -75,64 +90,168 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Unsere Leistungen</h3>
-            <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => scrollToSection("services")}
-                    className="text-gray-300 hover:text-green-400 transition-colors text-sm text-left"
-                  >
-                    {service}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            {/* Mobile Collapsible */}
+            <div className="md:hidden">
+              <Collapsible 
+                open={openSections.services} 
+                onOpenChange={() => toggleSection('services')}
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
+                  <span>Unsere Leistungen</span>
+                  {openSections.services ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <ul className="space-y-3 text-center">
+                    {services.map((service, index) => (
+                      <li key={index}>
+                        <button
+                          onClick={() => scrollToSection("services")}
+                          className="text-gray-300 hover:text-green-400 transition-colors text-sm w-full"
+                        >
+                          {service}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+
+            {/* Desktop Always Visible */}
+            <div className="hidden md:block">
+              <h3 className="text-lg font-semibold mb-6">Unsere Leistungen</h3>
+              <ul className="space-y-3">
+                {services.map((service, index) => (
+                  <li key={index}>
+                    <button
+                      onClick={() => scrollToSection("services")}
+                      className="text-gray-300 hover:text-green-400 transition-colors text-sm text-left"
+                    >
+                      {service}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Schnelllinks</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-gray-300 hover:text-green-400 transition-colors text-sm text-left"
-                  >
-                    {link.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            {/* Mobile Collapsible */}
+            <div className="md:hidden">
+              <Collapsible 
+                open={openSections.quickLinks} 
+                onOpenChange={() => toggleSection('quickLinks')}
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
+                  <span>Schnelllinks</span>
+                  {openSections.quickLinks ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <ul className="space-y-3 text-center">
+                    {quickLinks.map((link, index) => (
+                      <li key={index}>
+                        <button
+                          onClick={() => scrollToSection(link.href)}
+                          className="text-gray-300 hover:text-green-400 transition-colors text-sm w-full"
+                        >
+                          {link.name}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+
+            {/* Desktop Always Visible */}
+            <div className="hidden md:block">
+              <h3 className="text-lg font-semibold mb-6">Schnelllinks</h3>
+              <ul className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className="text-gray-300 hover:text-green-400 transition-colors text-sm text-left"
+                    >
+                      {link.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Kontaktinformationen</h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                <div className="text-sm text-gray-300">
-                  <p>Krefelderstr. 193</p>
-                  <p>52070 Aachen</p>
-                  <p>Praxis für Osteopathie u. Naturheilkunde</p>
+            {/* Mobile Collapsible */}
+            <div className="md:hidden">
+              <Collapsible 
+                open={openSections.contact} 
+                onOpenChange={() => toggleSection('contact')}
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
+                  <span>Kontaktinformationen</span>
+                  {openSections.contact ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <div className="space-y-4 text-center">
+                    <div className="flex items-start space-x-3 justify-center">
+                      <MapPin className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm text-gray-300">
+                        <p>Krefelderstr. 193</p>
+                        <p>52070 Aachen</p>
+                        <p>Praxis für Osteopathie u. Naturheilkunde</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-3 justify-center">
+                      <Phone className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-sm text-gray-300">0241 - 4464848</span>
+                    </div>
+                    <div className="flex items-center space-x-3 justify-center">
+                      <Mail className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-sm text-gray-300">melaniebretscher@netcologne.de</span>
+                    </div>
+                    <div className="flex items-start space-x-3 justify-center">
+                      <Clock className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm text-gray-300">
+                        <p>Mo-Fr: 8:00-18:00</p>
+                        <p>Samstag: 9:00-15:00</p>
+                        <p>Sonntag: Geschlossen</p>
+                      </div>
+                    </div>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+
+            {/* Desktop Always Visible */}
+            <div className="hidden md:block">
+              <h3 className="text-lg font-semibold mb-6">Kontaktinformationen</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                  <div className="text-sm text-gray-300">
+                    <p>Krefelderstr. 193</p>
+                    <p>52070 Aachen</p>
+                    <p>Praxis für Osteopathie u. Naturheilkunde</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-sm text-gray-300">0241 - 4464848</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-sm text-gray-300">melaniebretscher@netcologne.de</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Clock className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                <div className="text-sm text-gray-300">
-                  <p>Mo-Fr: 8:00-18:00</p>
-                  <p>Samstag: 9:00-15:00</p>
-                  <p>Sonntag: Geschlossen</p>
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-sm text-gray-300">0241 - 4464848</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-sm text-gray-300">melaniebretscher@netcologne.de</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Clock className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                  <div className="text-sm text-gray-300">
+                    <p>Mo-Fr: 8:00-18:00</p>
+                    <p>Samstag: 9:00-15:00</p>
+                    <p>Sonntag: Geschlossen</p>
+                  </div>
                 </div>
               </div>
             </div>
