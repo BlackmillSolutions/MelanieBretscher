@@ -41,9 +41,11 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">P</span>
-              </div>
+              <img 
+                src="/Logo-400.png" 
+                alt="PhysioClinic Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <div>
                 <div className="text-xl font-bold">PhysioClinic</div>
                 <div className="text-sm text-gray-400">Expert Care & Recovery</div>

@@ -90,9 +90,11 @@ export default function Navigation() {
               onClick={() => scrollToSection("home")}
               className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">P</span>
-              </div>
+              <img 
+                src="/Logo-400.png" 
+                alt="PhysioClinic Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <div>
                 <div className="text-xl font-bold text-gray-900">PhysioClinic</div>
                 <div className="text-xs text-gray-600">Expert Care & Recovery</div>
