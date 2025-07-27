@@ -74,7 +74,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-cyan-50/30 to-cyan-100/20">
+      <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-green-100/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Book Your Appointment</h1>
@@ -93,10 +93,10 @@ export default function ContactPage() {
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
-                className="text-center border-0 bg-gradient-to-b from-white to-cyan-50/30 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-center border-0 bg-gradient-to-b from-white to-green-50/30 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-6">
-                  <div className="flex justify-center mb-4 text-cyan-600">{info.icon}</div>
+                  <div className="flex justify-center mb-4 text-green-600">{info.icon}</div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h3>
                   <p className="text-gray-700 font-medium mb-1">{info.details}</p>
                   <p className="text-sm text-gray-600">{info.subtitle}</p>
@@ -108,7 +108,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form and Map */}
-      <section className="py-20 bg-gradient-to-b from-white to-cyan-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -138,7 +138,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                          className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
                           placeholder="Your full name"
                         />
                       </div>
@@ -153,7 +153,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                          className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
                           placeholder="your.email@example.com"
                         />
                       </div>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                           type="tel"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                          className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
                           placeholder="(555) 123-4567"
                         />
                       </div>
@@ -183,7 +183,7 @@ export default function ContactPage() {
                           name="service"
                           value={formData.service}
                           onChange={handleChange}
-                          className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-cyan-500 focus:ring-cyan-500 bg-white"
+                          className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-green-500 focus:ring-green-500 bg-white"
                         >
                           <option value="">Select a service</option>
                           {services.map((service, index) => (
@@ -206,7 +206,7 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                        className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
                         placeholder="Tell us about your condition, symptoms, or any questions you have..."
                       />
                     </div>
@@ -214,7 +214,7 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-full text-lg font-semibold"
+                      className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-full text-lg font-semibold"
                     >
                       Send Message
                       <Send className="ml-2 w-5 h-5" />
@@ -228,10 +228,10 @@ export default function ContactPage() {
             <div className="space-y-8">
               {/* Map Placeholder */}
               <Card className="border-0 shadow-xl overflow-hidden">
-                <div className="aspect-[4/3] bg-gradient-to-br from-cyan-100 to-cyan-200 relative">
+                <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 relative">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <MapPin className="w-12 h-12 text-cyan-600 mx-auto mb-4" />
+                      <MapPin className="w-12 h-12 text-green-600 mx-auto mb-4" />
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">Find Us Here</h3>
                       <p className="text-gray-600">123 Health Street</p>
                       <p className="text-gray-600">Downtown Medical Center</p>
@@ -242,22 +242,22 @@ export default function ContactPage() {
               </Card>
 
               {/* Quick Contact */}
-              <Card className="border-0 bg-gradient-to-r from-cyan-600 to-cyan-700 text-white shadow-xl">
+              <Card className="border-0 bg-gradient-to-r from-green-600 to-green-700 text-white shadow-xl">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Need Immediate Assistance?</h3>
-                  <p className="mb-6 text-cyan-100">
+                  <p className="mb-6 text-green-100">
                     For urgent matters or to speak with someone right away, give us a call during business hours.
                   </p>
                   <div className="space-y-3">
                     <Button
                       variant="outline"
                       size="lg"
-                      className="w-full border-2 border-white text-white hover:bg-white hover:text-cyan-600 rounded-full bg-transparent"
+                      className="w-full border-2 border-white text-white hover:bg-white hover:text-green-600 rounded-full bg-transparent"
                     >
                       <Phone className="mr-2 w-5 h-5" />
                       Call (555) 123-4567
                     </Button>
-                    <div className="text-center text-sm text-cyan-100">Mon-Fri: 8AM-7PM | Sat: 9AM-3PM</div>
+                    <div className="text-center text-sm text-green-100">Mon-Fri: 8AM-7PM | Sat: 9AM-3PM</div>
                   </div>
                 </CardContent>
               </Card>

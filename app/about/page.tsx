@@ -32,22 +32,22 @@ export default function AboutPage() {
 
   const values = [
     {
-      icon: <Heart className="w-8 h-8 text-cyan-600" />,
+      icon: <Heart className="w-8 h-8 text-green-600" />,
       title: "Patient-Centered Care",
       description: "Every treatment plan is tailored to your unique needs, goals, and lifestyle.",
     },
     {
-      icon: <Award className="w-8 h-8 text-cyan-600" />,
+      icon: <Award className="w-8 h-8 text-green-600" />,
       title: "Excellence in Practice",
       description: "We maintain the highest standards through continuous education and evidence-based treatments.",
     },
     {
-      icon: <Users className="w-8 h-8 text-cyan-600" />,
+      icon: <Users className="w-8 h-8 text-green-600" />,
       title: "Collaborative Approach",
       description: "We work closely with your healthcare team to ensure comprehensive care.",
     },
     {
-      icon: <Clock className="w-8 h-8 text-cyan-600" />,
+      icon: <Clock className="w-8 h-8 text-green-600" />,
       title: "Timely Recovery",
       description:
         "Our efficient treatment methods help you return to your activities as quickly and safely as possible.",
@@ -65,7 +65,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-cyan-50/30 to-cyan-100/20">
+      <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-green-100/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">About Our Practice</h1>
@@ -94,17 +94,17 @@ export default function AboutPage() {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-600 mb-2">15+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">15+</div>
                   <div className="text-gray-600">Years Serving</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-600 mb-2">2000+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">2000+</div>
                   <div className="text-gray-600">Patients Helped</div>
                 </div>
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-100 to-cyan-200">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-green-100 to-green-200">
                 <Image
                   src="/placeholder.svg?height=400&width=500"
                   alt="Modern physiotherapy clinic interior"
@@ -119,7 +119,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 bg-gradient-to-b from-white to-cyan-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 key={index}
                 className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-square bg-gradient-to-br from-cyan-100 to-cyan-200">
+                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
@@ -173,7 +173,7 @@ export default function AboutPage() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-cyan-600 font-semibold mb-2">{member.role}</p>
+                  <p className="text-green-600 font-semibold mb-2">{member.role}</p>
                   <p className="text-sm text-gray-600 mb-3">
                     {member.credentials} • {member.experience}
                   </p>
@@ -181,7 +181,7 @@ export default function AboutPage() {
                     <p className="text-sm font-semibold text-gray-900">Specialties:</p>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-cyan-100 text-cyan-700 text-xs rounded-full">
+                        <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
                           {specialty}
                         </span>
                       ))}
@@ -195,7 +195,7 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials */}
-      <section className="py-20 bg-gradient-to-b from-white to-cyan-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -212,7 +212,7 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   {credentials.map((credential, index) => (
                     <div key={index} className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-cyan-600 mr-4 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-4 flex-shrink-0" />
                       <span className="text-gray-700">{credential}</span>
                     </div>
                   ))}
@@ -226,7 +226,7 @@ export default function AboutPage() {
       {/* Patient Testimonial */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-cyan-50 to-cyan-100/50 shadow-lg">
+          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-green-50 to-green-100/50 shadow-lg">
             <CardContent className="p-8 lg:p-12 text-center">
               <div className="flex justify-center mb-6">
                 {[...Array(5)].map((_, i) => (

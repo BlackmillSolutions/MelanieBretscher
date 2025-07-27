@@ -103,7 +103,7 @@ export default function HistoryTimeline() {
                             <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
                             <p className="text-white/70 text-sm font-semibold">{event.year}</p>
                           </div>
-                          <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center">
+                          <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
                             {event.icon}
                           </div>
                         </div>
@@ -114,7 +114,7 @@ export default function HistoryTimeline() {
 
                   {/* Center Timeline Dot */}
                   <div className="relative z-10">
-                    <div className="w-4 h-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full border-2 border-white"></div>
+                    <div className="w-4 h-4 bg-gradient-to-br from-green-500 to-green-600 rounded-full border-2 border-white"></div>
                   </div>
 
                   <div className="w-1/2 pl-6"></div>
@@ -125,7 +125,7 @@ export default function HistoryTimeline() {
 
                   {/* Center Timeline Dot */}
                   <div className="relative z-10">
-                    <div className="w-4 h-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full border-2 border-white"></div>
+                    <div className="w-4 h-4 bg-gradient-to-br from-green-500 to-green-600 rounded-full border-2 border-white"></div>
                   </div>
 
                   {/* Right Side (even items) */}
@@ -133,7 +133,7 @@ export default function HistoryTimeline() {
                     <Card className="glass-card border-white/20 hover:shadow-lg transition-all duration-300">
                       <CardContent className="p-4">
                         <div className="flex items-center mb-2">
-                          <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center mr-3">
+                          <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3">
                             {event.icon}
                           </div>
                           <div>
@@ -154,7 +154,7 @@ export default function HistoryTimeline() {
               <div className="flex items-start pl-2">
                 {/* Timeline Dot */}
                 <div className="relative z-10 mr-4 mt-1">
-                  <div className="w-3 h-3 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full border border-white"></div>
+                  <div className="w-3 h-3 bg-gradient-to-br from-green-500 to-green-600 rounded-full border border-white"></div>
                 </div>
 
                 {/* Content */}

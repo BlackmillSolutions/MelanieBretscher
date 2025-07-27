@@ -71,7 +71,7 @@ export default function ContactForm() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                  className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
                   placeholder="Your full name"
                 />
               </div>
@@ -86,7 +86,7 @@ export default function ContactForm() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                  className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -103,7 +103,7 @@ export default function ContactForm() {
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                  className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
                   placeholder="(555) 123-4567"
                 />
               </div>
@@ -116,7 +116,7 @@ export default function ContactForm() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-cyan-500 focus:ring-cyan-500 bg-white"
+                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-green-500 focus:ring-green-500 bg-white"
                 >
                   <option value="">Select a service</option>
                   {services.map((service, index) => (
@@ -139,7 +139,7 @@ export default function ContactForm() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
                 placeholder="Tell us about your condition, symptoms, or any questions you have..."
               />
             </div>
@@ -147,7 +147,7 @@ export default function ContactForm() {
             <Button
               type="submit"
               size="lg"
-              className="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-full text-lg font-semibold"
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-full text-lg font-semibold"
             >
               Send Message
               <Send className="ml-2 w-5 h-5" />

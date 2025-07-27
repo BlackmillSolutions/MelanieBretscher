@@ -108,14 +108,14 @@ export default function Navigation() {
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={`font-medium transition-colors duration-200 text-sm ${
-                    activeSection === item.href ? "text-cyan-600" : "text-gray-700 hover:text-cyan-600"
+                    activeSection === item.href ? "text-green-600" : "text-gray-700 hover:text-green-600"
                   }`}
                 >
                   {item.name}
                 </button>
               ))}
               <Button
-                className="bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => scrollToSection("contact")}
               >
                 Book Appointment
@@ -126,7 +126,7 @@ export default function Navigation() {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 hover:text-cyan-600 transition-colors"
+                className="text-gray-700 hover:text-green-600 transition-colors"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -144,14 +144,14 @@ export default function Navigation() {
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
                     className={`block w-full text-left font-medium transition-colors duration-200 ${
-                      activeSection === item.href ? "text-cyan-600" : "text-gray-700 hover:text-cyan-600"
+                      activeSection === item.href ? "text-green-600" : "text-gray-700 hover:text-green-600"
                     }`}
                   >
                     {item.name}
                   </button>
                 ))}
                 <Button
-                  className="w-full bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white py-3 rounded-full mt-4 shadow-lg"
+                  className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-3 rounded-full mt-4 shadow-lg"
                   onClick={() => scrollToSection("contact")}
                 >
                   Book Appointment

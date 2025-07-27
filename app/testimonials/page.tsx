@@ -97,7 +97,7 @@ export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-cyan-50/30 to-cyan-100/20">
+      <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-green-100/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Patient Success Stories</h1>
@@ -110,7 +110,7 @@ export default function TestimonialsPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl lg:text-4xl font-bold text-cyan-600 mb-2">{stat.number}</div>
+                  <div className="text-3xl lg:text-4xl font-bold text-green-600 mb-2">{stat.number}</div>
                   <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
                 </div>
               ))}
@@ -122,17 +122,17 @@ export default function TestimonialsPage() {
       {/* Featured Testimonial */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-cyan-50 to-cyan-100/50 shadow-xl">
+          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-green-50 to-green-100/50 shadow-xl">
             <CardContent className="p-8 lg:p-12">
               <div className="flex justify-center mb-6">
-                <Quote className="w-12 h-12 text-cyan-600" />
+                <Quote className="w-12 h-12 text-green-600" />
               </div>
               <blockquote className="text-2xl lg:text-3xl text-gray-700 text-center mb-8 italic leading-relaxed">
                 "This clinic completely changed my life. After years of chronic pain, I finally found a team that truly
                 understood my condition and provided the care I needed to get back to living fully."
               </blockquote>
               <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-cyan-100 to-cyan-200">
+                <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-green-100 to-green-200">
                   <Image
                     src="/placeholder.svg?height=64&width=64"
                     alt="Featured patient"
@@ -157,7 +157,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Testimonials Grid */}
-      <section className="py-20 bg-gradient-to-b from-white to-cyan-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
@@ -172,7 +172,7 @@ export default function TestimonialsPage() {
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-cyan-100 to-cyan-200">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-green-100 to-green-200">
                       <Image
                         src={testimonial.image || "/placeholder.svg"}
                         alt={testimonial.name}
@@ -231,10 +231,10 @@ export default function TestimonialsPage() {
                 key={index}
                 className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-video bg-gradient-to-br from-cyan-100 to-cyan-200 relative group cursor-pointer">
+                <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 relative group cursor-pointer">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                      <div className="w-0 h-0 border-l-[12px] border-l-cyan-600 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                      <div className="w-0 h-0 border-l-[12px] border-l-green-600 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
@@ -250,17 +250,17 @@ export default function TestimonialsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-cyan-600 to-cyan-700">
+      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to Write Your Success Story?</h2>
-          <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
             Join the thousands of patients who have transformed their lives through our personalized physiotherapy care.
             Your journey to recovery starts here.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-cyan-600 hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold"
+              className="bg-white text-green-600 hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold"
             >
               Book Your Consultation
               <ArrowRight className="ml-2 w-5 h-5" />

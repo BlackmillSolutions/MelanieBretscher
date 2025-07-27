@@ -91,22 +91,22 @@ export default function HomePage() {
 
   const values = [
     {
-      icon: <Heart className="w-8 h-8 text-cyan-600" />,
+      icon: <Heart className="w-8 h-8 text-green-600" />,
       title: "Patient-Centered Care",
       description: "Every treatment plan is tailored to your unique needs, goals, and lifestyle.",
     },
     {
-      icon: <Award className="w-8 h-8 text-cyan-600" />,
+      icon: <Award className="w-8 h-8 text-green-600" />,
       title: "Excellence in Practice",
       description: "We maintain the highest standards through continuous education and evidence-based treatments.",
     },
     {
-      icon: <Users className="w-8 h-8 text-cyan-600" />,
+      icon: <Users className="w-8 h-8 text-green-600" />,
       title: "Collaborative Approach",
       description: "We work closely with your healthcare team to ensure comprehensive care.",
     },
     {
-      icon: <Clock className="w-8 h-8 text-cyan-600" />,
+      icon: <Clock className="w-8 h-8 text-green-600" />,
       title: "Timely Recovery",
       description:
         "Our efficient treatment methods help you return to your activities as quickly and safely as possible.",
@@ -212,7 +212,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center glass-card-light p-6 rounded-2xl">
-                <div className="text-3xl lg:text-4xl font-bold text-cyan-600 mb-2">{stat.number}</div>
+                <div className="text-3xl lg:text-4xl font-bold text-green-600 mb-2">{stat.number}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -287,7 +287,7 @@ export default function HomePage() {
               >
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
                       {React.cloneElement(value.icon, { className: "w-8 h-8 text-white" })}
                     </div>
                   </div>
@@ -364,11 +364,12 @@ export default function HomePage() {
                 key={index}
                 className="overflow-hidden glass-card-light border-gray-200/50 hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-square bg-gradient-to-br from-cyan-100 to-cyan-200">
+                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200">
                   <Image
                     src={
                       member.image ||
                       "/placeholder.svg?height=400&width=400&query=professional physiotherapist portrait" ||
+                      "/placeholder.svg" ||
                       "/placeholder.svg" ||
                       "/placeholder.svg" ||
                       "/placeholder.svg" ||
@@ -385,7 +386,7 @@ export default function HomePage() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-cyan-600 font-semibold mb-2">{member.role}</p>
+                  <p className="text-green-600 font-semibold mb-2">{member.role}</p>
                   <p className="text-sm text-gray-600 mb-3">
                     {member.credentials} • {member.experience}
                   </p>
@@ -393,7 +394,7 @@ export default function HomePage() {
                     <p className="text-sm font-semibold text-gray-900">Specialties:</p>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-cyan-100 text-cyan-700 text-xs rounded-full">
+                        <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
                           {specialty}
                         </span>
                       ))}
@@ -543,7 +544,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <Phone className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -554,7 +555,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -565,7 +566,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <Clock className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -576,7 +577,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <Send className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -597,10 +598,10 @@ export default function HomePage() {
             <div className="space-y-8">
               {/* Map Placeholder */}
               <Card className="glass-card-light border-gray-200/50 shadow-xl overflow-hidden">
-                <div className="aspect-[4/3] bg-gradient-to-br from-cyan-100 to-cyan-200 relative">
+                <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 relative">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <MapPin className="w-12 h-12 text-cyan-600 mx-auto mb-4" />
+                      <MapPin className="w-12 h-12 text-green-600 mx-auto mb-4" />
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">Find Us Here</h3>
                       <p className="text-gray-600">123 Health Street</p>
                       <p className="text-gray-600">Downtown Medical Center</p>
@@ -620,7 +621,7 @@ export default function HomePage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full border-2 border-cyan-600 text-cyan-600 hover:bg-cyan-50 rounded-full bg-transparent"
+                    className="w-full border-2 border-green-600 text-green-600 hover:bg-green-50 rounded-full bg-transparent"
                   >
                     <Phone className="mr-2 w-5 h-5" />
                     Call (555) 123-4567

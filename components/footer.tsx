@@ -56,16 +56,16 @@ export default function Footer() {
               achieve optimal health and wellness.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -79,7 +79,7 @@ export default function Footer() {
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection("services")}
-                    className="text-gray-300 hover:text-cyan-400 transition-colors text-sm text-left"
+                    className="text-gray-300 hover:text-green-400 transition-colors text-sm text-left"
                   >
                     {service}
                   </button>
@@ -96,7 +96,7 @@ export default function Footer() {
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-gray-300 hover:text-cyan-400 transition-colors text-sm text-left"
+                    className="text-gray-300 hover:text-green-400 transition-colors text-sm text-left"
                   >
                     {link.name}
                   </button>
@@ -110,7 +110,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Contact Information</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
                   <p>123 Health Street</p>
                   <p>Downtown Medical Center</p>
@@ -118,15 +118,15 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-sm text-gray-300">(555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-sm text-gray-300">info@physioclinic.com</span>
               </div>
               <div className="flex items-start space-x-3">
-                <Clock className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                <Clock className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
                   <p>Mon-Fri: 8AM-7PM</p>
                   <p>Saturday: 9AM-3PM</p>
@@ -143,7 +143,7 @@ export default function Footer() {
             <div className="text-sm text-gray-400">© 2024 PhysioClinic. All rights reserved.</div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
               {legalLinks.map((link, index) => (
-                <a key={index} href={link.href} className="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
+                <a key={index} href={link.href} className="text-sm text-gray-400 hover:text-green-400 transition-colors">
                   {link.name}
                 </a>
               ))}
