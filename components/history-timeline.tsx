@@ -1,12 +1,11 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Award, Users, Building, Star, Zap, Heart, Trophy } from "lucide-react"
 
 export default function HistoryTimeline() {
-  const [visibleItems, setVisibleItems] = useState<number[]>([])
-  const timelineRef = useRef<HTMLDivElement>(null)
+  const [animatedItems, setAnimatedItems] = useState<number[]>([])
 
   const timelineEvents = [
     {
@@ -54,41 +53,35 @@ export default function HistoryTimeline() {
   ]
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number.parseInt(entry.target.getAttribute("data-index") || "0")
-            setVisibleItems((prev) => [...new Set([...prev, index])])
-          }
-        })
-      },
-      { threshold: 0.3 },
-    )
+    // Animate items in sequence
+    const animateItems = () => {
+      timelineEvents.forEach((_, index) => {
+        setTimeout(() => {
+          setAnimatedItems(prev => [...prev, index])
+        }, index * 200) // 200ms delay between each item
+      })
+    }
 
-    const timelineItems = timelineRef.current?.querySelectorAll("[data-index]")
-    timelineItems?.forEach((item) => observer.observe(item))
-
-    return () => observer.disconnect()
+    // Start animation after a short delay
+    const timer = setTimeout(animateItems, 500)
+    
+    return () => clearTimeout(timer)
   }, [])
 
   return (
-    <div ref={timelineRef} className="relative max-w-4xl mx-auto">
+    <div className="relative max-w-4xl mx-auto">
       {/* Timeline Line - Hidden on mobile */}
       <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-white/30 h-full rounded-full"></div>
 
-      {/* Mobile Timeline Line */}
-      <div className="md:hidden absolute left-4 w-0.5 bg-white/30 h-full rounded-full"></div>
-
       <div className="space-y-6">
         {timelineEvents.map((event, index) => (
-          <div
-            key={index}
-            data-index={index}
-            className={`relative transition-all duration-500 ${
-              visibleItems.includes(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          <div 
+            key={index} 
+            className={`relative transition-all duration-700 ease-out ${
+              animatedItems.includes(index) 
+                ? "opacity-100 translate-y-0" 
+                : "opacity-0 translate-y-8"
             }`}
-            style={{ transitionDelay: `${index * 100}ms` }}
           >
             {/* Desktop Layout */}
             <div className="hidden md:flex items-center">
@@ -96,25 +89,23 @@ export default function HistoryTimeline() {
               {index % 2 === 0 ? (
                 <>
                   <div className="w-1/2 pr-6 text-right">
-                    <Card className="glass-card border-white/20 hover:shadow-lg transition-all duration-300">
-                      <CardContent className="p-4">
-                        <div className="flex items-center justify-end mb-2">
-                          <div className="text-right mr-3">
-                            <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
-                            <p className="text-white/70 text-sm font-semibold">{event.year}</p>
-                          </div>
-                          <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
-                            {event.icon}
-                          </div>
+                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/15">
+                      <div className="flex items-center justify-end mb-2">
+                        <div className="text-right mr-3">
+                          <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
+                          <p className="text-white/70 text-sm font-semibold">{event.year}</p>
                         </div>
-                        <p className="text-white/90 text-sm leading-relaxed">{event.description}</p>
-                      </CardContent>
-                    </Card>
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
+                          {event.icon}
+                        </div>
+                      </div>
+                      <p className="text-white/90 text-sm leading-relaxed">{event.description}</p>
+                    </div>
                   </div>
 
                   {/* Center Timeline Dot */}
-                  <div className="relative z-10">
-                    <div className="w-4 h-4 bg-gradient-to-br from-green-500 to-green-600 rounded-full border-2 border-white"></div>
+                  <div className="relative z-10 flex items-center justify-center">
+                    <div className="w-4 h-4 bg-gradient-to-br from-green-500 to-green-600 rounded-full border-2 border-white shadow-lg"></div>
                   </div>
 
                   <div className="w-1/2 pl-6"></div>
@@ -124,26 +115,24 @@ export default function HistoryTimeline() {
                   <div className="w-1/2 pr-6"></div>
 
                   {/* Center Timeline Dot */}
-                  <div className="relative z-10">
-                    <div className="w-4 h-4 bg-gradient-to-br from-green-500 to-green-600 rounded-full border-2 border-white"></div>
+                  <div className="relative z-10 flex items-center justify-center">
+                    <div className="w-4 h-4 bg-gradient-to-br from-green-500 to-green-600 rounded-full border-2 border-white shadow-lg"></div>
                   </div>
 
                   {/* Right Side (even items) */}
                   <div className="w-1/2 pl-6">
-                    <Card className="glass-card border-white/20 hover:shadow-lg transition-all duration-300">
-                      <CardContent className="p-4">
-                        <div className="flex items-center mb-2">
-                          <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3">
-                            {event.icon}
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
-                            <p className="text-white/70 text-sm font-semibold">{event.year}</p>
-                          </div>
+                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/15">
+                      <div className="flex items-center mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3">
+                          {event.icon}
                         </div>
-                        <p className="text-white/90 text-sm leading-relaxed">{event.description}</p>
-                      </CardContent>
-                    </Card>
+                        <div>
+                          <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
+                          <p className="text-white/70 text-sm font-semibold">{event.year}</p>
+                        </div>
+                      </div>
+                      <p className="text-white/90 text-sm leading-relaxed">{event.description}</p>
+                    </div>
                   </div>
                 </>
               )}
@@ -151,19 +140,25 @@ export default function HistoryTimeline() {
 
             {/* Mobile Layout */}
             <div className="md:hidden">
-              <div className="flex items-start pl-2">
-                {/* Timeline Dot */}
-                <div className="relative z-10 mr-4 mt-1">
-                  <div className="w-3 h-3 bg-gradient-to-br from-green-500 to-green-600 rounded-full border border-white"></div>
+              <div className="flex items-center">
+                {/* Vertical Date with Background */}
+                <div className="mr-4 flex-shrink-0">
+                  <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-2 py-1">
+                    <div className="text-white font-semibold text-xs tracking-wider" style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}>
+                      {event.year}
+                    </div>
+                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <div className="glass-card border-white/20 rounded-lg p-3">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 hover:bg-white/15 transition-all duration-300">
                     <div className="mb-2">
                       <div className="flex items-center justify-between mb-1">
                         <h3 className="text-sm font-bold text-white truncate">{event.title}</h3>
-                        <span className="text-white/70 text-xs font-semibold ml-2 flex-shrink-0">{event.year}</span>
+                        <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center ml-2 flex-shrink-0">
+                          {event.icon}
+                        </div>
                       </div>
                       <p className="text-white/90 text-xs leading-relaxed">{event.description}</p>
                     </div>
