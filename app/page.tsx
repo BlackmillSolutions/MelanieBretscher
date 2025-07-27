@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight, Phone, MapPin, Clock, Star, CheckCircle, Award, Users, Heart, Send, Quote } from "lucide-react"
+import { ArrowRight, Phone, MapPin, Clock, Star, CheckCircle, Award, Users, Heart, Send, Quote, HandHeart, Ear, Leaf, Syringe, Droplets, Footprints, Sparkles, Activity } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ContactForm from "@/components/contact-form"
@@ -15,56 +15,56 @@ export default function HomePage() {
     {
       title: "Osteopathische Behandlung",
       description: "Ganzheitliche manuelle Therapie zur Behandlung von Funktionsstörungen und Schmerzen",
-      icon: "🤲",
+      icon: <HandHeart className="w-12 h-12 text-white" />,
       duration: "45-60 Minuten",
       benefits: ["Verbesserte Beweglichkeit", "Schmerzlinderung", "Ganzheitliche Behandlung", "Natürliche Heilung"],
     },
     {
       title: "Ohrakupunktur",
       description: "Spezialisierte Akupunkturbehandlung über die Ohrmuschel zur Schmerzlinderung und Regulation",
-      icon: "👂",
+      icon: <Ear className="w-12 h-12 text-white" />,
       duration: "30-45 Minuten",
       benefits: ["Schnelle Schmerzlinderung", "Regulation des Nervensystems", "Stressabbau", "Ganzheitliche Wirkung"],
     },
     {
       title: "Phytotherapie",
       description: "Behandlung mit pflanzlichen Heilmitteln zur Unterstützung der natürlichen Heilungsprozesse",
-      icon: "🌿",
+      icon: <Leaf className="w-12 h-12 text-white" />,
       duration: "30-60 Minuten",
       benefits: ["Natürliche Wirkstoffe", "Geringe Nebenwirkungen", "Ganzheitliche Therapie", "Langfristige Wirkung"],
     },
     {
       title: "Infusionen und Injektionen",
       description: "Intravenöse und intramuskuläre Therapien zur gezielten Nährstoffversorgung und Behandlung",
-      icon: "💉",
+      icon: <Syringe className="w-12 h-12 text-white" />,
       duration: "30-90 Minuten",
       benefits: ["Direkte Wirkung", "Gezielte Therapie", "Schnelle Aufnahme", "Individuelle Dosierung"],
     },
     {
       title: "Schröpfen",
       description: "Traditionelle Therapie zur Verbesserung der Durchblutung und Entgiftung des Gewebes",
-      icon: "🥤",
+      icon: <Droplets className="w-12 h-12 text-white" />,
       duration: "20-30 Minuten",
       benefits: ["Verbesserte Durchblutung", "Entgiftung", "Schmerzlinderung", "Entspannung"],
     },
     {
       title: "Fußreflexzonenmassage",
       description: "Reflexzonentherapie über die Füße zur Behandlung verschiedener Körperbereiche",
-      icon: "🦶",
+      icon: <Footprints className="w-12 h-12 text-white" />,
       duration: "45-60 Minuten",
       benefits: ["Entspannung", "Durchblutungsförderung", "Schmerzlinderung", "Ganzheitliche Wirkung"],
     },
     {
       title: "Manuelle Lymphdrainage",
       description: "Sanfte Massagetechnik zur Verbesserung des Lymphabflusses und Entstauung",
-      icon: "💆‍♀️",
+      icon: <Sparkles className="w-12 h-12 text-white" />,
       duration: "45-60 Minuten",
       benefits: ["Entstauung", "Immunstärkung", "Entgiftung", "Schmerzlinderung"],
     },
     {
       title: "Physiotherapie",
       description: "Klassische physiotherapeutische Behandlung zur Wiederherstellung der Beweglichkeit",
-      icon: "🏥",
+      icon: <Activity className="w-12 h-12 text-white" />,
       duration: "45-60 Minuten",
       benefits: ["Beweglichkeitsverbesserung", "Kräftigung", "Schmerzlinderung", "Funktionswiederherstellung"],
     },
@@ -321,7 +321,7 @@ export default function HomePage() {
                 className="group glass-card border-white/20 hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-6">
-                  <div className="text-4xl mb-4 text-center">{service.icon}</div>
+                  <div className="mb-4 text-center flex justify-center">{service.icon}</div>
                   <h3 className="text-xl font-semibold text-white mb-3 text-center">{service.title}</h3>
                   <p className="text-white/80 text-sm leading-relaxed mb-4 text-center">{service.description}</p>
 
