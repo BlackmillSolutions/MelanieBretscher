@@ -32,7 +32,7 @@ export default function AboutPage() {
       description: "Wir arbeiten eng mit Ihrem Gesundheitsteam zusammen, um eine umfassende Versorgung zu gewährleisten.",
     },
     {
-      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform rotate-270" />,
+      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform -rotate-90" />,
       title: "Schnelle Genesung",
       description:
         "Unsere effizienten Behandlungsmethoden helfen Ihnen, so schnell und sicher wie möglich zu Ihren Aktivitäten zurückzukehren.",
