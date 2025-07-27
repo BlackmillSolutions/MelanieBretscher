@@ -8,6 +8,7 @@ import ContactForm from "@/components/contact-form"
 import React from "react"
 import PracticeSlider from "@/components/practice-slider"
 import HistoryTimeline from "@/components/history-timeline"
+import AnimatedCounter from "@/components/animated-counter"
 
 export default function HomePage() {
   const services = [
@@ -210,7 +211,11 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center glass-card-light p-6 rounded-2xl">
-                <div className="text-3xl lg:text-4xl font-bold text-green-600 mb-2">{stat.number}</div>
+                <AnimatedCounter 
+                  value={stat.number} 
+                  className="text-3xl lg:text-4xl font-bold text-green-600 mb-2"
+                  duration={2500}
+                />
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}

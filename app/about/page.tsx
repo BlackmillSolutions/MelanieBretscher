@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Award, Users, Clock, Heart, CheckCircle, Star } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import AnimatedCounter from "@/components/animated-counter"
 
 export default function AboutPage() {
   const team = [
@@ -80,11 +81,19 @@ export default function AboutPage() {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">15+</div>
+                  <AnimatedCounter 
+                    value="15+" 
+                    className="text-3xl font-bold text-green-600 mb-2"
+                    duration={2500}
+                  />
                   <div className="text-gray-600">Jahre im Dienst</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">2000+</div>
+                  <AnimatedCounter 
+                    value="2000+" 
+                    className="text-3xl font-bold text-green-600 mb-2"
+                    duration={2500}
+                  />
                   <div className="text-gray-600">Patienten geholfen</div>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import Image from "next/image"
 import { Star, Quote, ArrowRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import AnimatedCounter from "@/components/animated-counter"
 
 export default function TestimonialsPage() {
   const testimonials = [
@@ -110,7 +111,11 @@ export default function TestimonialsPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl lg:text-4xl font-bold text-green-600 mb-2">{stat.number}</div>
+                  <AnimatedCounter 
+                    value={stat.number} 
+                    className="text-3xl lg:text-4xl font-bold text-green-600 mb-2"
+                    duration={2500}
+                  />
                   <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
                 </div>
               ))}
