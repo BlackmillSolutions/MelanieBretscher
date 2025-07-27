@@ -17,22 +17,22 @@ export default function AboutPage() {
 
   const values = [
     {
-      icon: <Heart className="w-8 h-8 text-green-600" />,
+      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform rotate-0" />,
       title: "Ganzheitliche Behandlung",
       description: "Jeder Behandlungsplan wird individuell auf Ihre Bedürfnisse, Ziele und Lebensweise abgestimmt.",
     },
     {
-      icon: <Award className="w-8 h-8 text-green-600" />,
+      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform rotate-90" />,
       title: "Exzellenz in der Praxis",
       description: "Wir halten die höchsten Standards durch kontinuierliche Weiterbildung und evidenzbasierte Behandlungen.",
     },
     {
-      icon: <Users className="w-8 h-8 text-green-600" />,
+      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform rotate-180" />,
       title: "Kooperativer Ansatz",
       description: "Wir arbeiten eng mit Ihrem Gesundheitsteam zusammen, um eine umfassende Versorgung zu gewährleisten.",
     },
     {
-      icon: <Clock className="w-8 h-8 text-green-600" />,
+      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform rotate-270" />,
       title: "Schnelle Genesung",
       description:
         "Unsere effizienten Behandlungsmethoden helfen Ihnen, so schnell und sicher wie möglich zu Ihren Aktivitäten zurückzukehren.",
@@ -116,12 +116,7 @@ export default function AboutPage() {
       {/* Our Values */}
       <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Unsere Kernwerte</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Diese Prinzipien leiten alles, was wir tun und stellen sicher, dass Sie die höchste Qualität an Versorgung erhalten.
-            </p>
-          </div>
+
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
@@ -130,7 +125,11 @@ export default function AboutPage() {
                 className="text-center border-0 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
               >
                 <CardContent className="p-6">
-                  <div className="flex justify-center mb-4">{value.icon}</div>
+                  <div className="flex justify-center mb-4">
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      {value.icon}
+                    </div>
+                  </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
                 </CardContent>
