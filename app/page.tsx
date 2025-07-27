@@ -146,21 +146,17 @@ export default function HomePage() {
         id="home"
         className="relative min-h-screen flex items-center justify-center animated-gradient overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1200')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/Logo.svg')] bg-contain bg-center bg-no-repeat opacity-10"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center px-4 py-2 glass-card rounded-full border border-white/30 mb-6">
-                <CheckCircle className="w-4 h-4 text-white mr-2" />
-                <span className="text-sm font-medium text-white">Vertraut von 2000+ Patienten</span>
-              </div>
+            <div className="mb-8 -mt-32">
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Ihr Weg zu einem
                 <span className="block">schmerzfreien Leben</span>
               </h1>
               <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Expertenteam für Osteopathie und Naturheilkunde kombiniert moderne Techniken mit persönlichen Behandlungsplänen. 
-                Kehren Sie zu dem zurück, was Sie lieben - schneller und stärker als zuvor.
+                Expertenteam für Osteopathie und Naturheilkunde kombiniert moderne Techniken mit persönlichen Behandlungsplänen.
               </p>
             </div>
 
