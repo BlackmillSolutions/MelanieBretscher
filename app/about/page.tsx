@@ -5,27 +5,11 @@ import { Card, CardContent } from "@/components/ui/card"
 export default function AboutPage() {
   const team = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Lead Physiotherapist & Clinic Director",
-      credentials: "DPT, OCS, FAAOMPT",
-      experience: "15+ years",
-      specialties: ["Manual Therapy", "Sports Medicine", "Orthopedic Rehabilitation"],
-      image: "/placeholder.svg?height=400&width=400",
-    },
-    {
-      name: "Dr. Michael Chen",
-      role: "Senior Physiotherapist",
-      credentials: "DPT, SCS, CSCS",
-      experience: "12+ years",
-      specialties: ["Sports Rehabilitation", "Strength Training", "Movement Analysis"],
-      image: "/placeholder.svg?height=400&width=400",
-    },
-    {
-      name: "Dr. Emily Rodriguez",
-      role: "Physiotherapist",
-      credentials: "DPT, NCS",
-      experience: "8+ years",
-      specialties: ["Neurological Rehabilitation", "Balance Training", "Chronic Pain"],
+      name: "Melanie Bretscher",
+      role: "Heilpraktikerin, Osteopathin, Physiotherapeutin",
+      credentials: "Heilpraktikerin, Osteopathin, Physiotherapeutin",
+      experience: "15+ Jahre",
+      specialties: ["Osteopathie", "Naturheilkunde", "Physiotherapie", "Ohrakupunktur"],
       image: "/placeholder.svg?height=400&width=400",
     },
   ]
@@ -33,33 +17,33 @@ export default function AboutPage() {
   const values = [
     {
       icon: <Heart className="w-8 h-8 text-green-600" />,
-      title: "Patient-Centered Care",
-      description: "Every treatment plan is tailored to your unique needs, goals, and lifestyle.",
+      title: "Ganzheitliche Behandlung",
+      description: "Jeder Behandlungsplan wird individuell auf Ihre Bedürfnisse, Ziele und Lebensweise abgestimmt.",
     },
     {
       icon: <Award className="w-8 h-8 text-green-600" />,
-      title: "Excellence in Practice",
-      description: "We maintain the highest standards through continuous education and evidence-based treatments.",
+      title: "Exzellenz in der Praxis",
+      description: "Wir halten die höchsten Standards durch kontinuierliche Weiterbildung und evidenzbasierte Behandlungen.",
     },
     {
       icon: <Users className="w-8 h-8 text-green-600" />,
-      title: "Collaborative Approach",
-      description: "We work closely with your healthcare team to ensure comprehensive care.",
+      title: "Kooperativer Ansatz",
+      description: "Wir arbeiten eng mit Ihrem Gesundheitsteam zusammen, um eine umfassende Versorgung zu gewährleisten.",
     },
     {
       icon: <Clock className="w-8 h-8 text-green-600" />,
-      title: "Timely Recovery",
+      title: "Schnelle Genesung",
       description:
-        "Our efficient treatment methods help you return to your activities as quickly and safely as possible.",
+        "Unsere effizienten Behandlungsmethoden helfen Ihnen, so schnell und sicher wie möglich zu Ihren Aktivitäten zurückzukehren.",
     },
   ]
 
   const credentials = [
-    "American Physical Therapy Association (APTA) Members",
-    "Board Certified Orthopedic Clinical Specialists",
-    "Fellowship-trained Manual Therapy Specialists",
-    "Certified Strength and Conditioning Specialists",
-    "Continuing Education Requirements Exceeded Annually",
+    "Heilpraktikerin mit umfassender Ausbildung",
+    "Osteopathin mit spezialisierter Weiterbildung",
+    "Physiotherapeutin mit langjähriger Erfahrung",
+    "Zertifizierte Ohrakupunktur-Therapeutin",
+    "Kontinuierliche Weiterbildung in Naturheilkunde",
   ]
 
   return (
@@ -68,10 +52,11 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-green-100/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">About Our Practice</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Über unsere Praxis</h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Dedicated to providing exceptional physiotherapy care with a personal touch. Our experienced team combines
-              advanced clinical expertise with genuine compassion to help you achieve your health and wellness goals.
+              Gewidmet der Bereitstellung außergewöhnlicher osteopathischer und naturheilkundlicher Versorgung mit persönlicher Note. 
+              Unser erfahrenes Team kombiniert fortschrittliche klinische Expertise mit echter Mitfühlung, 
+              um Ihnen zu helfen, Ihre Gesundheits- und Wellnessziele zu erreichen.
             </p>
           </div>
         </div>
@@ -82,24 +67,25 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Unsere Mission</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                To empower individuals to overcome physical limitations and achieve optimal health through personalized,
-                evidence-based physiotherapy care. We believe in treating not just the symptoms, but the whole person.
+                Menschen zu befähigen, körperliche Einschränkungen zu überwinden und optimale Gesundheit durch personalisierte, 
+                evidenzbasierte osteopathische und naturheilkundliche Versorgung zu erreichen. 
+                Wir glauben daran, nicht nur die Symptome, sondern den ganzen Menschen zu behandeln.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Since our founding in 2008, we've helped over 2,000 patients return to active, pain-free lives. Our
-                commitment to excellence and patient satisfaction has made us a trusted healthcare partner in our
-                community.
+                Seit unserer Gründung haben wir über 2.000 Patienten geholfen, zu einem aktiven, schmerzfreien Leben zurückzukehren. 
+                Unser Engagement für Exzellenz und Patientenzufriedenheit hat uns zu einem vertrauenswürdigen 
+                Gesundheitspartner in unserer Gemeinde gemacht.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-green-600 mb-2">15+</div>
-                  <div className="text-gray-600">Years Serving</div>
+                  <div className="text-gray-600">Jahre im Dienst</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-green-600 mb-2">2000+</div>
-                  <div className="text-gray-600">Patients Helped</div>
+                  <div className="text-gray-600">Patienten geholfen</div>
                 </div>
               </div>
             </div>
@@ -107,7 +93,7 @@ export default function AboutPage() {
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-green-100 to-green-200">
                 <Image
                   src="/placeholder.svg?height=400&width=500"
-                  alt="Modern physiotherapy clinic interior"
+                  alt="Moderne Osteopathie-Praxis Innenraum"
                   width={500}
                   height={400}
                   className="w-full h-full object-cover"
@@ -122,9 +108,9 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Unsere Kernwerte</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              These principles guide everything we do and ensure you receive the highest quality care.
+              Diese Prinzipien leiten alles, was wir tun und stellen sicher, dass Sie die höchste Qualität an Versorgung erhalten.
             </p>
           </div>
 
@@ -149,10 +135,10 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Meet Our Expert Team</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Lernen Sie unser Expertenteam kennen</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our highly qualified physiotherapists bring years of experience and specialized training to provide you
-              with the best possible care.
+              Unsere hochqualifizierte Heilpraktikerin bringt jahrelange Erfahrung und spezialisierte Ausbildung mit, 
+              um Ihnen die bestmögliche Versorgung zu bieten.
             </p>
           </div>
 
@@ -178,7 +164,7 @@ export default function AboutPage() {
                     {member.credentials} • {member.experience}
                   </p>
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-gray-900">Specialties:</p>
+                    <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
                         <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
@@ -200,10 +186,10 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Professional Credentials & Certifications
+                Professionelle Qualifikationen & Zertifizierungen
               </h2>
               <p className="text-lg text-gray-600">
-                Our commitment to excellence is reflected in our extensive training and certifications.
+                Unser Engagement für Exzellenz spiegelt sich in unserer umfassenden Ausbildung und Zertifizierung wider.
               </p>
             </div>
 
@@ -234,13 +220,13 @@ export default function AboutPage() {
                 ))}
               </div>
               <blockquote className="text-xl lg:text-2xl text-gray-700 mb-6 italic leading-relaxed">
-                "The team at this clinic completely transformed my recovery experience. Their personalized approach and
-                genuine care helped me get back to running marathons after my knee injury. I couldn't recommend them
-                more highly."
+                "Das Team in dieser Praxis hat mein Genesungserlebnis komplett verändert. Ihr personalisierter Ansatz und 
+                echte Fürsorge haben mir geholfen, nach meiner Knieverletzung wieder Marathon zu laufen. 
+                Ich kann sie nur wärmstens empfehlen."
               </blockquote>
               <div className="text-gray-600">
                 <p className="font-semibold">Jennifer Martinez</p>
-                <p className="text-sm">Marathon Runner & Patient</p>
+                <p className="text-sm">Marathonläuferin & Patientin</p>
               </div>
             </CardContent>
           </Card>

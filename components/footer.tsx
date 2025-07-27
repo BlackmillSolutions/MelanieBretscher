@@ -4,27 +4,29 @@ import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin } fr
 
 export default function Footer() {
   const services = [
-    "Manual Therapy",
-    "Sports Rehabilitation",
-    "Chronic Pain Management",
-    "Post-Surgery Recovery",
-    "Neurological Rehabilitation",
-    "Pediatric Physiotherapy",
+    "Osteopathische Behandlung",
+    "Ohrakupunktur",
+    "Phytotherapie",
+    "Infusionen und Injektionen",
+    "Schröpfen",
+    "Fußreflexzonenmassage",
+    "Manuelle Lymphdrainage",
+    "Physiotherapie",
   ]
 
   const quickLinks = [
-    { name: "About Us", href: "about" },
-    { name: "Our Services", href: "services" },
-    { name: "Our Team", href: "team" },
-    { name: "Patient Stories", href: "testimonials" },
-    { name: "Contact Us", href: "contact" },
+    { name: "Über uns", href: "about" },
+    { name: "Unsere Leistungen", href: "services" },
+    { name: "Unser Team", href: "team" },
+    { name: "Patientengeschichten", href: "testimonials" },
+    { name: "Kontakt", href: "contact" },
   ]
 
   const legalLinks = [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "HIPAA Notice", href: "/hipaa" },
-    { name: "Patient Rights", href: "/patient-rights" },
+    { name: "Datenschutz", href: "/privacy" },
+    { name: "Nutzungsbedingungen", href: "/terms" },
+    { name: "Impressum", href: "/impressum" },
+    { name: "Patientenrechte", href: "/patient-rights" },
   ]
 
   const scrollToSection = (sectionId: string) => {
@@ -43,17 +45,17 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               <img 
                 src="/Logo-400.png" 
-                alt="PhysioClinic Logo" 
+                alt="Praxis für Osteopathie u. Naturheilkunde Logo" 
                 className="w-10 h-10 object-contain"
               />
               <div>
-                <div className="text-xl font-bold">PhysioClinic</div>
-                <div className="text-sm text-gray-400">Expert Care & Recovery</div>
+                <div className="text-xl font-bold">Melanie Bretscher</div>
+                <div className="text-sm text-gray-400">Osteopathie & Naturheilkunde</div>
               </div>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              Dedicated to providing exceptional physiotherapy care with personalized treatment plans to help you
-              achieve optimal health and wellness.
+              Gewidmet der Bereitstellung außergewöhnlicher osteopathischer und naturheilkundlicher Versorgung 
+              mit personalisierten Behandlungsplänen, um Ihnen zu optimaler Gesundheit und Wohlbefinden zu verhelfen.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
@@ -73,7 +75,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Our Services</h3>
+            <h3 className="text-lg font-semibold mb-6">Unsere Leistungen</h3>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
@@ -90,7 +92,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-6">Schnelllinks</h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -107,30 +109,30 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Information</h3>
+            <h3 className="text-lg font-semibold mb-6">Kontaktinformationen</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
-                  <p>123 Health Street</p>
-                  <p>Downtown Medical Center</p>
-                  <p>Suite 200, Medical Plaza</p>
+                  <p>Krefelderstr. 193</p>
+                  <p>52070 Aachen</p>
+                  <p>Praxis für Osteopathie u. Naturheilkunde</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-sm text-gray-300">(555) 123-4567</span>
+                <span className="text-sm text-gray-300">0241 - 4464848</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-sm text-gray-300">info@physioclinic.com</span>
+                <span className="text-sm text-gray-300">melaniebretscher@netcologne.de</span>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
-                  <p>Mon-Fri: 8AM-7PM</p>
-                  <p>Saturday: 9AM-3PM</p>
-                  <p>Sunday: Closed</p>
+                  <p>Mo-Fr: 8:00-18:00</p>
+                  <p>Samstag: 9:00-15:00</p>
+                  <p>Sonntag: Geschlossen</p>
                 </div>
               </div>
             </div>
@@ -140,7 +142,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400">© 2024 PhysioClinic. All rights reserved.</div>
+            <div className="text-sm text-gray-400">© 2024 Melanie Bretscher. Alle Rechte vorbehalten.</div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
               {legalLinks.map((link, index) => (
                 <a key={index} href={link.href} className="text-sm text-gray-400 hover:text-green-400 transition-colors">
