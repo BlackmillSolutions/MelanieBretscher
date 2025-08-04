@@ -1,145 +1,141 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight, Phone, MapPin, Clock, Star, CheckCircle, Award, Users, Heart, Send, Quote } from "lucide-react"
+import { ArrowRight, Phone, MapPin, Clock, Star, CheckCircle, Award, Users, Heart, Send, Quote, HandHeart, Ear, Leaf, Syringe, Droplets, Footprints, Sparkles, Activity } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ContactForm from "@/components/contact-form"
 import React from "react"
 import PracticeSlider from "@/components/practice-slider"
 import HistoryTimeline from "@/components/history-timeline"
+import AnimatedCounter from "@/components/animated-counter"
+import { InitialsAvatar } from "@/components/ui/avatar"
 
 export default function HomePage() {
   const services = [
     {
-      title: "Manual Therapy",
-      description: "Hands-on treatment techniques to restore mobility and reduce pain",
-      icon: "🤲",
-      duration: "45-60 minutes",
-      benefits: ["Improved joint mobility", "Reduced muscle tension", "Pain relief", "Enhanced circulation"],
+      title: "Osteopathische Behandlung",
+      description: "Ganzheitliche manuelle Therapie zur Behandlung von Funktionsstörungen und Schmerzen",
+      icon: <HandHeart className="w-12 h-12 text-white" />,
+      duration: "45-60 Minuten",
+      benefits: ["Verbesserte Beweglichkeit", "Schmerzlinderung", "Ganzheitliche Behandlung", "Natürliche Heilung"],
     },
     {
-      title: "Sports Rehabilitation",
-      description: "Specialized recovery programs for athletes and active individuals",
-      icon: "🏃‍♂️",
-      duration: "60-90 minutes",
-      benefits: ["Faster injury recovery", "Performance enhancement", "Injury prevention", "Sport-specific training"],
+      title: "Ohrakupunktur",
+      description: "Spezialisierte Akupunkturbehandlung über die Ohrmuschel zur Schmerzlinderung und Regulation",
+      icon: <Ear className="w-12 h-12 text-white" />,
+      duration: "30-45 Minuten",
+      benefits: ["Schnelle Schmerzlinderung", "Regulation des Nervensystems", "Stressabbau", "Ganzheitliche Wirkung"],
     },
     {
-      title: "Chronic Pain Management",
-      description: "Comprehensive approaches to long-term pain relief and management",
-      icon: "💪",
-      duration: "60 minutes",
-      benefits: ["Pain reduction", "Improved function", "Better sleep quality", "Enhanced quality of life"],
+      title: "Phytotherapie",
+      description: "Behandlung mit pflanzlichen Heilmitteln zur Unterstützung der natürlichen Heilungsprozesse",
+      icon: <Leaf className="w-12 h-12 text-white" />,
+      duration: "30-60 Minuten",
+      benefits: ["Natürliche Wirkstoffe", "Geringe Nebenwirkungen", "Ganzheitliche Therapie", "Langfristige Wirkung"],
     },
     {
-      title: "Post-Surgery Recovery",
-      description: "Guided rehabilitation following surgical procedures",
-      icon: "🏥",
-      duration: "45-75 minutes",
-      benefits: ["Faster healing", "Reduced complications", "Restored function", "Scar tissue management"],
+      title: "Infusionen und Injektionen",
+      description: "Intravenöse und intramuskuläre Therapien zur gezielten Nährstoffversorgung und Behandlung",
+      icon: <Syringe className="w-12 h-12 text-white" />,
+      duration: "30-90 Minuten",
+      benefits: ["Direkte Wirkung", "Gezielte Therapie", "Schnelle Aufnahme", "Individuelle Dosierung"],
     },
     {
-      title: "Neurological Rehabilitation",
-      description: "Specialized treatment for neurological conditions",
-      icon: "🧠",
-      duration: "60-90 minutes",
-      benefits: ["Improved balance", "Enhanced coordination", "Increased strength", "Better mobility"],
+      title: "Schröpfen",
+      description: "Traditionelle Therapie zur Verbesserung der Durchblutung und Entgiftung des Gewebes",
+      icon: <Droplets className="w-12 h-12 text-white" />,
+      duration: "20-30 Minuten",
+      benefits: ["Verbesserte Durchblutung", "Entgiftung", "Schmerzlinderung", "Entspannung"],
     },
     {
-      title: "Pediatric Physiotherapy",
-      description: "Specialized care for children and adolescents",
-      icon: "👶",
-      duration: "45-60 minutes",
-      benefits: ["Improved development", "Enhanced motor skills", "Better posture", "Increased confidence"],
+      title: "Fußreflexzonenmassage",
+      description: "Reflexzonentherapie über die Füße zur Behandlung verschiedener Körperbereiche",
+      icon: <Footprints className="w-12 h-12 text-white" />,
+      duration: "45-60 Minuten",
+      benefits: ["Entspannung", "Durchblutungsförderung", "Schmerzlinderung", "Ganzheitliche Wirkung"],
+    },
+    {
+      title: "Manuelle Lymphdrainage",
+      description: "Sanfte Massagetechnik zur Verbesserung des Lymphabflusses und Entstauung",
+      icon: <Sparkles className="w-12 h-12 text-white" />,
+      duration: "45-60 Minuten",
+      benefits: ["Entstauung", "Immunstärkung", "Entgiftung", "Schmerzlinderung"],
+    },
+    {
+      title: "Physiotherapie",
+      description: "Klassische physiotherapeutische Behandlung zur Wiederherstellung der Beweglichkeit",
+      icon: <Activity className="w-12 h-12 text-white" />,
+      duration: "45-60 Minuten",
+      benefits: ["Beweglichkeitsverbesserung", "Kräftigung", "Schmerzlinderung", "Funktionswiederherstellung"],
     },
   ]
 
   const stats = [
-    { number: "15+", label: "Years Experience" },
-    { number: "2000+", label: "Patients Treated" },
-    { number: "95%", label: "Success Rate" },
-    { number: "24/7", label: "Support Available" },
+    { number: "15+", label: "Jahre Erfahrung" },
+    { number: "2000+", label: "Behandelte Patienten" },
+    { number: "95%", label: "Erfolgsrate" },
+    { number: "24/7", label: "Support verfügbar" },
   ]
 
   const team = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Lead Physiotherapist & Clinic Director",
-      credentials: "DPT, OCS, FAAOMPT",
-      experience: "15+ years",
-      specialties: ["Manual Therapy", "Sports Medicine", "Orthopedic Rehabilitation"],
-      image: "/placeholder.svg?height=400&width=400",
-    },
-    {
-      name: "Dr. Michael Chen",
-      role: "Senior Physiotherapist",
-      credentials: "DPT, SCS, CSCS",
-      experience: "12+ years",
-      specialties: ["Sports Rehabilitation", "Strength Training", "Movement Analysis"],
-      image: "/placeholder.svg?height=400&width=400",
-    },
-    {
-      name: "Dr. Emily Rodriguez",
-      role: "Physiotherapist",
-      credentials: "DPT, NCS",
-      experience: "8+ years",
-      specialties: ["Neurological Rehabilitation", "Balance Training", "Chronic Pain"],
-      image: "/placeholder.svg?height=400&width=400",
+      name: "Melanie Bretscher",
+      role: "Heilpraktikerin, Osteopathin, Physiotherapeutin",
+      credentials: "Heilpraktikerin, Osteopathin, Physiotherapeutin",
+      experience: "15+ Jahre",
+      specialties: ["Osteopathie", "Naturheilkunde", "Physiotherapie", "Ohrakupunktur"],
     },
   ]
 
   const values = [
     {
-      icon: <Heart className="w-8 h-8 text-cyan-600" />,
-      title: "Patient-Centered Care",
-      description: "Every treatment plan is tailored to your unique needs, goals, and lifestyle.",
+      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform rotate-0" />,
+      title: "Ganzheitliche Behandlung",
+      description: "Jeder Behandlungsplan wird individuell auf Ihre Bedürfnisse, Ziele und Lebensweise abgestimmt.",
     },
     {
-      icon: <Award className="w-8 h-8 text-cyan-600" />,
-      title: "Excellence in Practice",
-      description: "We maintain the highest standards through continuous education and evidence-based treatments.",
+      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform rotate-90" />,
+      title: "Exzellenz in der Praxis",
+      description: "Wir halten die höchsten Standards durch kontinuierliche Weiterbildung und evidenzbasierte Behandlungen.",
     },
     {
-      icon: <Users className="w-8 h-8 text-cyan-600" />,
-      title: "Collaborative Approach",
-      description: "We work closely with your healthcare team to ensure comprehensive care.",
+      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform rotate-180" />,
+      title: "Kooperativer Ansatz",
+      description: "Wir arbeiten eng mit Ihrem Gesundheitsteam zusammen, um eine umfassende Versorgung zu gewährleisten.",
     },
     {
-      icon: <Clock className="w-8 h-8 text-cyan-600" />,
-      title: "Timely Recovery",
+      icon: <Image src="/green_spiral.svg" alt="Green Spiral" width={32} height={32} className="w-8 h-8 transform -rotate-90" />,
+      title: "Schnelle Genesung",
       description:
-        "Our efficient treatment methods help you return to your activities as quickly and safely as possible.",
+        "Unsere effizienten Behandlungsmethoden helfen Ihnen, so schnell und sicher wie möglich zu Ihren Aktivitäten zurückzukehren.",
     },
   ]
 
   const testimonials = [
     {
-      name: "Jennifer Martinez",
-      condition: "Knee Injury Recovery",
+      name: "Maria Schmidt",
+      condition: "Chronische Rückenschmerzen",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
       testimonial:
-        "After my knee surgery, I was worried I'd never run again. The team here not only got me back on my feet but helped me return to marathon running stronger than ever.",
-      treatment: "Post-Surgery Recovery & Sports Rehabilitation",
+        "Nach jahrelangen Rückenschmerzen hat mich die osteopathische Behandlung von Frau Bretscher endlich schmerzfrei gemacht. Ihre ganzheitliche Herangehensweise war der Schlüssel zum Erfolg.",
+      treatment: "Osteopathische Behandlung & Manuelle Therapie",
     },
     {
-      name: "Robert Chen",
-      condition: "Chronic Back Pain",
+      name: "Hans Weber",
+      condition: "Migräne",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
       testimonial:
-        "I suffered from chronic back pain for over 5 years. After just 3 months of treatment here, I'm pain-free and back to playing golf.",
-      treatment: "Manual Therapy & Chronic Pain Management",
+        "Die Ohrakupunktur hat meine Migräneattacken deutlich reduziert. Frau Bretscher hat eine ruhige Hand und viel Erfahrung. Ich kann sie nur empfehlen.",
+      treatment: "Ohrakupunktur & Phytotherapie",
     },
     {
-      name: "Sarah Thompson",
-      condition: "Sports Injury",
+      name: "Anna Müller",
+      condition: "Lymphödem",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
       testimonial:
-        "As a competitive tennis player, I needed specialized care for my shoulder injury. I'm back on the court and playing better than before.",
-      treatment: "Sports Rehabilitation",
+        "Die manuelle Lymphdrainage hat mir bei meinem Lymphödem sehr geholfen. Frau Bretscher ist sehr einfühlsam und kompetent. Die Behandlung ist angenehm und wirksam.",
+      treatment: "Manuelle Lymphdrainage",
     },
   ]
 
@@ -150,21 +146,30 @@ export default function HomePage() {
         id="home"
         className="relative min-h-screen flex items-center justify-center animated-gradient overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1200')] bg-cover bg-center opacity-10"></div>
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center px-4 py-2 glass-card rounded-full border border-white/30 mb-6">
-                <CheckCircle className="w-4 h-4 text-white mr-2" />
-                <span className="text-sm font-medium text-white">Trusted by 2000+ patients</span>
+            <div className="mb-8 -mt-32">
+              {/* Logo */}
+              <div className="flex justify-center mb-8">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 400 400" 
+                  className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40"
+                >
+                  <path 
+                    fill="white" 
+                    d="M207.54,8.83c7.55-.28,14.14,5.29,15.44,12.64.81,52.96.14,106,.34,159,.6,9.18,11.12,14.46,18.62,8.63,4.69-3.65,4.36-9.31,4.54-14.73,1.45-43.73-1.11-88.25-.03-132.06,3.09-19.61,29.64-19.06,30.87,1.92.6,10.3-.31,20.89-.35,31.16-.13,30.18-.21,60.47.35,90.59.09,4.85-.43,10.41-.02,15.12,1.09,12.69,19.37,14.32,22.79,2.21l.02-102.14c1.08-13.67,18.21-19.7,26.99-8.98,3.31,4.04,3.14,6.71,3.2,11.54.78,62.74-.56,125.53.03,188.28-1.11,13.58-1.72,27.3-4.67,40.63-20.91,94.36-150.57,100.91-206.4,34.52-29.01-34.49-29.57-69.11-40.19-110.48-1.64-6.38-3.46-12.75-5.35-19.06-2.51-8.4-7.59-16.23-1.04-24.32s20.23-7.81,24.89,1.76c4.9,10.06,9.09,27.11,11.89,38.23,9.19,36.44,9.49,72.5,39.99,99.11,39.12,34.14,113.61,36.57,145.15-9.06,20.7-29.95,18.27-74.78-12.37-97.06-34.91-25.38-100.85-14.95-108.9,32.97-5.24,31.2,22.77,54.1,52.59,47.45,13.45-3,26.55-15.44,26.63-29.91.05-9.31-10.42-15.92-18.7-11.31-6.41,3.57-4.11,11.24-11.3,16.01-10.19,6.76-22.28-.56-24.17-11.82-2.85-16.97,12.3-29.81,27.48-33.06,34.95-7.48,63.84,15.99,56.06,52.53-11.45,53.74-88.47,60.58-121.7,23.51-17.68-19.72-18.86-41.77-18.77-66.97.23-62.5-.54-125.09.39-187.54,4.54-17.38,28.45-15.4,30.13,2.47l.02,121.41c1.69,12.57,19.41,12.47,20.53-.59V22.4c1.01-7.53,7.44-13.3,15.03-13.58Z"
+                  />
+                </svg>
               </div>
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Your Journey to
-                <span className="block">Pain-Free Living</span>
+                Ihr Weg zu einem
+                <span className="block">schmerzfreien Leben</span>
               </h1>
               <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Expert physiotherapy care combining advanced techniques with personalized treatment plans. Get back to
-                doing what you love, faster and stronger than before.
+                Expertenteam für Osteopathie und Naturheilkunde kombiniert moderne Techniken mit persönlichen Behandlungsplänen.
               </p>
             </div>
 
@@ -174,7 +179,7 @@ export default function HomePage() {
                 className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white border border-white/30 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
-                Book Appointment
+                Termin vereinbaren
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
@@ -183,7 +188,7 @@ export default function HomePage() {
                 className="border-2 border-white/50 text-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-semibold bg-transparent backdrop-blur-md"
               >
                 <Phone className="mr-2 w-5 h-5" />
-                Call Now
+                Jetzt anrufen
               </Button>
             </div>
 
@@ -191,15 +196,15 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/80">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-white" />
-                <span>(555) 123-4567</span>
+                <span>0241 - 4464848</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2 text-white" />
-                <span>Downtown Medical Center</span>
+                <span>Krefelderstr. 193, 52070 Aachen</span>
               </div>
               <div className="flex items-center">
                 <Clock className="w-4 h-4 mr-2 text-white" />
-                <span>Mon-Fri 8AM-7PM</span>
+                <span>Mo-Fr 8:00-18:00</span>
               </div>
             </div>
           </div>
@@ -212,7 +217,11 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center glass-card-light p-6 rounded-2xl">
-                <div className="text-3xl lg:text-4xl font-bold text-cyan-600 mb-2">{stat.number}</div>
+                <AnimatedCounter 
+                  value={stat.number} 
+                  className="text-3xl lg:text-4xl font-bold text-green-600 mb-2"
+                  duration={2500}
+                />
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -225,23 +234,23 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Expert Care You Can Trust</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Expertenteam dem Sie vertrauen können</h2>
               <p className="text-lg text-white/90 mb-6 leading-relaxed">
-                With over 15 years of experience, our team of certified physiotherapists combines evidence-based
-                treatments with compassionate care to help you achieve optimal health and wellness.
+                Mit über 15 Jahren Erfahrung kombiniert unser Team aus Heilpraktikerin, Osteopathin und Physiotherapeutin 
+                evidenzbasierte Behandlungen mit mitfühlender Fürsorge, um Ihnen zu optimaler Gesundheit und Wohlbefinden zu verhelfen.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-white mr-3" />
-                  <span className="text-white/90">Licensed and certified professionals</span>
+                  <span className="text-white/90">Lizenzierte und zertifizierte Fachkräfte</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-white mr-3" />
-                  <span className="text-white/90">State-of-the-art equipment and facilities</span>
+                  <span className="text-white/90">Moderne Ausstattung und Einrichtungen</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-white mr-3" />
-                  <span className="text-white/90">Personalized treatment plans</span>
+                  <span className="text-white/90">Persönliche Behandlungspläne</span>
                 </div>
               </div>
             </div>
@@ -249,7 +258,7 @@ export default function HomePage() {
               <div className="aspect-square rounded-2xl overflow-hidden glass-card">
                 <Image
                   src="/placeholder.svg?height=500&width=500"
-                  alt="Professional physiotherapist working with patient"
+                  alt="Professionelle Osteopathin bei der Arbeit mit Patient"
                   width={500}
                   height={500}
                   className="w-full h-full object-cover"
@@ -261,8 +270,8 @@ export default function HomePage() {
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-sm font-semibold text-white">4.9/5 Patient Rating</p>
-                <p className="text-xs text-white/70">Based on 500+ reviews</p>
+                <p className="text-sm font-semibold text-white">4.9/5 Patientenbewertung</p>
+                <p className="text-xs text-white/70">Basierend auf 500+ Bewertungen</p>
               </div>
             </div>
           </div>
@@ -272,12 +281,7 @@ export default function HomePage() {
       {/* Core Values Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              These principles guide everything we do and ensure you receive the highest quality care.
-            </p>
-          </div>
+
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
@@ -287,8 +291,8 @@ export default function HomePage() {
               >
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center">
-                      {React.cloneElement(value.icon, { className: "w-8 h-8 text-white" })}
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      {value.icon}
                     </div>
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h4>
@@ -304,10 +308,10 @@ export default function HomePage() {
       <section id="services" className="py-20 animated-gradient">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Comprehensive Physiotherapy Services</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Umfassende Osteopathie & Naturheilkunde</h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              From injury recovery to performance enhancement, we provide personalized care tailored to your specific
-              needs and goals.
+              Von Schmerzlinderung bis zur Leistungssteigerung bieten wir personalisierte Versorgung, 
+              die auf Ihre spezifischen Bedürfnisse und Ziele zugeschnitten ist.
             </p>
           </div>
 
@@ -318,18 +322,18 @@ export default function HomePage() {
                 className="group glass-card border-white/20 hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-6">
-                  <div className="text-4xl mb-4 text-center">{service.icon}</div>
+                  <div className="mb-4 text-center flex justify-center">{service.icon}</div>
                   <h3 className="text-xl font-semibold text-white mb-3 text-center">{service.title}</h3>
                   <p className="text-white/80 text-sm leading-relaxed mb-4 text-center">{service.description}</p>
 
                   <div className="border-t border-white/20 pt-4 space-y-3">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-white/80">Duration:</span>
+                      <span className="text-white/80">Dauer:</span>
                       <span className="text-white font-medium">{service.duration}</span>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-white mb-2 text-sm">Key Benefits:</h4>
+                      <h4 className="font-semibold text-white mb-2 text-sm">Hauptvorteile:</h4>
                       <ul className="space-y-1">
                         {service.benefits.slice(0, 3).map((benefit, idx) => (
                           <li key={idx} className="flex items-center text-xs text-white/80">
@@ -351,10 +355,10 @@ export default function HomePage() {
       <section id="team" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Meet Our Expert Team</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Lernen Sie unser Expertenteam kennen</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our highly qualified physiotherapists bring years of experience and specialized training to provide you
-              with the best possible care.
+              Unsere hochqualifizierte Heilpraktikerin bringt jahrelange Erfahrung und spezialisierte Ausbildung mit, 
+              um Ihnen die bestmögliche Versorgung zu bieten.
             </p>
           </div>
 
@@ -364,36 +368,23 @@ export default function HomePage() {
                 key={index}
                 className="overflow-hidden glass-card-light border-gray-200/50 hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-square bg-gradient-to-br from-cyan-100 to-cyan-200">
-                  <Image
-                    src={
-                      member.image ||
-                      "/placeholder.svg?height=400&width=400&query=professional physiotherapist portrait" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg" ||
-                      "/placeholder.svg"
-                    }
-                    alt={member.name}
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover"
+                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                  <InitialsAvatar
+                    name={member.name}
+                    size="xl"
                   />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-cyan-600 font-semibold mb-2">{member.role}</p>
+                  <p className="text-green-600 font-semibold mb-2">{member.role}</p>
                   <p className="text-sm text-gray-600 mb-3">
                     {member.credentials} • {member.experience}
                   </p>
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-gray-900">Specialties:</p>
+                    <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-cyan-100 text-cyan-700 text-xs rounded-full">
+                        <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
                           {specialty}
                         </span>
                       ))}
@@ -410,10 +401,10 @@ export default function HomePage() {
       <section id="testimonials" className="py-20 animated-gradient-reverse">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">What Our Patients Say</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Was unsere Patienten sagen</h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              Real stories from patients who have overcome pain, recovered from injuries, and returned to the activities
-              they love.
+              Echte Geschichten von Patienten, die Schmerzen überwunden, sich von Verletzungen erholt und zu den Aktivitäten 
+              zurückgekehrt sind, die sie lieben.
             </p>
           </div>
 
@@ -424,19 +415,14 @@ export default function HomePage() {
                 <Quote className="w-12 h-12 text-white" />
               </div>
               <blockquote className="text-2xl lg:text-3xl text-white mb-8 italic leading-relaxed">
-                "This clinic completely changed my life. After years of chronic pain, I finally found a team that truly
-                understood my condition and provided the care I needed to get back to living fully."
+                "Diese Praxis hat mein Leben komplett verändert. Nach Jahren chronischer Schmerzen habe ich endlich ein Team gefunden, 
+                das meine Erkrankung wirklich verstanden und die Versorgung bereitgestellt hat, die ich brauchte, um wieder vollständig zu leben."
               </blockquote>
               <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-white/20 to-white/10">
-                  <Image
-                    src="/placeholder.svg?height=64&width=64"
-                    alt="Featured patient"
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <InitialsAvatar
+                  name="Maria Gonzalez"
+                  size="lg"
+                />
                 <div className="text-center">
                   <div className="flex justify-center mb-2">
                     {[...Array(5)].map((_, i) => (
@@ -444,7 +430,7 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="font-semibold text-white">Maria Gonzalez</p>
-                  <p className="text-sm text-white/70">Chronic Pain Management Patient</p>
+                  <p className="text-sm text-white/70">Patientin für chronische Schmerzbehandlung</p>
                 </div>
               </div>
             </CardContent>
@@ -456,15 +442,10 @@ export default function HomePage() {
               <Card key={index} className="glass-card border-white/20 hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-white/20 to-white/10">
-                      <Image
-                        src={testimonial.image || "/placeholder.svg?height=48&width=48&query=patient portrait"}
-                        alt={testimonial.name}
-                        width={48}
-                        height={48}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    <InitialsAvatar
+                      name={testimonial.name}
+                      size="md"
+                    />
                     <div>
                       <h4 className="font-semibold text-white">{testimonial.name}</h4>
                       <p className="text-sm text-white/70">{testimonial.condition}</p>
@@ -483,7 +464,7 @@ export default function HomePage() {
 
                   <div className="border-t border-white/20 pt-4">
                     <p className="text-xs text-white/70">
-                      <span className="font-medium">Treatment:</span> {testimonial.treatment}
+                      <span className="font-medium">Behandlung:</span> {testimonial.treatment}
                     </p>
                   </div>
                 </CardContent>
@@ -497,10 +478,10 @@ export default function HomePage() {
       <section id="gallery" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Tour Our Modern Facility</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Besuchen Sie unsere moderne Praxis</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Take a virtual tour of our state-of-the-art physiotherapy clinic. Our modern, welcoming environment is
-              designed to support your healing and recovery journey.
+              Machen Sie eine virtuelle Tour durch unsere moderne Osteopathie-Praxis. Unsere einladende Umgebung ist 
+              darauf ausgerichtet, Ihren Heilungs- und Genesungsprozess zu unterstützen.
             </p>
           </div>
 
@@ -512,10 +493,10 @@ export default function HomePage() {
       <section id="history" className="py-20 animated-gradient">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Our Journey of Excellence</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Unser Weg zur Exzellenz</h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              From humble beginnings to becoming a leading physiotherapy practice, discover the milestones that have
-              shaped our commitment to exceptional patient care.
+              Von bescheidenen Anfängen bis hin zu einer führenden Osteopathie-Praxis - entdecken Sie die Meilensteine, 
+              die unser Engagement für außergewöhnliche Patientenversorgung geprägt haben.
             </p>
           </div>
 
@@ -527,9 +508,9 @@ export default function HomePage() {
       <section id="contact" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Book Your Appointment</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Vereinbaren Sie Ihren Termin</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ready to start your journey to better health? Get in touch with us today to schedule your consultation.
+              Bereit, Ihren Weg zu besserer Gesundheit zu beginnen? Kontaktieren Sie uns heute, um Ihre Beratung zu vereinbaren.
             </p>
           </div>
 
@@ -540,49 +521,49 @@ export default function HomePage() {
               {/* Contact Information Tile */}
               <Card className="glass-card-light border-gray-200/50 shadow-xl">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Kontaktinformationen</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <Phone className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Phone</h4>
-                        <p className="text-gray-700 font-medium text-sm">(555) 123-4567</p>
-                        <p className="text-xs text-gray-600">Call us anytime</p>
+                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Telefon</h4>
+                        <p className="text-gray-700 font-medium text-sm">0241 - 4464848</p>
+                        <p className="text-xs text-gray-600">Rufen Sie uns jederzeit an</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Location</h4>
-                        <p className="text-gray-700 font-medium text-sm">123 Health Street</p>
-                        <p className="text-xs text-gray-600">Downtown Medical Center</p>
+                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Adresse</h4>
+                        <p className="text-gray-700 font-medium text-sm">Krefelderstr. 193</p>
+                        <p className="text-xs text-gray-600">52070 Aachen</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <Clock className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Hours</h4>
-                        <p className="text-gray-700 font-medium text-sm">Mon-Fri: 8AM-7PM</p>
-                        <p className="text-xs text-gray-600">Sat: 9AM-3PM</p>
+                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Öffnungszeiten</h4>
+                        <p className="text-gray-700 font-medium text-sm">Mo-Fr: 8:00-18:00</p>
+                        <p className="text-xs text-gray-600">Sa: 9:00-15:00</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <Send className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Email</h4>
-                        <p className="text-gray-700 font-medium text-sm">info@physioclinic.com</p>
-                        <p className="text-xs text-gray-600">24 hour response</p>
+                        <h4 className="font-semibold text-gray-900 text-sm mb-1">E-Mail</h4>
+                        <p className="text-gray-700 font-medium text-sm">melaniebretscher@netcologne.de</p>
+                        <p className="text-xs text-gray-600">24h Antwortzeit</p>
                       </div>
                     </div>
                   </div>
@@ -597,14 +578,14 @@ export default function HomePage() {
             <div className="space-y-8">
               {/* Map Placeholder */}
               <Card className="glass-card-light border-gray-200/50 shadow-xl overflow-hidden">
-                <div className="aspect-[4/3] bg-gradient-to-br from-cyan-100 to-cyan-200 relative">
+                <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 relative">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <MapPin className="w-12 h-12 text-cyan-600 mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Find Us Here</h3>
-                      <p className="text-gray-600">123 Health Street</p>
-                      <p className="text-gray-600">Downtown Medical Center</p>
-                      <p className="text-gray-600">Suite 200, Medical Plaza</p>
+                      <MapPin className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Finden Sie uns hier</h3>
+                      <p className="text-gray-600">Krefelderstr. 193</p>
+                      <p className="text-gray-600">52070 Aachen</p>
+                      <p className="text-gray-600">Praxis für Osteopathie u. Naturheilkunde</p>
                     </div>
                   </div>
                 </div>
@@ -613,19 +594,19 @@ export default function HomePage() {
               {/* Quick Contact */}
               <Card className="glass-card-light border-gray-200/50 shadow-xl">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Need Immediate Assistance?</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Sofortige Hilfe benötigt?</h3>
                   <p className="mb-6 text-gray-600">
-                    For urgent matters or to speak with someone right away, give us a call during business hours.
+                    Für dringende Angelegenheiten oder um sofort mit jemandem zu sprechen, rufen Sie uns während der Geschäftszeiten an.
                   </p>
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full border-2 border-cyan-600 text-cyan-600 hover:bg-cyan-50 rounded-full bg-transparent"
+                    className="w-full border-2 border-green-600 text-green-600 hover:bg-green-50 rounded-full bg-transparent"
                   >
                     <Phone className="mr-2 w-5 h-5" />
-                    Call (555) 123-4567
+                    Anrufen 0241 - 4464848
                   </Button>
-                  <div className="text-center text-sm text-gray-600 mt-3">Mon-Fri: 8AM-7PM | Sat: 9AM-3PM</div>
+                  <div className="text-center text-sm text-gray-600 mt-3">Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00</div>
                 </CardContent>
               </Card>
             </div>
@@ -636,10 +617,10 @@ export default function HomePage() {
       {/* Final CTA Section */}
       <section className="py-20 animated-gradient">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to Start Your Recovery Journey?</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Bereit, Ihren Genesungsweg zu beginnen?</h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Don't let pain hold you back. Book your consultation today and take the first step towards a healthier, more
-            active lifestyle.
+            Lassen Sie sich nicht von Schmerzen zurückhalten. Vereinbaren Sie heute Ihre Beratung und machen Sie den ersten Schritt 
+            zu einem gesünderen, aktiveren Lebensstil.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -647,7 +628,7 @@ export default function HomePage() {
               className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white border border-white/30 px-8 py-4 rounded-full text-lg font-semibold"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Book Appointment
+              Termin vereinbaren
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
@@ -656,7 +637,7 @@ export default function HomePage() {
               className="border-2 border-white/50 text-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-semibold bg-transparent backdrop-blur-md"
             >
               <Phone className="mr-2 w-5 h-5" />
-              (555) 123-4567
+              0241 - 4464848
             </Button>
           </div>
         </div>

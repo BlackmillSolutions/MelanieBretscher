@@ -8,11 +8,11 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "PhysioClinic - Expert Physiotherapy Care & Recovery",
+  title: "Melanie Bretscher - Osteopathie & Naturheilkunde in Aachen",
   description:
-    "Professional physiotherapy services with personalized treatment plans. Specializing in sports rehabilitation, chronic pain management, and post-surgery recovery.",
+    "Professionelle osteopathische und naturheilkundliche Versorgung mit personalisierten Behandlungsplänen. Spezialisiert auf Osteopathie, Ohrakupunktur, Phytotherapie und Physiotherapie.",
   keywords:
-    "physiotherapy, physical therapy, sports rehabilitation, chronic pain, post-surgery recovery, manual therapy",
+    "Osteopathie, Naturheilkunde, Ohrakupunktur, Phytotherapie, Physiotherapie, Aachen, Melanie Bretscher",
     generator: 'v0.dev'
 }
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="de" className="scroll-smooth">
       <body className={inter.className}>
         <Navigation />
         <main>{children}</main>

@@ -35,34 +35,36 @@ export default function ContactForm() {
   }
 
   const services = [
-    "Manual Therapy",
-    "Sports Rehabilitation",
-    "Chronic Pain Management",
-    "Post-Surgery Recovery",
-    "Neurological Rehabilitation",
-    "Pediatric Physiotherapy",
-    "General Consultation",
+    "Osteopathische Behandlung",
+    "Ohrakupunktur",
+    "Phytotherapie",
+    "Infusionen und Injektionen",
+    "Schröpfen",
+    "Fußreflexzonenmassage",
+    "Manuelle Lymphdrainage",
+    "Physiotherapie",
+    "Allgemeine Beratung",
   ]
 
   return (
     <Card className="glass-card-light border-gray-200/50 shadow-xl">
       <CardHeader>
-        <CardTitle className="text-2xl text-gray-900">Send Us a Message</CardTitle>
-        <p className="text-gray-600">Fill out the form below and we'll get back to you within 24 hours.</p>
+        <CardTitle className="text-2xl text-gray-900">Senden Sie uns eine Nachricht</CardTitle>
+        <p className="text-gray-600">Füllen Sie das Formular unten aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
       </CardHeader>
       <CardContent className="p-6">
         {isSubmitted ? (
           <div className="text-center py-8">
             <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
-            <p className="text-gray-600">Thank you for contacting us. We'll get back to you soon.</p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Nachricht gesendet!</h3>
+            <p className="text-gray-600">Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns bald bei Ihnen.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="name" className="text-gray-700 font-medium">
-                  Full Name *
+                  Vollständiger Name *
                 </Label>
                 <Input
                   id="name"
@@ -71,13 +73,13 @@ export default function ContactForm() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-                  placeholder="Your full name"
+                  className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                  placeholder="Ihr vollständiger Name"
                 />
               </div>
               <div>
                 <Label htmlFor="email" className="text-gray-700 font-medium">
-                  Email Address *
+                  E-Mail-Adresse *
                 </Label>
                 <Input
                   id="email"
@@ -86,8 +88,8 @@ export default function ContactForm() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-                  placeholder="your.email@example.com"
+                  className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                  placeholder="ihre.email@beispiel.de"
                 />
               </div>
             </div>
@@ -95,7 +97,7 @@ export default function ContactForm() {
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="phone" className="text-gray-700 font-medium">
-                  Phone Number
+                  Telefonnummer
                 </Label>
                 <Input
                   id="phone"
@@ -103,22 +105,22 @@ export default function ContactForm() {
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-                  placeholder="(555) 123-4567"
+                  className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                  placeholder="0241 - 4464848"
                 />
               </div>
               <div>
                 <Label htmlFor="service" className="text-gray-700 font-medium">
-                  Service Interested In
+                  Interessierte Leistung
                 </Label>
                 <select
                   id="service"
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-cyan-500 focus:ring-cyan-500 bg-white"
+                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-green-500 focus:ring-green-500 bg-white"
                 >
-                  <option value="">Select a service</option>
+                  <option value="">Leistung auswählen</option>
                   {services.map((service, index) => (
                     <option key={index} value={service}>
                       {service}
@@ -130,7 +132,7 @@ export default function ContactForm() {
 
             <div>
               <Label htmlFor="message" className="text-gray-700 font-medium">
-                Message *
+                Nachricht *
               </Label>
               <Textarea
                 id="message"
@@ -139,17 +141,17 @@ export default function ContactForm() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="mt-1 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-                placeholder="Tell us about your condition, symptoms, or any questions you have..."
+                className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                placeholder="Erzählen Sie uns von Ihrem Zustand, Symptomen oder Fragen, die Sie haben..."
               />
             </div>
 
             <Button
               type="submit"
               size="lg"
-              className="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-full text-lg font-semibold"
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-full text-lg font-semibold"
             >
-              Send Message
+              Nachricht senden
               <Send className="ml-2 w-5 h-5" />
             </Button>
           </form>

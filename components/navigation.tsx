@@ -36,14 +36,14 @@ export default function Navigation() {
   }, [])
 
   const navigation = [
-    { name: "Home", href: "home" },
-    { name: "About", href: "about" },
-    { name: "Services", href: "services" },
+    { name: "Startseite", href: "home" },
+    { name: "Über uns", href: "about" },
+    { name: "Leistungen", href: "services" },
     { name: "Team", href: "team" },
-    { name: "Testimonials", href: "testimonials" },
-    { name: "Gallery", href: "gallery" },
-    { name: "History", href: "history" },
-    { name: "Contact", href: "contact" },
+    { name: "Bewertungen", href: "testimonials" },
+    { name: "Galerie", href: "gallery" },
+    { name: "Geschichte", href: "history" },
+    { name: "Kontakt", href: "contact" },
   ]
 
   const scrollToSection = (sectionId: string) => {
@@ -63,15 +63,15 @@ export default function Navigation() {
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
-                <span>(555) 123-4567</span>
+                <span>0241 - 4464848</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2" />
-                <span>Downtown Medical Center</span>
+                <span>Krefelderstr. 193, 52070 Aachen</span>
               </div>
             </div>
             <div className="text-center sm:text-right">
-              <span>Mon-Fri: 8AM-7PM | Sat: 9AM-3PM</span>
+              <span>Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00</span>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Navigation() {
       {/* Main Navigation */}
       <nav
         className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled ? "glass-card shadow-lg" : "bg-white/95 backdrop-blur-md"
+          isScrolled ? "bg-white shadow-lg" : "bg-white"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,12 +90,14 @@ export default function Navigation() {
               onClick={() => scrollToSection("home")}
               className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">P</span>
-              </div>
+              <img 
+                src="/Logo-400.png" 
+                alt="Praxis für Osteopathie u. Naturheilkunde Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <div>
-                <div className="text-xl font-bold text-gray-900">PhysioClinic</div>
-                <div className="text-xs text-gray-600">Expert Care & Recovery</div>
+                <div className="text-xl font-bold text-gray-900">Melanie Bretscher</div>
+                <div className="text-xs text-gray-600">Osteopathie & Naturheilkunde</div>
               </div>
             </button>
 
@@ -106,17 +108,17 @@ export default function Navigation() {
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={`font-medium transition-colors duration-200 text-sm ${
-                    activeSection === item.href ? "text-cyan-600" : "text-gray-700 hover:text-cyan-600"
+                    activeSection === item.href ? "text-green-600" : "text-gray-700 hover:text-green-600"
                   }`}
                 >
                   {item.name}
                 </button>
               ))}
               <Button
-                className="bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => scrollToSection("contact")}
               >
-                Book Appointment
+                Termin vereinbaren
               </Button>
             </div>
 
@@ -124,7 +126,7 @@ export default function Navigation() {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 hover:text-cyan-600 transition-colors"
+                className="text-gray-700 hover:text-green-600 transition-colors"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -134,7 +136,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden glass-card border-t border-white/20 shadow-lg">
+          <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
             <div className="container mx-auto px-4 sm:px-6 py-4">
               <div className="space-y-4">
                 {navigation.map((item) => (
@@ -142,17 +144,17 @@ export default function Navigation() {
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
                     className={`block w-full text-left font-medium transition-colors duration-200 ${
-                      activeSection === item.href ? "text-cyan-600" : "text-gray-700 hover:text-cyan-600"
+                      activeSection === item.href ? "text-green-600" : "text-gray-700 hover:text-green-600"
                     }`}
                   >
                     {item.name}
                   </button>
                 ))}
                 <Button
-                  className="w-full bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white py-3 rounded-full mt-4 shadow-lg"
+                  className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-3 rounded-full mt-4 shadow-lg"
                   onClick={() => scrollToSection("contact")}
                 >
-                  Book Appointment
+                  Termin vereinbaren
                 </Button>
               </div>
             </div>
