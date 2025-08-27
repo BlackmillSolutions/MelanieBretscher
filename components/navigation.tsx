@@ -14,7 +14,7 @@ export default function Navigation() {
       setIsScrolled(window.scrollY > 10)
 
       // Update active section based on scroll position
-      const sections = ["home", "about", "services", "team", "testimonials", "gallery", "history", "contact"]
+      const sections = ["home", "about", "services", "gallery", "contact"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -36,13 +36,9 @@ export default function Navigation() {
   }, [])
 
   const navigation = [
-    { name: "Startseite", href: "home" },
     { name: "Über uns", href: "about" },
     { name: "Leistungen", href: "services" },
-    { name: "Team", href: "team" },
-    { name: "Bewertungen", href: "testimonials" },
-    { name: "Galerie", href: "gallery" },
-    { name: "Geschichte", href: "history" },
+    { name: "Die Praxis", href: "gallery" },
     { name: "Kontakt", href: "contact" },
   ]
 
