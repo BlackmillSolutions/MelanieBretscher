@@ -55,7 +55,6 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Über unsere Praxis</h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Gewidmet der Bereitstellung außergewöhnlicher osteopathischer und naturheilkundlicher Versorgung mit persönlicher Note. 
               Unser erfahrenes Team kombiniert fortschrittliche klinische Expertise mit echter Mitfühlung, 
               um Ihnen zu helfen, Ihre Gesundheits- und Wellnessziele zu erreichen.
             </p>

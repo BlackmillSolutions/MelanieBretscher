@@ -6,28 +6,23 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 
 export default function Footer() {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
-    services: false,
-    quickLinks: false,
+    services1: false,
+    services2: false,
     contact: false
   })
 
-  const services = [
+  const services1 = [
     "Osteopathische Behandlung",
+    "Physiotherapie",
+    "Manuelle Lymphdrainage",
+    "Fußreflexzonenmassage",
+  ]
+
+  const services2 = [
     "Ohrakupunktur",
     "Phytotherapie",
     "Infusionen und Injektionen",
     "Schröpfen",
-    "Fußreflexzonenmassage",
-    "Manuelle Lymphdrainage",
-    "Physiotherapie",
-  ]
-
-  const quickLinks = [
-    { name: "Über uns", href: "about" },
-    { name: "Unsere Leistungen", href: "services" },
-    { name: "Unser Team", href: "team" },
-    { name: "Patientengeschichten", href: "testimonials" },
-    { name: "Kontakt", href: "contact" },
   ]
 
   const legalLinks = [
@@ -68,10 +63,7 @@ export default function Footer() {
                 <div className="text-sm text-gray-400">Osteopathie & Naturheilkunde</div>
               </div>
             </div>
-            <p className="text-gray-300 leading-relaxed">
-              Gewidmet der Bereitstellung außergewöhnlicher osteopathischer und naturheilkundlicher Versorgung 
-              mit personalisierten Behandlungsplänen, um Ihnen zu optimaler Gesundheit und Wohlbefinden zu verhelfen.
-            </p>
+
             <div className="flex space-x-4 justify-center md:justify-start">
               <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
                 <Facebook className="w-5 h-5" />
@@ -88,13 +80,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Services Block 1 */}
           <div>
             {/* Mobile Collapsible */}
             <div className="md:hidden">
               <Collapsible 
-                open={openSections.services} 
-                onOpenChange={() => toggleSection('services')}
+                open={openSections.services1} 
+                onOpenChange={() => toggleSection('services1')}
               >
                 <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
                   <img 
@@ -102,12 +94,12 @@ export default function Footer() {
                     alt="Logo" 
                     className="w-4 h-4 object-contain brightness-0 invert"
                   />
-                  <span className="flex-1 text-center">Unsere Leistungen</span>
-                  {openSections.services ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                                     <span className="flex-1 text-center">Manuelle Therapien</span>
+                  {openSections.services1 ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul className="space-y-3 text-center">
-                    {services.map((service, index) => (
+                    {services1.map((service, index) => (
                       <li key={index}>
                         <button
                           onClick={() => scrollToSection("services")}
@@ -124,9 +116,9 @@ export default function Footer() {
 
             {/* Desktop Always Visible */}
             <div className="hidden md:block">
-              <h3 className="text-lg font-semibold mb-6">Unsere Leistungen</h3>
+                             <h3 className="text-lg font-semibold mb-6">Manuelle Therapien</h3>
               <ul className="space-y-3">
-                {services.map((service, index) => (
+                {services1.map((service, index) => (
                   <li key={index}>
                     <button
                       onClick={() => scrollToSection("services")}
@@ -140,13 +132,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Services Block 2 */}
           <div>
             {/* Mobile Collapsible */}
             <div className="md:hidden">
               <Collapsible 
-                open={openSections.quickLinks} 
-                onOpenChange={() => toggleSection('quickLinks')}
+                open={openSections.services2} 
+                onOpenChange={() => toggleSection('services2')}
               >
                 <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-semibold mb-6">
                   <img 
@@ -154,18 +146,18 @@ export default function Footer() {
                     alt="Logo" 
                     className="w-4 h-4 object-contain brightness-0 invert"
                   />
-                  <span className="flex-1 text-center">Schnelllinks</span>
-                  {openSections.quickLinks ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                                     <span className="flex-1 text-center">Naturheilkunde & Akupunktur</span>
+                  {openSections.services2 ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul className="space-y-3 text-center">
-                    {quickLinks.map((link, index) => (
+                    {services2.map((service, index) => (
                       <li key={index}>
                         <button
-                          onClick={() => scrollToSection(link.href)}
+                          onClick={() => scrollToSection("services")}
                           className="text-gray-300 hover:text-green-400 transition-colors text-sm w-full"
                         >
-                          {link.name}
+                          {service}
                         </button>
                       </li>
                     ))}
@@ -176,15 +168,15 @@ export default function Footer() {
 
             {/* Desktop Always Visible */}
             <div className="hidden md:block">
-              <h3 className="text-lg font-semibold mb-6">Schnelllinks</h3>
+                             <h3 className="text-lg font-semibold mb-6">Naturheilkunde & Akupunktur</h3>
               <ul className="space-y-3">
-                {quickLinks.map((link, index) => (
+                {services2.map((service, index) => (
                   <li key={index}>
                     <button
-                      onClick={() => scrollToSection(link.href)}
+                      onClick={() => scrollToSection("services")}
                       className="text-gray-300 hover:text-green-400 transition-colors text-sm text-left"
                     >
-                      {link.name}
+                      {service}
                     </button>
                   </li>
                 ))}
