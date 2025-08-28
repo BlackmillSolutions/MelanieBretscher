@@ -351,49 +351,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-20 bg-white">
+      {/* Practice Gallery Section */}
+      <section id="gallery" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Lernen Sie unser Expertenteam kennen</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Besuchen Sie unsere moderne Praxis</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Unsere hochqualifizierte Heilpraktikerin bringt jahrelange Erfahrung und spezialisierte Ausbildung mit, 
-              um Ihnen die bestmögliche Versorgung zu bieten.
+              Machen Sie eine virtuelle Tour durch unsere moderne Osteopathie-Praxis. Unsere einladende Umgebung ist 
+              darauf ausgerichtet, Ihren Heilungs- und Genesungsprozess zu unterstützen.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden glass-card-light border-gray-200/50 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <InitialsAvatar
-                    name={member.name}
-                    size="xl"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-green-600 font-semibold mb-2">{member.role}</p>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {member.credentials} • {member.experience}
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <PracticeSlider />
         </div>
       </section>
 
@@ -474,18 +443,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Practice Gallery Section */}
-      <section id="gallery" className="py-20 bg-white">
+      {/* Team Section */}
+      <section id="team" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Besuchen Sie unsere moderne Praxis</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Lernen Sie unser Expertenteam kennen</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Machen Sie eine virtuelle Tour durch unsere moderne Osteopathie-Praxis. Unsere einladende Umgebung ist 
-              darauf ausgerichtet, Ihren Heilungs- und Genesungsprozess zu unterstützen.
+              Unsere hochqualifizierte Heilpraktikerin bringt jahrelange Erfahrung und spezialisierte Ausbildung mit, 
+              um Ihnen die bestmögliche Versorgung zu bieten.
             </p>
           </div>
 
-          <PracticeSlider />
+          <div className="grid lg:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden glass-card-light border-gray-200/50 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                  <InitialsAvatar
+                    name={member.name}
+                    size="xl"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                  <p className="text-green-600 font-semibold mb-2">{member.role}</p>
+                  <p className="text-sm text-gray-600 mb-3">
+                    {member.credentials} • {member.experience}
+                  </p>
+                  <div className="space-y-2">
+                    <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {member.specialties.map((specialty, idx) => (
+                        <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
