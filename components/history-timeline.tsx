@@ -153,27 +153,22 @@ export default function HistoryTimeline() {
             {/* Mobile Layout */}
             <div className="md:hidden">
               <div className="flex items-center">
-                {/* Vertical Date with Background */}
+                {/* Mobile icon position - centered next to tiles */}
                 <div className="mr-4 flex-shrink-0">
-                  <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-2 py-1">
-                    <div className="text-white font-semibold text-xs tracking-wider" style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}>
-                      {event.year}
-                    </div>
+                  <div className="relative w-10 h-10 rounded-full bg-white/20 border-2 border-green-500 flex items-center justify-center">
+                    <div className="text-green-500">{event.icon}</div>
+                    <div className="absolute inset-0 rounded-full animate-pulse bg-green-500/20" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 hover:bg-white/15 transition-all duration-300">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:bg-white/15 transition-all duration-300">
                     <div className="mb-2">
-                      <div className="flex items-center justify-between mb-1">
-                        <h3 className="text-sm font-bold text-white truncate">{event.title}</h3>
-                        <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center ml-2 flex-shrink-0">
-                          {event.icon}
-                        </div>
-                      </div>
-                      <p className="text-white/90 text-xs leading-relaxed">{event.description}</p>
+                      <p className="text-white/70 text-xs font-semibold mb-1">{event.year}</p>
+                      <h3 className="text-sm font-bold text-white truncate">{event.title}</h3>
                     </div>
+                    <p className="text-white/90 text-xs leading-relaxed">{event.description}</p>
                   </div>
                 </div>
               </div>
