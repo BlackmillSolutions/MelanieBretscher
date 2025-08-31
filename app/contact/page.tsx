@@ -228,16 +228,25 @@ export default function ContactPage() {
 
             {/* Map and Additional Info */}
             <div className="space-y-8">
-              {/* Map Placeholder */}
+              {/* Interactive Google Maps */}
               <Card className="border-0 shadow-xl overflow-hidden">
-                <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
+                <div className="aspect-[4/3] relative">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Krefelderstr.+193,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelderstr. 193, 52070 Aachen"
+                    className="absolute inset-0"
+                  ></iframe>
+                  <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                     <div className="text-center">
-                      <MapPin className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Finden Sie uns hier</h3>
-                      <p className="text-gray-600">Krefelderstr. 193</p>
-                      <p className="text-gray-600">52070 Aachen</p>
-                      <p className="text-gray-600">Praxis für Osteopathie u. Naturheilkunde</p>
+                      <MapPin className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">Praxis für Osteopathie u. Naturheilkunde</h3>
+                      <p className="text-gray-700 font-medium">Krefelderstr. 193, 52070 Aachen</p>
                     </div>
                   </div>
                 </div>
