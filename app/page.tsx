@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight, Phone, MapPin, Clock, Star, CheckCircle, Award, Users, Heart, Send, Quote, HandHeart, Ear, Leaf, Syringe, Droplets, Footprints, Sparkles, Activity, ChevronDown } from "lucide-react"
+import { ArrowRight, Phone, MapPin, Clock, CheckCircle, Award, Users, Heart, Send, HandHeart, Ear, Leaf, Syringe, Droplets, Footprints, Sparkles, Activity, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ContactForm from "@/components/contact-form"
@@ -88,15 +88,7 @@ export default function HomePage() {
     { number: "24/7", label: "Support verfügbar" },
   ]
 
-  const team = [
-    {
-      name: "Melanie Bretscher",
-      role: "Heilpraktikerin, Osteopathin, Physiotherapeutin",
-      credentials: "Heilpraktikerin, Osteopathin, Physiotherapeutin",
-      experience: "15+ Jahre",
-      specialties: ["Osteopathie", "Naturheilkunde", "Physiotherapie", "Ohrakupunktur"],
-    },
-  ]
+
 
   const values = [
     {
@@ -122,32 +114,9 @@ export default function HomePage() {
     },
   ]
 
-  const testimonials = [
-    {
-      name: "Maria Schmidt",
-      condition: "Chronische Rückenschmerzen",
-      rating: 5,
-      testimonial:
-        "Nach jahrelangen Rückenschmerzen hat mich die osteopathische Behandlung von Frau Bretscher endlich schmerzfrei gemacht. Ihre ganzheitliche Herangehensweise war der Schlüssel zum Erfolg.",
-      treatment: "Osteopathische Behandlung & Manuelle Therapie",
-    },
-    {
-      name: "Hans Weber",
-      condition: "Migräne",
-      rating: 5,
-      testimonial:
-        "Die Ohrakupunktur hat meine Migräneattacken deutlich reduziert. Frau Bretscher hat eine ruhige Hand und viel Erfahrung. Ich kann sie nur empfehlen.",
-      treatment: "Ohrakupunktur & Phytotherapie",
-    },
-    {
-      name: "Anna Müller",
-      condition: "Lymphödem",
-      rating: 5,
-      testimonial:
-        "Die manuelle Lymphdrainage hat mir bei meinem Lymphödem sehr geholfen. Frau Bretscher ist sehr einfühlsam und kompetent. Die Behandlung ist angenehm und wirksam.",
-      treatment: "Manuelle Lymphdrainage",
-    },
-  ]
+
+
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -274,15 +243,7 @@ export default function HomePage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 glass-card rounded-2xl p-6 shadow-xl border border-white/20">
-                <div className="flex items-center space-x-2 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-sm font-semibold text-white">4.9/5 Patientenbewertung</p>
-                <p className="text-xs text-white/70">Basierend auf 500+ Bewertungen</p>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -399,128 +360,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 animated-gradient-reverse">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Was unsere Patienten sagen</h2>
-            <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              Echte Geschichten von Patienten, die Schmerzen überwunden, sich von Verletzungen erholt und zu den Aktivitäten 
-              zurückgekehrt sind, die sie lieben.
-            </p>
-          </div>
 
-          {/* Featured Testimonial */}
-          <Card className="max-w-4xl mx-auto glass-card border-white/20 shadow-xl mb-16">
-            <CardContent className="p-8 lg:p-12 text-center">
-              <div className="flex justify-center mb-6">
-                <Quote className="w-12 h-12 text-white" />
-              </div>
-              <blockquote className="text-2xl lg:text-3xl text-white mb-8 italic leading-relaxed">
-                "Diese Praxis hat mein Leben komplett verändert. Nach Jahren chronischer Schmerzen habe ich endlich ein Team gefunden, 
-                das meine Erkrankung wirklich verstanden und die Versorgung bereitgestellt hat, die ich brauchte, um wieder vollständig zu leben."
-              </blockquote>
-              <div className="flex items-center justify-center space-x-4">
-                <InitialsAvatar
-                  name="Maria Gonzalez"
-                  size="lg"
-                />
-                <div className="text-center">
-                  <div className="flex justify-center mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="font-semibold text-white">Maria Gonzalez</p>
-                  <p className="text-sm text-white/70">Patientin für chronische Schmerzbehandlung</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
 
-          {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="glass-card border-white/20 hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <InitialsAvatar
-                      name={testimonial.name}
-                      size="md"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-white">{testimonial.name}</h4>
-                      <p className="text-sm text-white/70">{testimonial.condition}</p>
-                    </div>
-                  </div>
 
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-
-                  <blockquote className="text-white/90 mb-4 italic leading-relaxed text-sm">
-                    "{testimonial.testimonial}"
-                  </blockquote>
-
-                  <div className="border-t border-white/20 pt-4">
-                    <p className="text-xs text-white/70">
-                      <span className="font-medium">Behandlung:</span> {testimonial.treatment}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section id="team" className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Lernen Sie unser Expertenteam kennen</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Unsere hochqualifizierte Heilpraktikerin bringt jahrelange Erfahrung und spezialisierte Ausbildung mit, 
-              um Ihnen die bestmögliche Versorgung zu bieten.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden glass-card-light border-gray-200/50 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <InitialsAvatar
-                    name={member.name}
-                    size="xl"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-green-600 font-semibold mb-2">{member.role}</p>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {member.credentials} • {member.experience}
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* History Section */}
       <section id="history" className="py-20 animated-gradient">
