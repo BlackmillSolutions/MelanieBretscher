@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight, Phone, MapPin, Clock, Star, CheckCircle, Award, Users, Heart, Send, Quote, HandHeart, Ear, Leaf, Syringe, Droplets, Footprints, Sparkles, Activity } from "lucide-react"
+import { ArrowRight, Phone, MapPin, Clock, Star, CheckCircle, Award, Users, Heart, Send, Quote, HandHeart, Ear, Leaf, Syringe, Droplets, Footprints, Sparkles, Activity, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ContactForm from "@/components/contact-form"
@@ -12,6 +12,16 @@ import AnimatedCounter from "@/components/animated-counter"
 import { InitialsAvatar } from "@/components/ui/avatar"
 
 export default function HomePage() {
+  const [showAllServices, setShowAllServices] = React.useState(false)
+  
+  const toggleServices = () => {
+    if (showAllServices) {
+      // Wenn wir einklappen, scrollen wir sanft zur Services-Sektion zurück
+      document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
+    }
+    setShowAllServices(!showAllServices)
+  }
+  
   const services = [
     {
       title: "Osteopathische Behandlung",
@@ -316,7 +326,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.slice(0, showAllServices ? services.length : 3).map((service, index) => (
               <Card
                 key={index}
                 className="group glass-card border-white/20 hover:shadow-xl transition-all duration-300"
@@ -348,6 +358,29 @@ export default function HomePage() {
               </Card>
             ))}
           </div>
+          
+          {/* Expand/Collapse Button */}
+          {services.length > 3 && (
+            <div className="text-center mt-8">
+                             <Button
+                 onClick={toggleServices}
+                 variant="outline"
+                 className="glass-card border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+               >
+                {showAllServices ? (
+                  <>
+                    Weniger anzeigen
+                    <ChevronDown className="w-4 h-4 ml-2 transform rotate-180" />
+                  </>
+                ) : (
+                  <>
+                    Alle {services.length} Dienstleistungen anzeigen
+                    <ChevronDown className="w-4 h-4 ml-2" />
+                  </>
+                )}
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
