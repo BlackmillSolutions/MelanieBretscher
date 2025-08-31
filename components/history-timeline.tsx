@@ -100,18 +100,18 @@ export default function HistoryTimeline() {
               {/* Left Side (odd items) */}
               {index % 2 === 0 ? (
                 <>
-                  <div className="w-1/2 pr-6 text-right">
+                  <div className="w-1/2 pr-6">
                     <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/15">
-                      <div className="flex items-center justify-end mb-2">
-                        <div className="text-right mr-3">
+                      <div className="flex items-center mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3">
+                          {event.icon}
+                        </div>
+                        <div>
                           <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
                           <p className="text-white/70 text-sm font-semibold">{event.year}</p>
                         </div>
-                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
-                          {event.icon}
-                        </div>
                       </div>
-                      <p className="text-white/90 text-sm leading-relaxed">{event.description}</p>
+                      <p className="text-white/90 text-sm leading-relaxed ml-11">{event.description}</p>
                     </div>
                   </div>
 
@@ -143,7 +143,7 @@ export default function HistoryTimeline() {
                           <p className="text-white/70 text-sm font-semibold">{event.year}</p>
                         </div>
                       </div>
-                      <p className="text-white/90 text-sm leading-relaxed">{event.description}</p>
+                      <p className="text-white/90 text-sm leading-relaxed ml-11">{event.description}</p>
                     </div>
                   </div>
                 </>
