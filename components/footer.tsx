@@ -3,6 +3,7 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, ChevronDown, ChevronUp } from "lucide-react"
 import { useState } from "react"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { PrivacyContent, TermsContent, ImpressumContent, PatientRightsContent } from "@/components/legal-content"
 
 export default function Footer() {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
@@ -23,13 +24,6 @@ export default function Footer() {
     "Phytotherapie",
     "Infusionen und Injektionen",
     "Schröpfen",
-  ]
-
-  const legalLinks = [
-    { name: "Datenschutz", href: "/privacy" },
-    { name: "Nutzungsbedingungen", href: "/terms" },
-    { name: "Impressum", href: "/impressum" },
-    { name: "Patientenrechte", href: "/patient-rights" },
   ]
 
   const scrollToSection = (sectionId: string) => {
@@ -270,11 +264,10 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400 text-center md:text-left">© 2024 Melanie Bretscher. Alle Rechte vorbehalten.</div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
-              {legalLinks.map((link, index) => (
-                <a key={index} href={link.href} className="text-sm text-gray-400 hover:text-green-400 transition-colors">
-                  {link.name}
-                </a>
-              ))}
+              <PrivacyContent />
+              <TermsContent />
+              <ImpressumContent />
+              <PatientRightsContent />
             </div>
           </div>
         </div>
