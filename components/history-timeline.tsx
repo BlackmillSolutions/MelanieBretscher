@@ -65,19 +65,50 @@ export default function HistoryTimeline() {
   ]
 
   useEffect(() => {
-    // Animate items in sequence
-    const animateItems = () => {
-      timelineEvents.forEach((_, index) => {
-        setTimeout(() => {
-          setAnimatedItems(prev => [...prev, index])
-        }, index * 200) // 200ms delay between each item
-      })
+    const totalItems = timelineEvents.length
+
+    // Respect reduced motion preferences: show all items immediately
+    if (typeof window !== "undefined" && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setAnimatedItems(Array.from({ length: totalItems }, (_, i) => i))
+      return
     }
 
-    // Start animation after a short delay
-    const timer = setTimeout(animateItems, 500)
-    
-    return () => clearTimeout(timer)
+    // If IntersectionObserver is supported, animate on scroll into view
+    if (typeof window !== "undefined" && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const indexAttr = (entry.target as HTMLElement).dataset.index
+            const index = indexAttr ? parseInt(indexAttr, 10) : NaN
+            if (!Number.isNaN(index)) {
+              // slight per-item delay for softer cascade effect
+              const delay = Math.min(index * 60, 600)
+              setTimeout(() => {
+                setAnimatedItems((prev) => (prev.includes(index) ? prev : [...prev, index]))
+              }, delay)
+            }
+            observer.unobserve(entry.target)
+          }
+        })
+      }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' })
+
+      const elements = document.querySelectorAll('[data-tl-item="true"]')
+      elements.forEach((el) => observer.observe(el))
+
+      return () => observer.disconnect()
+    }
+
+    // Fallback: sequential reveal
+    const timerIds: number[] = []
+    timelineEvents.forEach((_, index) => {
+      const id = window.setTimeout(() => {
+        setAnimatedItems((prev) => (prev.includes(index) ? prev : [...prev, index]))
+      }, 400 + index * 150)
+      timerIds.push(id)
+    })
+    return () => {
+      timerIds.forEach((id) => clearTimeout(id))
+    }
   }, [])
 
   return (
@@ -89,7 +120,9 @@ export default function HistoryTimeline() {
         {timelineEvents.map((event, index) => (
           <div 
             key={index} 
-            className={`relative transition-all duration-700 ease-out ${
+            data-tl-item="true"
+            data-index={index}
+            className={`relative will-change-transform transition-all duration-700 ease-out ${
               animatedItems.includes(index) 
                 ? "opacity-100 translate-y-0" 
                 : "opacity-0 translate-y-8"
