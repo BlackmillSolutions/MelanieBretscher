@@ -236,7 +236,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden glass-card">
                 <Image
-                  src="/placeholder.svg?height=500&width=500"
+                  src="/Team-Placeholder.jpg"
                   alt="Professionelle Osteopathin bei der Arbeit mit Patient"
                   width={500}
                   height={500}
