@@ -368,10 +368,10 @@ export default function HomePage() {
       <section id="history" className="py-20 animated-gradient">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Unser Weg zur Exzellenz</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Unsere Geschichte</h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              Von bescheidenen Anfängen bis hin zu einer führenden Osteopathie-Praxis - entdecken Sie die Meilensteine, 
-              die unser Engagement für außergewöhnliche Patientenversorgung geprägt haben.
+              Von den ersten Schritten bis heute – kleine Meilensteine,
+              die unsere persönliche und sorgfältige Betreuung prägen.
             </p>
           </div>
 
