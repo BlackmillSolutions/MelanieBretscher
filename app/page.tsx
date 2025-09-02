@@ -193,15 +193,15 @@ export default function HomePage() {
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center glass-card-light p-6 rounded-2xl">
+              <div key={index} className="text-center glass-card-light p-4 rounded-xl">
                 <AnimatedCounter 
                   value={stat.number} 
-                  className="text-3xl lg:text-4xl font-bold text-green-600 mb-2"
+                  className="text-2xl lg:text-3xl font-bold text-green-600 mb-2"
                   duration={2500}
                 />
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
