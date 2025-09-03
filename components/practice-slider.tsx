@@ -12,28 +12,33 @@ export default function PracticeSlider() {
   const slides = [
     {
       id: 1,
-      title: "Reception & Waiting Area",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "Rezeption und Wartebereich",
+      description: "Unser freundlicher Empfangsbereich mit gemütlichem Wartebereich",
+      image: "/images/Rezeption und Wartebereich.jpeg",
     },
     {
       id: 2,
-      title: "Treatment Rooms",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "Rezeption und Wartebereich",
+      description: "Detailansicht unseres modernen Empfangsbereichs",
+      image: "/images/Rezeption und Wartebereich (2).jpeg",
     },
     {
       id: 3,
-      title: "Exercise & Rehabilitation Area",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "Wartebereich",
+      description: "Gemütlicher Wartebereich für unsere Patienten",
+      image: "/images/Wartebereich.jpeg",
     },
     {
       id: 4,
-      title: "Hydrotherapy Pool",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "Behandlungsraum",
+      description: "Moderne Behandlungsräume mit hochwertiger Ausstattung",
+      image: "/images/Behandlungsraum.jpeg",
     },
     {
       id: 5,
-      title: "Consultation Room",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "Behandlungsraum",
+      description: "Detailansicht unserer Behandlungsräume",
+      image: "/images/Behandlungsraum (2).jpeg",
     },
   ]
 
@@ -77,7 +82,8 @@ export default function PracticeSlider() {
 
           {/* Image Title Overlay */}
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-            <h3 className="text-xl font-bold text-white">{slides[currentSlide].title}</h3>
+            <h3 className="text-xl font-bold text-white mb-2">{slides[currentSlide].title}</h3>
+            <p className="text-white/90 text-sm">{slides[currentSlide].description}</p>
           </div>
         </div>
       </Card>

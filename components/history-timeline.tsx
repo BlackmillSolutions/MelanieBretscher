@@ -9,63 +9,106 @@ export default function HistoryTimeline() {
 
   const timelineEvents = [
     {
-      year: "2008",
-      title: "Foundation",
-      description: "Dr. Sarah Johnson establishes PhysioClinic with personalized care focus.",
+      year: "1998",
+      title: "Start der Physiotherapie-Ausbildung",
+      description: "Ausbildung zur Physiotherapeutin, erste Erfahrungen in orthopädischen Fachkliniken (konservative Bandscheibenbehandlung) sowie Praxiserfahrung in Seeheim-Jugenheim, Köln und Aachen.",
       icon: <Building className="w-4 h-4 text-white" />,
     },
     {
-      year: "2011",
-      title: "Sports Rehabilitation",
-      description: "Added sports rehab services and local team partnerships.",
-      icon: <Users className="w-4 h-4 text-white" />,
-    },
-    {
-      year: "2014",
-      title: "Advanced Certifications",
-      description: "Team achieved specialized certifications in neuro and pain management.",
+      year: "2004",
+      title: "Heilpraktikerprüfung",
+      description: "Erfolgreich abgelegte Heilpraktikerprüfung, Beginn der naturheilkundlichen Ausrichtung.",
       icon: <Award className="w-4 h-4 text-white" />,
     },
     {
-      year: "2017",
-      title: "Technology Integration",
-      description: "Introduced modern equipment and digital patient systems.",
-      icon: <Zap className="w-4 h-4 text-white" />,
+      year: "2005",
+      title: "Praxiseröffnung in Aachen",
+      description: "Eröffnung der eigenen Praxis in Aachen.",
+      icon: <Building className="w-4 h-4 text-white" />,
     },
     {
-      year: "2019",
-      title: "Excellence Award",
-      description: "Received 'Best Physiotherapy Clinic' with 98% satisfaction.",
-      icon: <Trophy className="w-4 h-4 text-white" />,
-    },
-    {
-      year: "2021",
-      title: "Pediatric Services",
-      description: "Launched specialized care for children and adolescents.",
+      year: "2006",
+      title: "Lymphdrainagentherapie",
+      description: "Ausbildung zur Lymphdrainagentherapeutin.",
       icon: <Heart className="w-4 h-4 text-white" />,
     },
     {
-      year: "2023",
-      title: "Modern Facility",
-      description: "Moved to current state-of-the-art location with expanded areas.",
+      year: "2007",
+      title: "Spezialisierungen & Fortbildungen",
+      description: "Weiterbildung Ozontherapie (\"blaue Karte\") & Injektionstechniken, Fortbildung Triggerpunktbehandlung, Fortbildung Kinesiotaping.",
+      icon: <Zap className="w-4 h-4 text-white" />,
+    },
+    {
+      year: "2008-2010",
+      title: "Osteopathie-Weiterbildung",
+      description: "Upledger Institut: Craniosacrale Osteopathie (3 Teile), Viszerale Osteopathie (3 Teile).",
+      icon: <Users className="w-4 h-4 text-white" />,
+    },
+    {
+      year: "2012-2017",
+      title: "Osteopathie-Ausbildung",
+      description: "Fünfjährige Ausbildung zur Osteopathin am Institut für angewandte Osteopathie (IFAO).",
+      icon: <Trophy className="w-4 h-4 text-white" />,
+    },
+    {
+      year: "2016",
+      title: "Vertiefung Injektionstechniken",
+      description: "Fortbildung in Injektionstechniken.",
+      icon: <Zap className="w-4 h-4 text-white" />,
+    },
+    {
+      year: "Laufend",
+      title: "Fortbildung & Messen",
+      description: "Regelmäßige Teilnahme an Heilpraktikermessen und Fachfortbildungen, um auf dem neuesten Stand zu bleiben.",
       icon: <Star className="w-4 h-4 text-white" />,
     },
   ]
 
   useEffect(() => {
-    // Animate items in sequence
-    const animateItems = () => {
-      timelineEvents.forEach((_, index) => {
-        setTimeout(() => {
-          setAnimatedItems(prev => [...prev, index])
-        }, index * 200) // 200ms delay between each item
-      })
+    const totalItems = timelineEvents.length
+
+    // Respect reduced motion preferences: show all items immediately
+    if (typeof window !== "undefined" && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setAnimatedItems(Array.from({ length: totalItems }, (_, i) => i))
+      return
     }
 
-    // Start animation after a short delay
-    const timer = setTimeout(animateItems, 500)
-    
-    return () => clearTimeout(timer)
+    // If IntersectionObserver is supported, animate on scroll into view
+    if (typeof window !== "undefined" && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const indexAttr = (entry.target as HTMLElement).dataset.index
+            const index = indexAttr ? parseInt(indexAttr, 10) : NaN
+            if (!Number.isNaN(index)) {
+              // slight per-item delay for softer cascade effect
+              const delay = Math.min(index * 60, 600)
+              setTimeout(() => {
+                setAnimatedItems((prev) => (prev.includes(index) ? prev : [...prev, index]))
+              }, delay)
+            }
+            observer.unobserve(entry.target)
+          }
+        })
+      }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' })
+
+      const elements = document.querySelectorAll('[data-tl-item="true"]')
+      elements.forEach((el) => observer.observe(el))
+
+      return () => observer.disconnect()
+    }
+
+    // Fallback: sequential reveal
+    const timerIds: number[] = []
+    timelineEvents.forEach((_, index) => {
+      const id = window.setTimeout(() => {
+        setAnimatedItems((prev) => (prev.includes(index) ? prev : [...prev, index]))
+      }, 400 + index * 150)
+      timerIds.push(id)
+    })
+    return () => {
+      timerIds.forEach((id) => clearTimeout(id))
+    }
   }, [])
 
   return (
@@ -77,7 +120,9 @@ export default function HistoryTimeline() {
         {timelineEvents.map((event, index) => (
           <div 
             key={index} 
-            className={`relative transition-all duration-700 ease-out ${
+            data-tl-item="true"
+            data-index={index}
+            className={`relative will-change-transform transition-all duration-700 ease-out ${
               animatedItems.includes(index) 
                 ? "opacity-100 translate-y-0" 
                 : "opacity-0 translate-y-8"
@@ -88,18 +133,18 @@ export default function HistoryTimeline() {
               {/* Left Side (odd items) */}
               {index % 2 === 0 ? (
                 <>
-                  <div className="w-1/2 pr-6 text-right">
+                  <div className="w-1/2 pr-6">
                     <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/15">
-                      <div className="flex items-center justify-end mb-2">
-                        <div className="text-right mr-3">
+                      <div className="flex items-center mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3">
+                          {event.icon}
+                        </div>
+                        <div>
                           <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
                           <p className="text-white/70 text-sm font-semibold">{event.year}</p>
                         </div>
-                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
-                          {event.icon}
-                        </div>
                       </div>
-                      <p className="text-white/90 text-sm leading-relaxed">{event.description}</p>
+                      <p className="text-white/90 text-sm leading-relaxed ml-11">{event.description}</p>
                     </div>
                   </div>
 
@@ -131,7 +176,7 @@ export default function HistoryTimeline() {
                           <p className="text-white/70 text-sm font-semibold">{event.year}</p>
                         </div>
                       </div>
-                      <p className="text-white/90 text-sm leading-relaxed">{event.description}</p>
+                      <p className="text-white/90 text-sm leading-relaxed ml-11">{event.description}</p>
                     </div>
                   </div>
                 </>
@@ -141,27 +186,22 @@ export default function HistoryTimeline() {
             {/* Mobile Layout */}
             <div className="md:hidden">
               <div className="flex items-center">
-                {/* Vertical Date with Background */}
+                {/* Mobile icon position - centered next to tiles */}
                 <div className="mr-4 flex-shrink-0">
-                  <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-2 py-1">
-                    <div className="text-white font-semibold text-xs tracking-wider" style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}>
-                      {event.year}
-                    </div>
+                  <div className="relative w-10 h-10 rounded-full bg-white/20 border-2 border-green-500 flex items-center justify-center">
+                    <div className="text-green-500">{event.icon}</div>
+                    <div className="absolute inset-0 rounded-full animate-pulse bg-green-500/20" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 hover:bg-white/15 transition-all duration-300">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:bg-white/15 transition-all duration-300">
                     <div className="mb-2">
-                      <div className="flex items-center justify-between mb-1">
-                        <h3 className="text-sm font-bold text-white truncate">{event.title}</h3>
-                        <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center ml-2 flex-shrink-0">
-                          {event.icon}
-                        </div>
-                      </div>
-                      <p className="text-white/90 text-xs leading-relaxed">{event.description}</p>
+                      <p className="text-white/70 text-xs font-semibold mb-1">{event.year}</p>
+                      <h3 className="text-sm font-bold text-white truncate">{event.title}</h3>
                     </div>
+                    <p className="text-white/90 text-xs leading-relaxed">{event.description}</p>
                   </div>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight, Phone, MapPin, Clock, Star, CheckCircle, Award, Users, Heart, Send, Quote, HandHeart, Ear, Leaf, Syringe, Droplets, Footprints, Sparkles, Activity } from "lucide-react"
+import { ArrowRight, Phone, MapPin, Clock, CheckCircle, Award, Users, Heart, Send, HandHeart, Ear, Leaf, Syringe, Droplets, Footprints, Sparkles, Activity, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ContactForm from "@/components/contact-form"
@@ -12,6 +12,16 @@ import AnimatedCounter from "@/components/animated-counter"
 import { InitialsAvatar } from "@/components/ui/avatar"
 
 export default function HomePage() {
+  const [showAllServices, setShowAllServices] = React.useState(false)
+  
+  const toggleServices = () => {
+    if (showAllServices) {
+      // Wenn wir einklappen, scrollen wir sanft zur Services-Sektion zurück
+      document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
+    }
+    setShowAllServices(!showAllServices)
+  }
+  
   const services = [
     {
       title: "Osteopathische Behandlung",
@@ -78,15 +88,7 @@ export default function HomePage() {
     { number: "24/7", label: "Support verfügbar" },
   ]
 
-  const team = [
-    {
-      name: "Melanie Bretscher",
-      role: "Heilpraktikerin, Osteopathin, Physiotherapeutin",
-      credentials: "Heilpraktikerin, Osteopathin, Physiotherapeutin",
-      experience: "15+ Jahre",
-      specialties: ["Osteopathie", "Naturheilkunde", "Physiotherapie", "Ohrakupunktur"],
-    },
-  ]
+
 
   const values = [
     {
@@ -112,32 +114,9 @@ export default function HomePage() {
     },
   ]
 
-  const testimonials = [
-    {
-      name: "Maria Schmidt",
-      condition: "Chronische Rückenschmerzen",
-      rating: 5,
-      testimonial:
-        "Nach jahrelangen Rückenschmerzen hat mich die osteopathische Behandlung von Frau Bretscher endlich schmerzfrei gemacht. Ihre ganzheitliche Herangehensweise war der Schlüssel zum Erfolg.",
-      treatment: "Osteopathische Behandlung & Manuelle Therapie",
-    },
-    {
-      name: "Hans Weber",
-      condition: "Migräne",
-      rating: 5,
-      testimonial:
-        "Die Ohrakupunktur hat meine Migräneattacken deutlich reduziert. Frau Bretscher hat eine ruhige Hand und viel Erfahrung. Ich kann sie nur empfehlen.",
-      treatment: "Ohrakupunktur & Phytotherapie",
-    },
-    {
-      name: "Anna Müller",
-      condition: "Lymphödem",
-      rating: 5,
-      testimonial:
-        "Die manuelle Lymphdrainage hat mir bei meinem Lymphödem sehr geholfen. Frau Bretscher ist sehr einfühlsam und kompetent. Die Behandlung ist angenehm und wirksam.",
-      treatment: "Manuelle Lymphdrainage",
-    },
-  ]
+
+
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -214,15 +193,15 @@ export default function HomePage() {
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center glass-card-light p-6 rounded-2xl">
+              <div key={index} className="text-center glass-card-light p-4 rounded-xl">
                 <AnimatedCounter 
                   value={stat.number} 
-                  className="text-3xl lg:text-4xl font-bold text-green-600 mb-2"
+                  className="text-2xl lg:text-3xl font-bold text-green-600 mb-2"
                   duration={2500}
                 />
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -257,22 +236,14 @@ export default function HomePage() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden glass-card">
                 <Image
-                  src="/placeholder.svg?height=500&width=500"
+                  src="/Team-Placeholder.jpg"
                   alt="Professionelle Osteopathin bei der Arbeit mit Patient"
                   width={500}
                   height={500}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 glass-card rounded-2xl p-6 shadow-xl border border-white/20">
-                <div className="flex items-center space-x-2 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-sm font-semibold text-white">4.9/5 Patientenbewertung</p>
-                <p className="text-xs text-white/70">Basierend auf 500+ Bewertungen</p>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -316,7 +287,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.slice(0, showAllServices ? services.length : 3).map((service, index) => (
               <Card
                 key={index}
                 className="group glass-card border-white/20 hover:shadow-xl transition-all duration-300"
@@ -348,129 +319,29 @@ export default function HomePage() {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section id="team" className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Lernen Sie unser Expertenteam kennen</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Unsere hochqualifizierte Heilpraktikerin bringt jahrelange Erfahrung und spezialisierte Ausbildung mit, 
-              um Ihnen die bestmögliche Versorgung zu bieten.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden glass-card-light border-gray-200/50 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <InitialsAvatar
-                    name={member.name}
-                    size="xl"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-green-600 font-semibold mb-2">{member.role}</p>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {member.credentials} • {member.experience}
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 animated-gradient-reverse">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Was unsere Patienten sagen</h2>
-            <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              Echte Geschichten von Patienten, die Schmerzen überwunden, sich von Verletzungen erholt und zu den Aktivitäten 
-              zurückgekehrt sind, die sie lieben.
-            </p>
-          </div>
-
-          {/* Featured Testimonial */}
-          <Card className="max-w-4xl mx-auto glass-card border-white/20 shadow-xl mb-16">
-            <CardContent className="p-8 lg:p-12 text-center">
-              <div className="flex justify-center mb-6">
-                <Quote className="w-12 h-12 text-white" />
-              </div>
-              <blockquote className="text-2xl lg:text-3xl text-white mb-8 italic leading-relaxed">
-                "Diese Praxis hat mein Leben komplett verändert. Nach Jahren chronischer Schmerzen habe ich endlich ein Team gefunden, 
-                das meine Erkrankung wirklich verstanden und die Versorgung bereitgestellt hat, die ich brauchte, um wieder vollständig zu leben."
-              </blockquote>
-              <div className="flex items-center justify-center space-x-4">
-                <InitialsAvatar
-                  name="Maria Gonzalez"
-                  size="lg"
-                />
-                <div className="text-center">
-                  <div className="flex justify-center mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="font-semibold text-white">Maria Gonzalez</p>
-                  <p className="text-sm text-white/70">Patientin für chronische Schmerzbehandlung</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="glass-card border-white/20 hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <InitialsAvatar
-                      name={testimonial.name}
-                      size="md"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-white">{testimonial.name}</h4>
-                      <p className="text-sm text-white/70">{testimonial.condition}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-
-                  <blockquote className="text-white/90 mb-4 italic leading-relaxed text-sm">
-                    "{testimonial.testimonial}"
-                  </blockquote>
-
-                  <div className="border-t border-white/20 pt-4">
-                    <p className="text-xs text-white/70">
-                      <span className="font-medium">Behandlung:</span> {testimonial.treatment}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          
+          {/* Expand/Collapse Button */}
+          {services.length > 3 && (
+            <div className="text-center mt-8">
+                             <Button
+                 onClick={toggleServices}
+                 variant="outline"
+                 className="glass-card border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+               >
+                {showAllServices ? (
+                  <>
+                    Weniger anzeigen
+                    <ChevronDown className="w-4 h-4 ml-2 transform rotate-180" />
+                  </>
+                ) : (
+                  <>
+                    Alle {services.length} Dienstleistungen anzeigen
+                    <ChevronDown className="w-4 h-4 ml-2" />
+                  </>
+                )}
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -489,14 +360,18 @@ export default function HomePage() {
         </div>
       </section>
 
+
+
+
+
       {/* History Section */}
       <section id="history" className="py-20 animated-gradient">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Unser Weg zur Exzellenz</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Unsere Geschichte</h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              Von bescheidenen Anfängen bis hin zu einer führenden Osteopathie-Praxis - entdecken Sie die Meilensteine, 
-              die unser Engagement für außergewöhnliche Patientenversorgung geprägt haben.
+              Von den ersten Schritten bis heute – kleine Meilensteine,
+              die unsere persönliche und sorgfältige Betreuung prägen.
             </p>
           </div>
 
@@ -576,16 +451,25 @@ export default function HomePage() {
 
             {/* Right Side - Map and Additional Info */}
             <div className="space-y-8">
-              {/* Map Placeholder */}
+              {/* Interactive Google Maps */}
               <Card className="glass-card-light border-gray-200/50 shadow-xl overflow-hidden">
-                <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
+                <div className="aspect-[4/3] relative">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Krefelderstr.+193,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelderstr. 193, 52070 Aachen"
+                    className="absolute inset-0"
+                  ></iframe>
+                  <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                     <div className="text-center">
-                      <MapPin className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Finden Sie uns hier</h3>
-                      <p className="text-gray-600">Krefelderstr. 193</p>
-                      <p className="text-gray-600">52070 Aachen</p>
-                      <p className="text-gray-600">Praxis für Osteopathie u. Naturheilkunde</p>
+                      <MapPin className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">Praxis für Osteopathie u. Naturheilkunde</h3>
+                      <p className="text-gray-700 font-medium">Krefelderstr. 193, 52070 Aachen</p>
                     </div>
                   </div>
                 </div>
