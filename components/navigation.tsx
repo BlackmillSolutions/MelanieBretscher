@@ -1,13 +1,15 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Phone, MapPin } from "lucide-react"
+import { Menu, X, Phone, MapPin, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/components/ui/carousel"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
+  const [topBarCarouselApi, setTopBarCarouselApi] = useState<CarouselApi | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +37,13 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Auto-rotate the top bar contact carousel on mobile
+  useEffect(() => {
+    if (!topBarCarouselApi) return
+    const id = setInterval(() => topBarCarouselApi.scrollNext(), 3000)
+    return () => clearInterval(id)
+  }, [topBarCarouselApi])
+
   const navigation = [
     { name: "Über uns", href: "about" },
     { name: "Leistungen", href: "services" },
@@ -55,7 +64,34 @@ export default function Navigation() {
       {/* Top Bar */}
       <div className="animated-gradient text-white py-2 text-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-1 sm:space-y-0">
+          {/* Mobile: auto-rotating slider */}
+          <div className="sm:hidden">
+            <Carousel className="w-full max-w-xs mx-auto" opts={{ loop: true }} setApi={setTopBarCarouselApi}>
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="flex items-center justify-center gap-2 py-1">
+                    <Phone className="w-4 h-4" />
+                    <span>0241 - 4464848</span>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="flex items-center justify-center gap-2 py-1">
+                    <MapPin className="w-4 h-4" />
+                    <span>Krefelderstr. 193, 52070 Aachen</span>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="flex items-center justify-center gap-2 py-1">
+                    <Clock className="w-4 h-4" />
+                    <span>Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00</span>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+            </Carousel>
+          </div>
+
+          {/* Desktop/Tablet: static layout */}
+          <div className="hidden sm:flex justify-between items-center">
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />

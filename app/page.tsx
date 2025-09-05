@@ -21,7 +21,6 @@ export default function HomePage() {
     }
     setShowAllServices(!showAllServices)
   }
-  
   const services = [
     {
       title: "Osteopathische Behandlung",
