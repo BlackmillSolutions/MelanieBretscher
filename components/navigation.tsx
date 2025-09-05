@@ -116,7 +116,7 @@ export default function Navigation() {
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex items-center py-4 relative justify-center lg:justify-between">
             {/* Logo */}
             <button
               onClick={() => scrollToSection("home")}
@@ -127,9 +127,9 @@ export default function Navigation() {
                 alt="Praxis für Osteopathie u. Naturheilkunde Logo" 
                 className="w-10 h-10 object-contain"
               />
-              <div>
-                <div className="text-xl font-bold text-gray-900">Melanie Bretscher</div>
-                <div className="text-xs text-gray-600">Osteopathie & Naturheilkunde</div>
+              <div className="leading-tight">
+                <div className="text-xl font-bold text-gray-900 whitespace-nowrap">Melanie Bretscher</div>
+                <div className="text-xs text-gray-600 whitespace-nowrap">Osteopathie & Naturheilkunde</div>
               </div>
             </button>
 
@@ -155,7 +155,7 @@ export default function Navigation() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="lg:hidden">
+            <div className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-gray-700 hover:text-green-600 transition-colors"
