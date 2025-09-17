@@ -123,7 +123,7 @@ export default function Navigation() {
               className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
             >
               <img 
-                src="/Logo-400.png" 
+                src="/Logo.svg" 
                 alt="Praxis für Osteopathie u. Naturheilkunde Logo" 
                 className="w-10 h-10 object-contain"
               />

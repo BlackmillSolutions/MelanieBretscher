@@ -47,8 +47,8 @@ export default function Footer() {
           {/* Company Info - Always visible */}
           <div className="space-y-6 text-center md:text-left">
             <div className="flex items-center space-x-3 justify-center md:justify-start">
-              <img 
-                src="/Logo-400.png" 
+            <img 
+                src="/Logo.svg" 
                 alt="Praxis für Osteopathie u. Naturheilkunde Logo" 
                 className="w-10 h-10 object-contain"
               />
