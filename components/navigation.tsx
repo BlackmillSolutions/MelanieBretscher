@@ -147,7 +147,7 @@ export default function Navigation() {
                 </button>
               ))}
               <Button
-                className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-600 hover:to-pink-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => scrollToSection("contact")}
               >
                 Termin vereinbaren
@@ -183,7 +183,7 @@ export default function Navigation() {
                   </button>
                 ))}
                 <Button
-                  className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-3 rounded-full mt-4 shadow-lg"
+                  className="w-full bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-600 hover:to-pink-700 text-white py-3 rounded-full mt-4 shadow-lg"
                   onClick={() => scrollToSection("contact")}
                 >
                   Termin vereinbaren

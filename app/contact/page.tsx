@@ -122,7 +122,7 @@ export default function ContactPage() {
               <CardContent className="p-6">
                 {isSubmitted ? (
                   <div className="text-center py-8">
-                    <CheckCircle className="w-16 h-16 text-pink-500 mx-auto mb-4" />
+                    <CheckCircle className="w-16 h-16 text-pink-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Nachricht gesendet!</h3>
                     <p className="text-gray-600">Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns bald bei Ihnen.</p>
                   </div>
@@ -140,7 +140,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-pink-500 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                          className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="Ihr vollständiger Name"
                         />
                       </div>
@@ -155,7 +155,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-pink-500 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                          className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="ihre.email@beispiel.de"
                         />
                       </div>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                           type="tel"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-pink-500 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                          className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="0241 - 4464848"
                         />
                       </div>
@@ -185,7 +185,7 @@ export default function ContactPage() {
                           name="service"
                           value={formData.service}
                           onChange={handleChange}
-                          className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-pink-500 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none focus-visible:outline-none bg-white"
+                          className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none focus-visible:outline-none bg-white"
                         >
                           <option value="">Leistung auswählen</option>
                           {services.map((service, index) => (
@@ -208,7 +208,7 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="mt-1 border-gray-300 focus:border-pink-500 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                        className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                         placeholder="Erzählen Sie uns von Ihrem Zustand, Symptomen oder Fragen, die Sie haben..."
                       />
                     </div>

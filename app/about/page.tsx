@@ -174,7 +174,7 @@ export default function AboutPage() {
                     <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-pink-100 text-pink-700 text-xs rounded-full">
+                        <span key={idx} className="px-3 py-1 bg-pink-50 text-pink-600 text-xs rounded-full">
                           {specialty}
                         </span>
                       ))}

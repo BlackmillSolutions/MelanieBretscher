@@ -398,7 +398,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Kontaktinformationen</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
                         <Phone className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -409,7 +409,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -420,7 +420,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
                         <Clock className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -431,7 +431,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
                         <Send className="w-4 h-4 text-white" />
                       </div>
                       <div>
