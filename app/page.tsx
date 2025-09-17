@@ -197,7 +197,7 @@ export default function HomePage() {
               <div key={index} className="text-center glass-card-light p-4 rounded-xl">
                 <AnimatedCounter 
                   value={stat.number} 
-                  className="text-2xl lg:text-3xl font-bold text-green-600 mb-2"
+                  className="text-2xl lg:text-3xl font-bold text-pink-600 mb-2"
                   duration={2500}
                 />
                 <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
@@ -398,7 +398,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Kontaktinformationen</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <Phone className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -409,7 +409,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -420,7 +420,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <Clock className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -431,7 +431,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <Send className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -466,7 +466,7 @@ export default function HomePage() {
                   ></iframe>
                   <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                     <div className="text-center">
-                      <MapPin className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                      <MapPin className="w-5 h-5 text-pink-600 mx-auto mb-2" />
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Praxis für Osteopathie u. Naturheilkunde</h3>
                       <p className="text-gray-700 font-medium">Krefelderstr. 193, 52070 Aachen</p>
                     </div>
@@ -484,7 +484,7 @@ export default function HomePage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full border-2 border-green-600 text-green-600 hover:bg-green-50 rounded-full bg-transparent"
+                    className="w-full border-2 border-pink-600 text-pink-600 hover:bg-pink-50 rounded-full bg-transparent"
                   >
                     <Phone className="mr-2 w-5 h-5" />
                     Anrufen 0241 - 4464848

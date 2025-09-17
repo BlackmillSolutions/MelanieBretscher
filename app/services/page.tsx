@@ -111,7 +111,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-green-100/20">
+      <section className="py-20 bg-gradient-to-br from-white via-teal-50/30 to-teal-100/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Umfassende Osteopathie & Naturheilkunde</h1>
@@ -121,7 +121,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full">
+                <Button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-full">
                   Beratung vereinbaren
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -140,7 +140,7 @@ export default function ServicesPage() {
                 key={index}
                 className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200">
+                <div className="aspect-[4/3] bg-gradient-to-br from-teal-100 to-teal-200">
                   <Image
                     src={service.image || "/placeholder.svg"}
                     alt={service.title}
@@ -166,7 +166,7 @@ export default function ServicesPage() {
                       <ul className="space-y-2">
                         {service.benefits.map((benefit, idx) => (
                           <li key={idx} className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                            <CheckCircle className="w-4 h-4 text-pink-600 mr-2 flex-shrink-0" />
                             {benefit}
                           </li>
                         ))}
@@ -178,7 +178,7 @@ export default function ServicesPage() {
                       <ul className="space-y-2">
                         {service.conditions.map((condition, idx) => (
                           <li key={idx} className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                            <CheckCircle className="w-4 h-4 text-pink-600 mr-2 flex-shrink-0" />
                             {condition}
                           </li>
                         ))}
@@ -193,7 +193,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Treatment Process */}
-      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-teal-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Unser Behandlungsprozess</h2>
@@ -208,7 +208,7 @@ export default function ServicesPage() {
               {treatmentProcess.map((process, index) => (
                 <div key={index} className="flex items-start space-x-6">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                    <div className="w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
                       {process.step}
                     </div>
                   </div>
@@ -231,7 +231,7 @@ export default function ServicesPage() {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Warum unsere Leistungen wählen?</h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <Award className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <Award className="w-6 h-6 text-pink-600 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Evidenzbasierte Behandlung</h3>
                     <p className="text-gray-600">
@@ -240,7 +240,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Users className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <Users className="w-6 h-6 text-pink-600 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Personalisierten Versorgung</h3>
                     <p className="text-gray-600">
@@ -249,7 +249,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Clock className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <Clock className="w-6 h-6 text-pink-600 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Flexible Terminplanung</h3>
                     <p className="text-gray-600">Wir bieten günstige Terminzeiten, die sich Ihrem vollen Terminkalender anpassen.</p>
@@ -258,7 +258,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-green-100 to-green-200">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-teal-100 to-teal-200">
                 <Image
                   src="/placeholder.svg?height=400&width=500"
                   alt="Moderne Osteopathie-Behandlungsraum"
@@ -273,17 +273,17 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700">
+      <section className="py-20 bg-gradient-to-r from-teal-600 to-teal-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Bereit, Ihre Behandlung zu beginnen?</h2>
-          <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
             Lassen Sie sich nicht von Schmerzen oder Verletzungen in Ihrem Potenzial einschränken. 
             Kontaktieren Sie uns heute, um Ihre Beratung zu vereinbaren und Ihren Weg zur Genesung zu beginnen.
           </p>
           <Link href="/contact">
             <Button
               size="lg"
-              className="bg-white text-green-600 hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold"
+              className="bg-white text-pink-600 hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold"
             >
               Beratung vereinbaren
               <ArrowRight className="ml-2 w-5 h-5" />

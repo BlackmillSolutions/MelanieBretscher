@@ -82,7 +82,7 @@ export default function AboutPage() {
                 <div className="text-center">
                   <AnimatedCounter 
                     value="15+" 
-                    className="text-3xl font-bold text-green-600 mb-2"
+                    className="text-3xl font-bold text-pink-600 mb-2"
                     duration={2500}
                   />
                   <div className="text-gray-600">Jahre im Dienst</div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
                 <div className="text-center">
                   <AnimatedCounter 
                     value="2000+" 
-                    className="text-3xl font-bold text-green-600 mb-2"
+                    className="text-3xl font-bold text-pink-600 mb-2"
                     duration={2500}
                   />
                   <div className="text-gray-600">Patienten geholfen</div>
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-green-600 font-semibold mb-2">{member.role}</p>
+                  <p className="text-pink-600 font-semibold mb-2">{member.role}</p>
                   <p className="text-sm text-gray-600 mb-3">
                     {member.credentials} • {member.experience}
                   </p>
@@ -174,7 +174,7 @@ export default function AboutPage() {
                     <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
+                        <span key={idx} className="px-3 py-1 bg-pink-100 text-pink-700 text-xs rounded-full">
                           {specialty}
                         </span>
                       ))}

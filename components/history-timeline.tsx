@@ -136,7 +136,7 @@ export default function HistoryTimeline() {
                   <div className="w-1/2 pr-6">
                     <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/15">
                       <div className="flex items-center mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3">
+                        <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center mr-3">
                           {event.icon}
                         </div>
                         <div>
@@ -150,7 +150,7 @@ export default function HistoryTimeline() {
 
                   {/* Center Timeline Dot */}
                   <div className="relative z-10 flex items-center justify-center">
-                    <div className="w-4 h-4 bg-gradient-to-br from-green-500 to-green-600 rounded-full border-2 border-white shadow-lg"></div>
+                    <div className="w-4 h-4 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full border-2 border-white shadow-lg"></div>
                   </div>
 
                   <div className="w-1/2 pl-6"></div>
@@ -161,14 +161,14 @@ export default function HistoryTimeline() {
 
                   {/* Center Timeline Dot */}
                   <div className="relative z-10 flex items-center justify-center">
-                    <div className="w-4 h-4 bg-gradient-to-br from-green-500 to-green-600 rounded-full border-2 border-white shadow-lg"></div>
+                    <div className="w-4 h-4 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full border-2 border-white shadow-lg"></div>
                   </div>
 
                   {/* Right Side (even items) */}
                   <div className="w-1/2 pl-6">
                     <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:shadow-lg transition-all duration-300 hover:bg-white/15">
                       <div className="flex items-center mb-2">
-                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3">
+                        <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center mr-3">
                           {event.icon}
                         </div>
                         <div>
@@ -188,9 +188,9 @@ export default function HistoryTimeline() {
               <div className="flex items-center">
                 {/* Mobile icon position - centered next to tiles */}
                 <div className="mr-4 flex-shrink-0">
-                  <div className="relative w-10 h-10 rounded-full bg-white/20 border-2 border-green-500 flex items-center justify-center">
-                    <div className="text-green-500">{event.icon}</div>
-                    <div className="absolute inset-0 rounded-full animate-pulse bg-green-500/20" />
+                  <div className="relative w-10 h-10 rounded-full bg-white/20 border-2 border-pink-500 flex items-center justify-center">
+                    <div className="text-pink-500">{event.icon}</div>
+                    <div className="absolute inset-0 rounded-full animate-pulse bg-pink-500/20" />
                   </div>
                 </div>
 

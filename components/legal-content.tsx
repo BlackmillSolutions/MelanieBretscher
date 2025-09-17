@@ -7,7 +7,7 @@ export function PrivacyContent() {
     <LegalModal
       title="Datenschutzerklärung"
       trigger={
-        <span className="text-sm text-gray-400 hover:text-green-400 transition-colors cursor-pointer">
+        <span className="text-sm text-gray-400 hover:text-pink-400 transition-colors cursor-pointer">
           Datenschutz
         </span>
       }
@@ -15,7 +15,7 @@ export function PrivacyContent() {
       <div className="space-y-6">
         <section>
           <h2 className="text-lg font-semibold text-white mb-3">1. Datenschutz auf einen Blick</h2>
-          <h3 className="text-md font-medium text-green-400 mb-2">Allgemeine Hinweise</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">Allgemeine Hinweise</h3>
           <p className="mb-4">
             Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, 
             wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert 
@@ -25,7 +25,7 @@ export function PrivacyContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">Datenerfassung auf dieser Website</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">Datenerfassung auf dieser Website</h3>
           <p className="mb-4">
             Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten können Sie dem 
             Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.
@@ -33,7 +33,7 @@ export function PrivacyContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">Wie erfassen wir Ihre Daten?</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">Wie erfassen wir Ihre Daten?</h3>
           <p className="mb-4">
             Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten 
             handeln, die Sie in ein Kontaktformular eingeben. Andere Daten werden automatisch oder nach Ihrer Einwilligung 
@@ -43,7 +43,7 @@ export function PrivacyContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">Wofür nutzen wir Ihre Daten?</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">Wofür nutzen wir Ihre Daten?</h3>
           <p className="mb-4">
             Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. 
             Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
@@ -51,7 +51,7 @@ export function PrivacyContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">Welche Rechte haben Sie bezüglich Ihrer Daten?</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">Welche Rechte haben Sie bezüglich Ihrer Daten?</h3>
           <p className="mb-4">
             Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer 
             gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung 
@@ -70,7 +70,7 @@ export function TermsContent() {
     <LegalModal
       title="Nutzungsbedingungen"
       trigger={
-        <span className="text-sm text-gray-400 hover:text-green-400 transition-colors cursor-pointer">
+        <span className="text-sm text-gray-400 hover:text-pink-400 transition-colors cursor-pointer">
           Nutzungsbedingungen
         </span>
       }
@@ -85,7 +85,7 @@ export function TermsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">2. Zweck der Website</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">2. Zweck der Website</h3>
           <p className="mb-4">
             Diese Website dient ausschließlich der Information über unsere Praxis und unsere Leistungen. 
             Sie stellt keine medizinische Beratung dar und kann einen Besuch in unserer Praxis nicht ersetzen.
@@ -93,7 +93,7 @@ export function TermsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">3. Haftungsausschluss</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">3. Haftungsausschluss</h3>
           <p className="mb-4">
             Wir übernehmen keine Garantie für die Richtigkeit, Vollständigkeit oder Aktualität der bereitgestellten 
             Informationen. Die Nutzung der Website erfolgt auf eigene Gefahr des Nutzers.
@@ -101,7 +101,7 @@ export function TermsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">4. Urheberrecht</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">4. Urheberrecht</h3>
           <p className="mb-4">
             Alle Inhalte dieser Website sind urheberrechtlich geschützt. Die Vervielfältigung, Verbreitung oder 
             öffentliche Zugänglichmachung ist ohne unsere ausdrückliche Zustimmung nicht gestattet.
@@ -109,7 +109,7 @@ export function TermsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">5. Änderungen</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">5. Änderungen</h3>
           <p className="mb-4">
             Wir behalten uns das Recht vor, diese Nutzungsbedingungen jederzeit zu ändern. 
             Änderungen werden auf dieser Seite veröffentlicht.
@@ -125,7 +125,7 @@ export function ImpressumContent() {
     <LegalModal
       title="Impressum"
       trigger={
-        <span className="text-sm text-gray-400 hover:text-green-400 transition-colors cursor-pointer">
+        <span className="text-sm text-gray-400 hover:text-pink-400 transition-colors cursor-pointer">
           Impressum
         </span>
       }
@@ -142,7 +142,7 @@ export function ImpressumContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">Kontakt</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">Kontakt</h3>
           <div className="space-y-2">
             <p>Telefon: 0241 - 4464848</p>
             <p>E-Mail: melaniebretscher@netcologne.de</p>
@@ -150,7 +150,7 @@ export function ImpressumContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">Berufsbezeichnung und berufsrechtliche Regelungen</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">Berufsbezeichnung und berufsrechtliche Regelungen</h3>
           <div className="space-y-2">
             <p><strong className="text-white">Berufsbezeichnung:</strong> Heilpraktikerin</p>
             <p><strong className="text-white">Zuständige Kammer:</strong> Gesundheitsamt Aachen</p>
@@ -159,12 +159,12 @@ export function ImpressumContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">Umsatzsteuer-ID</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">Umsatzsteuer-ID</h3>
           <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: [USt-IdNr.]</p>
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
           <p>Melanie Bretscher<br />
           Krefelderstr. 193<br />
           52070 Aachen</p>
@@ -179,7 +179,7 @@ export function PatientRightsContent() {
     <LegalModal
       title="Patientenrechte"
       trigger={
-        <span className="text-sm text-gray-400 hover:text-green-400 transition-colors cursor-pointer">
+        <span className="text-sm text-gray-400 hover:text-pink-400 transition-colors cursor-pointer">
           Patientenrechte
         </span>
       }
@@ -194,7 +194,7 @@ export function PatientRightsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">1. Recht auf Information</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">1. Recht auf Information</h3>
           <p className="mb-4">
             Sie haben das Recht, umfassend über Ihre Erkrankung, die vorgeschlagene Behandlung, 
             mögliche Risiken und Alternativen informiert zu werden. Wir nehmen uns Zeit für Ihre Fragen.
@@ -202,7 +202,7 @@ export function PatientRightsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">2. Recht auf Selbstbestimmung</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">2. Recht auf Selbstbestimmung</h3>
           <p className="mb-4">
             Sie entscheiden selbst, welche Behandlungen Sie wünschen. Jede Behandlung erfolgt nur 
             mit Ihrer ausdrücklichen Einwilligung nach ausführlicher Aufklärung.
@@ -210,7 +210,7 @@ export function PatientRightsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">3. Schweigepflicht</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">3. Schweigepflicht</h3>
           <p className="mb-4">
             Alle Informationen, die Sie uns anvertrauen, unterliegen der ärztlichen Schweigepflicht. 
             Diese gilt auch für alle Mitarbeiter unserer Praxis.
@@ -218,7 +218,7 @@ export function PatientRightsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">4. Recht auf Einsicht in die Patientenakte</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">4. Recht auf Einsicht in die Patientenakte</h3>
           <p className="mb-4">
             Sie haben das Recht, Ihre Patientenakte einzusehen und Kopien zu erhalten. 
             Sprechen Sie uns gerne darauf an.
@@ -226,7 +226,7 @@ export function PatientRightsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">5. Recht auf eine zweite Meinung</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">5. Recht auf eine zweite Meinung</h3>
           <p className="mb-4">
             Sie haben das Recht, sich eine zweite Meinung einzuholen. Wir unterstützen Sie dabei 
             und stellen Ihnen gerne alle relevanten Unterlagen zur Verfügung.
@@ -234,7 +234,7 @@ export function PatientRightsContent() {
         </section>
 
         <section>
-          <h3 className="text-md font-medium text-green-400 mb-2">6. Beschwerderecht</h3>
+          <h3 className="text-md font-medium text-pink-400 mb-2">6. Beschwerderecht</h3>
           <p className="mb-4">
             Falls Sie mit der Behandlung nicht zufrieden sind, haben Sie das Recht, sich zu beschweren. 
             Wir nehmen jede Beschwerde ernst und bemühen uns um eine zufriedenstellende Lösung.
