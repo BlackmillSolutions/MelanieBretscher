@@ -247,7 +247,7 @@ export default function Footer() {
                 <CollapsibleContent>
                   <div className="space-y-4 text-center">
                     <div className="flex items-start space-x-3 justify-center">
-                      <MapPin className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <MapPin className="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" />
                       <div className="text-sm text-gray-300">
                       <p>Krefelder Str. 97a</p>
                         <p>52070 Aachen</p>
@@ -255,15 +255,15 @@ export default function Footer() {
                       </div>
                     </div>
                     <div className="flex items-center space-x-3 justify-center">
-                      <Phone className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <Phone className="w-5 h-5 text-pink-600 flex-shrink-0" />
                       <span className="text-sm text-gray-300">0241 - 4464848</span>
                     </div>
                     <div className="flex items-center space-x-3 justify-center">
-                      <Mail className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <Mail className="w-5 h-5 text-pink-600 flex-shrink-0" />
                       <span className="text-sm text-gray-300">melaniebretscher@netcologne.de</span>
                     </div>
                     <div className="flex items-start space-x-3 justify-center">
-                      <Clock className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <Clock className="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" />
                       <div className="text-sm text-gray-300">
                         <p>Mo-Fr: 8:00-18:00</p>
                         <p>Samstag: 9:00-15:00</p>
