@@ -146,12 +146,12 @@ export default function HomePage() {
                 </svg>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Ihr Weg zu einem
-                <span className="block">schmerzfreien Leben</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight">
+                Alles Leben ist Bewegung.
+                <span className="block">Dort, wo Bewegung gestört ist, beginnt Krankheit</span>
               </h1>
-              <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Expertenteam für Osteopathie und Naturheilkunde kombiniert moderne Techniken mit persönlichen Behandlungsplänen.
+              <p className="text-sm text-white/80 italic mb-8 max-w-2xl mx-auto">
+                Dr. Andrew Taylor Still
               </p>
             </div>
 
@@ -512,12 +512,12 @@ export default function HomePage() {
       {/* Final CTA Section */}
       <section className="py-20 animated-gradient">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Alles Leben ist Bewegung.</h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Dort, wo Bewegung gestört ist, beginnt Krankheit
-          </p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+            Die wirksamste Medizin ist die natürliche Heilkraft,
+            <span className="block">die im Inneren eines jeden von uns liegt.</span>
+          </h2>
           <p className="text-sm text-white/80 italic mb-8">
-            Dr. Andrew Taylor Still
+            Hippokrates von Kos (460 - etwa 377 v. Chr.), griechischer Arzt, »Vater der Heilkunde«
           </p>
           
         </div>
