@@ -200,15 +200,17 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   },
 }
 
-export function ServiceModalContent({ name }: { name: string }) {
+export function ServiceModalContent({ name, variant = "light" }: { name: string; variant?: "light" | "dark" }) {
   const content = SERVICE_CONTENT[name]
+  const headingClass = variant === "dark" ? "font-semibold text-pink-600 mb-1" : "font-semibold text-gray-900 mb-1"
+  const textClass = variant === "dark" ? "text-gray-300 leading-relaxed text-sm" : "text-gray-700 leading-relaxed text-sm"
   if (!content) return null
   return (
     <div className="space-y-6">
       {content.sections.map((section, idx) => (
         <div key={idx}>
-          <h4 className="font-semibold text-gray-900 mb-1">{section.heading}</h4>
-          <p className="text-gray-700 leading-relaxed text-sm">{section.body}</p>
+          <h4 className={headingClass}>{section.heading}</h4>
+          <p className={textClass}>{section.body}</p>
         </div>
       ))}
     </div>

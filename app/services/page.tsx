@@ -168,19 +168,21 @@ export default function ServicesPage() {
                 {/* Bottom-right subtle action */}
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button size="sm" variant="ghost" className="absolute bottom-4 right-4 text-gray-600 hover:text-gray-900 hover:bg-gray-100">
+                    <Button size="sm" variant="ghost" className="absolute bottom-4 right-4 bg-pink-600 text-white hover:bg-pink-700">
                       Mehr
                     </Button>
                   </DialogTrigger>
-                  <DialogContent>
-                    <DialogHeader>
-                      <DialogTitle>{service.title}</DialogTitle>
-                      <DialogDescription className="flex items-center gap-2">
-                        <Clock className="w-4 h-4" />
+                  <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                    <DialogHeader className="border-b border-gray-800 pb-4">
+                      <DialogTitle className="text-xl font-semibold text-pink-600">{service.title}</DialogTitle>
+                      <DialogDescription className="flex items-center gap-2 text-gray-300">
+                        <Clock className="w-4 h-4 text-pink-600" />
                         {SERVICE_CONTENT[service.title]?.duration || service.duration}
                       </DialogDescription>
                     </DialogHeader>
-                    <ServiceModalContent name={service.title} />
+                    <div className="py-6">
+                      <ServiceModalContent name={service.title} variant="dark" />
+                    </div>
                   </DialogContent>
                 </Dialog>
               </Card>
