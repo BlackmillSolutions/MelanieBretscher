@@ -57,7 +57,7 @@ export default function ContactPage() {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Öffnungszeiten",
-      details: "Mo-Fr: 8:00-18:00, Sa: 9:00-15:00",
+      details: "Mo-Dr: 8:00-18:00 | Fr-Sa: Termine nach Vereinbarung",
       subtitle: "Sonntags geschlossen",
     },
   ]
@@ -279,7 +279,7 @@ export default function ContactPage() {
                       <Phone className="mr-2 w-5 h-5" />
                       Anrufen 0241 - 4464848
                     </Button>
-                    <div className="text-center text-sm text-teal-100">Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00</div>
+                    <div className="text-center text-sm text-teal-100">Mo-Dr: 8:00-18:00 | Fr-Sa: Termine nach Vereinbarung</div>
                   </div>
                 </CardContent>
               </Card>

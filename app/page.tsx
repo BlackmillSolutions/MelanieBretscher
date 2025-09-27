@@ -188,7 +188,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center">
                 <Clock className="w-4 h-4 mr-2 text-white" />
-                <span>Mo-Fr 8:00-18:00</span>
+                <span>Mo-Dr: 8:00-18:00 | Fr-Sa: Termine nach Vereinbarung</span>
               </div>
             </div>
           </div>
@@ -458,8 +458,8 @@ export default function HomePage() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 text-sm mb-1">Öffnungszeiten</h4>
-                        <p className="text-gray-700 font-medium text-sm">Mo-Fr: 8:00-18:00</p>
-                        <p className="text-xs text-gray-600">Sa: 9:00-15:00</p>
+                        <p className="text-gray-700 font-medium text-sm">Mo-Dr: 8:00-18:00</p>
+                        <p className="text-xs text-gray-600">Fr-Sa: Termine nach Vereinbarung</p>
                       </div>
                     </div>
 
@@ -522,7 +522,7 @@ export default function HomePage() {
                     <Phone className="mr-2 w-5 h-5" />
                     Anrufen 0241 - 4464848
                   </Button>
-                  <div className="text-center text-sm text-gray-600 mt-3">Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00</div>
+                  <div className="text-center text-sm text-gray-600 mt-3">Mo-Dr: 8:00-18:00 | Fr-Sa: Termine nach Vereinbarung</div>
                 </CardContent>
               </Card>
             </div>

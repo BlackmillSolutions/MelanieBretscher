@@ -55,7 +55,7 @@ export default function Navigation() {
     phone: "0241 - 4464848",
     email: "melaniebretscher@netcologne.de",
     address: "Krefelder Str. 97a, 52070 Aachen",
-    hoursShort: "Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00",
+    hoursShort: "Mo-Dr: 8:00-18:00 | Fr-Sa: Termine nach Vereinbarung",
   }
 
   const scrollToSection = (sectionId: string) => {
