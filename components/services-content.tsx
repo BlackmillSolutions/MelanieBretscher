@@ -24,7 +24,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Manuelle Therapieform zur Behandlung von Funktionsstörungen im Körper; Ursprung in der amerikanischen Medizin, basiert auf dem Zusammenspiel von Muskeln, Faszien, Organen und Nerven.",
       },
       {
-        heading: "Wann sinnvoll",
+        heading: "Hauptbehandlungsgründe",
         body:
           "Bei Rücken-, Nacken- und Gelenkschmerzen, Bewegungseinschränkungen, Verspannungen, funktionellen Beschwerden.",
       },
@@ -45,7 +45,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Individuell angepasste, manuelle Techniken zur Lösung von Blockaden und zur Körperbalance; verbindet Schulmedizin mit ganzheitlichen Ansätzen.",
       },
       {
-        heading: "Wann sinnvoll",
+        heading: "Hauptbehandlungsgründe",
         body: "Muskuläre Verspannungen, Fehlhaltungen, Bewegungseinschränkungen, chronische Schmerzen.",
       },
       { heading: "Behandlungsablauf", body: "Sanfte Mobilisation, Dehnungen, myofasziale Techniken. In bequemer Kleidung. Dauer: 45–60 Minuten." },
@@ -65,7 +65,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Akupunktur über Reflexpunkte an der Ohrmuschel; basiert auf der traditionellen chinesischen Medizin (TCM) und modernen neurophysiologischen Erkenntnissen.",
       },
       {
-        heading: "Wann sinnvoll",
+        heading: "Hauptbehandlungsgründe",
         body:
           "Akute und chronische Schmerzen, Stress, Schlafstörungen, innere Unruhe, unterstützend bei Sucht oder Gewichtsregulation.",
       },
@@ -83,7 +83,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Behandlung mit pflanzlichen Arzneien (Tees, Tinkturen, Kapseln); basiert auf traditioneller Heilpflanzenkunde und moderner Forschung.",
       },
       {
-        heading: "Wann sinnvoll",
+        heading: "Hauptbehandlungsgründe",
         body:
           "Verdauungsprobleme, Schlafstörungen, hormonelle Beschwerden, Infekte, Erschöpfung, Hautprobleme.",
       },
@@ -105,7 +105,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Gezielte Versorgung mit Nährstoffen, Vitaminen oder Medikamenten per Vene oder Muskel; schnelle Wirkung.",
       },
       {
-        heading: "Wann sinnvoll",
+        heading: "Hauptbehandlungsgründe",
         body:
           "Erschöpfung, Immunschwäche, chronischer Stress, Nährstoffmangel (z. B. Vitamin-B12, Eisen, Mikronährstoffe).",
       },
@@ -126,7 +126,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         body:
           "Traditionelle Methode zur Anregung von Durchblutung und Lymphfluss durch Unterdruck auf der Haut.",
       },
-      { heading: "Wann sinnvoll", body: "Verspannungen, Rückenschmerzen, Muskelschmerzen, Durchblutungsstörungen." },
+      { heading: "Hauptbehandlungsgründe", body: "Verspannungen, Rückenschmerzen, Muskelschmerzen, Durchblutungsstörungen." },
       {
         heading: "Behandlungsablauf",
         body:
@@ -145,7 +145,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Massage bestimmter Fußbereiche zur Reflexbehandlung innerer Organe und Systeme; basiert auf der Zonenlehre.",
       },
       {
-        heading: "Wann sinnvoll",
+        heading: "Hauptbehandlungsgründe",
         body:
           "Stress, Verdauungsbeschwerden, Kopfschmerzen, hormonelle Dysbalancen, allgemeine Regulation.",
       },
@@ -162,7 +162,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         body: "Sanfte Massagetechnik zur Förderung des Lymphabflusses und Reduktion von Schwellungen.",
       },
       {
-        heading: "Wann sinnvoll",
+        heading: "Hauptbehandlungsgründe",
         body:
           "Lymphödeme, Schwellungen nach OP oder Verletzung, chronische Entzündungen, schwaches Immunsystem.",
       },
@@ -183,7 +183,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Medizinische Bewegungstherapie zur Wiederherstellung von Beweglichkeit, Kraft und Funktion.",
       },
       {
-        heading: "Wann sinnvoll",
+        heading: "Hauptbehandlungsgründe",
         body:
           "Nach Verletzungen, Operationen, bei Rückenschmerzen, Haltungsschwächen, Arthrose, neurologischen Beschwerden.",
       },

@@ -175,7 +175,7 @@ export default function HomePage() {
             </div>
 
             {/* Quick Contact Info */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/80">
+            <div className="hidden md:flex md:flex-row items-center justify-center gap-6 text-sm text-white/80">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-white" />
                 <span>0241 - 4464848</span>
@@ -216,9 +216,9 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Expertenteam dem Sie vertrauen können</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Schön dass sie mich besuchen!</h2>
               <p className="text-lg text-white/90 mb-6 leading-relaxed">
-                Mit über 15 Jahren Erfahrung kombiniert unser Team aus Heilpraktikerin, Osteopathin und Physiotherapeutin 
+                Mit über 30 Jahren Erfahrung kombiniert unser Team aus Heilpraktikerin, Osteopathin und Physiotherapeutin 
                 evidenzbasierte Behandlungen mit mitfühlender Fürsorge, um Ihnen zu optimaler Gesundheit und Wohlbefinden zu verhelfen.
               </p>
               
