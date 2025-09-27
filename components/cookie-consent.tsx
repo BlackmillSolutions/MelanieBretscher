@@ -44,7 +44,7 @@ function parsePreferences(raw: string | null): ConsentPreferences | null {
   }
 }
 
-export function CookieConsentBanner(): JSX.Element | null {
+export function CookieConsentBanner(): React.ReactElement | null {
   const [isVisible, setIsVisible] = React.useState(false);
   const [analytics, setAnalytics] = React.useState(false);
   const [marketing, setMarketing] = React.useState(false);
@@ -130,6 +130,7 @@ export function CookieConsentBanner(): JSX.Element | null {
               Auswahl speichern
             </Button>
             <Button
+              className="bg-pink-600 text-white hover:bg-pink-700"
               onClick={() => {
                 setAnalytics(true);
                 setMarketing(true);
