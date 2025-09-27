@@ -314,7 +314,7 @@ export default function HomePage() {
                 {/* Bottom-right subtle action */}
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button size="sm" variant="ghost" className="absolute bottom-4 right-4 text-white hover:text-white hover:bg-pink-500/20">
+                    <Button size="sm" variant="ghost" className="absolute bottom-4 right-4 text-white rounded-full hover:bg-pink-600 hover:text-white hover:shadow-md transition-colors">
                       Mehr
                     </Button>
                   </DialogTrigger>

@@ -168,7 +168,7 @@ export default function ServicesPage() {
                 {/* Bottom-right subtle action */}
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button size="sm" variant="ghost" className="absolute bottom-4 right-4 bg-pink-600 text-white hover:bg-pink-700">
+                    <Button size="sm" variant="ghost" className="absolute bottom-4 right-4 bg-pink-600 text-white rounded-full hover:bg-pink-700 hover:shadow-md transition-colors">
                       Mehr
                     </Button>
                   </DialogTrigger>
