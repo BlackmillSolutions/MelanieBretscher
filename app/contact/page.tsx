@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -180,20 +181,30 @@ export default function ContactPage() {
                         <Label htmlFor="service" className="text-gray-700 font-medium">
                           Interessierte Leistung
                         </Label>
-                        <select
-                          id="service"
-                          name="service"
+                        <Select
                           value={formData.service}
-                          onChange={handleChange}
-                          className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none focus-visible:outline-none bg-white"
+                          onValueChange={(value) =>
+                            setFormData({ ...formData, service: value })
+                          }
                         >
-                          <option value="">Leistung auswählen</option>
-                          {services.map((service, index) => (
-                            <option key={index} value={service}>
-                              {service}
-                            </option>
-                          ))}
-                        </select>
+                          <SelectTrigger
+                            id="service"
+                            className="mt-1 w-full border border-gray-300 rounded-md focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0"
+                          >
+                            <SelectValue placeholder="Leistung auswählen" />
+                          </SelectTrigger>
+                          <SelectContent className="bg-white">
+                            {services.map((service, index) => (
+                              <SelectItem
+                                key={index}
+                                value={service}
+                                className="hover:bg-pink-50 focus:bg-pink-100 focus:text-pink-700 data-[highlighted]:bg-pink-100 data-[highlighted]:text-pink-700 data-[state=checked]:bg-pink-100 data-[state=checked]:text-pink-700"
+                              >
+                                {service}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                       </div>
                     </div>
 
