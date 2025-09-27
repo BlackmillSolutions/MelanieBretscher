@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, ChevronDown, ChevronUp } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, ChevronDown, ChevronUp } from "lucide-react"
 import { useState } from "react"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { PrivacyContent, TermsContent, ImpressumContent, PatientRightsContent } from "@/components/legal-content"
@@ -55,20 +55,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex space-x-4 justify-center md:justify-start">
-              <a href="#" className="text-gray-400 hover:text-pink-600 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-pink-600 transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-pink-600 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-pink-600 transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
+            
           </div>
 
           {/* Services Block 1 */}
