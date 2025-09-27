@@ -71,48 +71,22 @@ export default function Navigation() {
       {/* Top Bar */}
       <div className="animated-gradient text-white py-2 text-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Mobile: auto-rotating slider */}
-          <div className="sm:hidden">
-            <Carousel className="w-full max-w-xs mx-auto" opts={{ loop: true }} setApi={setTopBarCarouselApi}>
-              <CarouselContent>
-                <CarouselItem>
-                  <div className="flex items-center justify-center gap-2 py-1">
-                    <Phone className="w-4 h-4" />
-                    <span>{CONTACT.phone}</span>
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="flex items-center justify-center gap-2 py-1">
-                    <MapPin className="w-4 h-4" />
-                    <span>{CONTACT.address}</span>
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="flex items-center justify-center gap-2 py-1">
-                    <Clock className="w-4 h-4" />
-                    <span>{CONTACT.hoursShort}</span>
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-            </Carousel>
-          </div>
-
-          {/* Desktop/Tablet: static layout */}
-          <div className="hidden sm:flex justify-between items-center">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-2" />
-                <span>{CONTACT.phone}</span>
-              </div>
-              <div className="flex items-center">
-                <MapPin className="w-4 h-4 mr-2" />
-                <span>{CONTACT.address}</span>
-              </div>
-            </div>
-            <div className="text-center sm:text-right">
-              <span>{CONTACT.hoursShort}</span>
-            </div>
-          </div>
+          <Carousel className="w-full max-w-xl mx-auto" opts={{ loop: true }} setApi={setTopBarCarouselApi}>
+            <CarouselContent>
+              <CarouselItem>
+                <div className="flex items-center justify-center gap-2 py-1">
+                  <Phone className="w-4 h-4" />
+                  <span>{CONTACT.phone}</span>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="flex items-center justify-center gap-2 py-1">
+                  <MapPin className="w-4 h-4" />
+                  <span>{CONTACT.address}</span>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
         </div>
       </div>
 
