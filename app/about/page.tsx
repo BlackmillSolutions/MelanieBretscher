@@ -39,6 +39,8 @@ export default function AboutPage() {
     },
   ]
 
+  const PRIMARY_VALUE_TITLE = "Ganzheitliche Behandlung"
+
   const credentials = [
     "Heilpraktikerin mit umfassender Ausbildung",
     "Osteopathin mit spezialisierter Weiterbildung",
@@ -117,7 +119,22 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Mobile-only: show primary value as text (no card) */}
+          <div className="md:hidden">
+            {values
+              .filter((v) => v.title === PRIMARY_VALUE_TITLE)
+              .map((v) => (
+                <div key={v.title} className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-pink-600 mx-auto mb-3 flex items-center justify-center">
+                    <Image src="/green_spiral.svg" alt="Green Spiral" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{v.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{v.description}</p>
+                </div>
+              ))}
+          </div>
+
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <Card
                 key={index}
