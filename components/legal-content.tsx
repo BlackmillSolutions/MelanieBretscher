@@ -14,7 +14,6 @@ export function PrivacyContent() {
     >
       <div className="space-y-6">
         <section>
-          <h2 className="text-lg font-semibold text-white mb-3">1. Datenschutz auf einen Blick</h2>
           <h3 className="text-md font-medium text-pink-600 mb-2">Allgemeine Hinweise</h3>
           <p className="mb-4">
             Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, 
@@ -77,7 +76,7 @@ export function TermsContent() {
     >
       <div className="space-y-6">
         <section>
-          <h2 className="text-lg font-semibold text-white mb-3">1. Allgemeine Bestimmungen</h2>
+          <h3 className="text-md font-medium text-pink-600 mb-2">1. Allgemeine Bestimmungen</h3>
           <p className="mb-4">
             Diese Nutzungsbedingungen gelten für die Nutzung der Website der Praxis für Osteopathie und Naturheilkunde 
             von Melanie Bretscher. Durch die Nutzung dieser Website erklären Sie sich mit diesen Bedingungen einverstanden.
