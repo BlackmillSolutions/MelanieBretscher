@@ -4,6 +4,8 @@ import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, Che
 import { useState } from "react"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { PrivacyContent, TermsContent, ImpressumContent, PatientRightsContent } from "@/components/legal-content"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { SERVICE_CONTENT, ServiceModalContent } from "@/components/services-content"
 
 export default function Footer() {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
@@ -26,12 +28,7 @@ export default function Footer() {
     "Schröpfen",
   ]
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
+  
 
   const toggleSection = (section: string) => {
     setOpenSections(prev => ({
@@ -95,12 +92,25 @@ export default function Footer() {
                   <ul className="space-y-3 text-center">
                     {services1.map((service, index) => (
                       <li key={index}>
-                        <button
-                          onClick={() => scrollToSection("services")}
-                          className="text-gray-300 hover:text-pink-600 transition-colors text-sm w-full"
-                        >
-                          {service}
-                        </button>
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <button className="text-gray-300 hover:text-pink-600 transition-colors text-sm w-full">
+                              {service}
+                            </button>
+                          </DialogTrigger>
+                          <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                            <DialogHeader className="border-b border-gray-800 pb-4">
+                              <DialogTitle className="text-xl font-semibold text-pink-600">{service}</DialogTitle>
+                              <DialogDescription className="flex items-center gap-2 text-gray-300">
+                                <Clock className="w-4 h-4 text-pink-600" />
+                                {SERVICE_CONTENT[service]?.duration}
+                              </DialogDescription>
+                            </DialogHeader>
+                            <div className="py-6">
+                              <ServiceModalContent name={service} variant="dark" />
+                            </div>
+                          </DialogContent>
+                        </Dialog>
                       </li>
                     ))}
                   </ul>
@@ -114,12 +124,25 @@ export default function Footer() {
               <ul className="space-y-3">
                 {services1.map((service, index) => (
                   <li key={index}>
-                    <button
-                      onClick={() => scrollToSection("services")}
-                      className="text-gray-300 hover:text-pink-600 transition-colors text-sm text-left"
-                    >
-                      {service}
-                    </button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="text-gray-300 hover:text-pink-600 transition-colors text-sm text-left">
+                          {service}
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader className="border-b border-gray-800 pb-4">
+                          <DialogTitle className="text-xl font-semibold text-pink-600">{service}</DialogTitle>
+                          <DialogDescription className="flex items-center gap-2 text-gray-300">
+                            <Clock className="w-4 h-4 text-pink-600" />
+                            {SERVICE_CONTENT[service]?.duration}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="py-6">
+                          <ServiceModalContent name={service} variant="dark" />
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </li>
                 ))}
               </ul>
@@ -147,12 +170,25 @@ export default function Footer() {
                   <ul className="space-y-3 text-center">
                     {services2.map((service, index) => (
                       <li key={index}>
-                        <button
-                          onClick={() => scrollToSection("services")}
-                          className="text-gray-300 hover:text-pink-600 transition-colors text-sm w-full"
-                        >
-                          {service}
-                        </button>
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <button className="text-gray-300 hover:text-pink-600 transition-colors text-sm w-full">
+                              {service}
+                            </button>
+                          </DialogTrigger>
+                          <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                            <DialogHeader className="border-b border-gray-800 pb-4">
+                              <DialogTitle className="text-xl font-semibold text-pink-600">{service}</DialogTitle>
+                              <DialogDescription className="flex items-center gap-2 text-gray-300">
+                                <Clock className="w-4 h-4 text-pink-600" />
+                                {SERVICE_CONTENT[service]?.duration}
+                              </DialogDescription>
+                            </DialogHeader>
+                            <div className="py-6">
+                              <ServiceModalContent name={service} variant="dark" />
+                            </div>
+                          </DialogContent>
+                        </Dialog>
                       </li>
                     ))}
                   </ul>
@@ -166,12 +202,25 @@ export default function Footer() {
               <ul className="space-y-3">
                 {services2.map((service, index) => (
                   <li key={index}>
-                    <button
-                      onClick={() => scrollToSection("services")}
-                      className="text-gray-300 hover:text-pink-600 transition-colors text-sm text-left"
-                    >
-                      {service}
-                    </button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="text-gray-300 hover:text-pink-600 transition-colors text-sm text-left">
+                          {service}
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader className="border-b border-gray-800 pb-4">
+                          <DialogTitle className="text-xl font-semibold text-pink-600">{service}</DialogTitle>
+                          <DialogDescription className="flex items-center gap-2 text-gray-300">
+                            <Clock className="w-4 h-4 text-pink-600" />
+                            {SERVICE_CONTENT[service]?.duration}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="py-6">
+                          <ServiceModalContent name={service} variant="dark" />
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </li>
                 ))}
               </ul>
