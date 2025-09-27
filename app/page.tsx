@@ -29,7 +29,7 @@ export default function HomePage() {
       description: "Ganzheitliche manuelle Therapie zur Behandlung von Funktionsstörungen und Schmerzen",
       icon: <HandHeart className="w-12 h-12 text-white" />,
       duration: "45-60 Minuten",
-      benefits: ["Verbesserte Beweglichkeit", "Schmerzlinderung", "Ganzheitliche Behandlung", "Natürliche Heilung"],
+      benefits: ["Verbesserte Beweglichkeit", "Schmerzlinderung", "Entspannung & Regulation des Nervensystems", "Natürliche Heilung"],
     },
     {
       title: "Ohrakupunktur",

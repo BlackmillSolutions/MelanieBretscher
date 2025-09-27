@@ -13,7 +13,7 @@ export default function ServicesPage() {
       description:
         "Ganzheitliche manuelle Therapie zur Behandlung von Funktionsstörungen und Schmerzen. Die Osteopathie betrachtet den Körper als Einheit und behandelt die Ursachen von Beschwerden.",
       duration: "45-60 Minuten",
-      benefits: ["Verbesserte Beweglichkeit", "Schmerzlinderung", "Ganzheitliche Behandlung", "Natürliche Heilung"],
+      benefits: ["Verbesserte Beweglichkeit", "Schmerzlinderung", "Entspannung & Regulation des Nervensystems", "Natürliche Heilung"],
       conditions: ["Rücken- und Nackenschmerzen", "Gelenksteifheit", "Muskelverspannungen", "Arthritis"],
       image: "/placeholder.svg?height=300&width=400",
     },
