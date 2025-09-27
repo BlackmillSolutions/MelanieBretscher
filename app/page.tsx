@@ -85,10 +85,10 @@ export default function HomePage() {
   type HomeService = (typeof services)[number]
 
   const stats = [
-    { number: "15+", label: "Jahre Erfahrung" },
-    { number: "2000+", label: "Behandelte Patienten" },
+    { number: "30+", label: "Jahre Erfahrung" },
+    { number: "10K+", label: "Behandelte Patienten" },
     { number: "95%", label: "Erfolgsrate" },
-    { number: "24/7", label: "Support verfügbar" },
+    { number: "24/7", label: "Terminbuchung möglich" },
   ]
 
 

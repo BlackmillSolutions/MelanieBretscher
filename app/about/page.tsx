@@ -81,7 +81,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <AnimatedCounter 
-                    value="15+" 
+                    value="30+" 
                     className="text-3xl font-bold text-pink-600 mb-2"
                     duration={2500}
                   />
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 </div>
                 <div className="text-center">
                   <AnimatedCounter 
-                    value="2000+" 
+                    value="10K+" 
                     className="text-3xl font-bold text-pink-600 mb-2"
                     duration={2500}
                   />
