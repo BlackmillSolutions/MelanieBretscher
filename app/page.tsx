@@ -5,6 +5,7 @@ import { ArrowRight, Phone, MapPin, Clock, CheckCircle, Award, Users, Heart, Sen
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { ServiceModalContent, SERVICE_CONTENT } from "@/components/services-content"
 import ContactForm from "@/components/contact-form"
 import React from "react"
 import PracticeSlider from "@/components/practice-slider"
@@ -82,23 +83,6 @@ export default function HomePage() {
   ]
 
   type HomeService = (typeof services)[number]
-
-  const HomeServiceDetails = ({ service }: { service: HomeService }) => (
-    <>
-      <p className="text-gray-700 mb-4 leading-relaxed">{service.description}</p>
-      <div className="space-y-2">
-        <h4 className="font-semibold text-gray-900 text-sm">Hauptvorteile:</h4>
-        <ul className="space-y-1">
-          {service.benefits.map((benefit, idx) => (
-            <li key={idx} className="flex items-center text-sm text-gray-700">
-              <CheckCircle className="w-4 h-4 text-pink-600 mr-2 flex-shrink-0" />
-              {benefit}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
-  )
 
   const stats = [
     { number: "15+", label: "Jahre Erfahrung" },
@@ -335,10 +319,10 @@ export default function HomePage() {
                       <DialogTitle>{service.title}</DialogTitle>
                       <DialogDescription className="flex items-center gap-2">
                         <Clock className="w-4 h-4" />
-                        {service.duration}
+                        {SERVICE_CONTENT[service.title]?.duration || service.duration}
                       </DialogDescription>
                     </DialogHeader>
-                    <HomeServiceDetails service={service} />
+                    <ServiceModalContent name={service.title} />
                   </DialogContent>
                 </Dialog>
               </Card>

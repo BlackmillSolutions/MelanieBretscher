@@ -1,9 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Clock, Users, Award, CheckCircle } from "lucide-react"
+import { ArrowRight, Clock, Users, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardTitle } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { ServiceModalContent, SERVICE_CONTENT } from "@/components/services-content"
 
 export default function ServicesPage() {
   const services = [
@@ -111,37 +112,6 @@ export default function ServicesPage() {
 
   type Service = (typeof services)[number]
 
-  const ServiceDetails = ({ service }: { service: Service }) => (
-    <>
-      <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <h4 className="font-semibold text-gray-900 mb-3">Hauptvorteile:</h4>
-          <ul className="space-y-2">
-            {service.benefits.map((benefit, idx) => (
-              <li key={idx} className="flex items-center text-sm text-gray-600">
-                <CheckCircle className="w-4 h-4 text-pink-600 mr-2 flex-shrink-0" />
-                {benefit}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-semibold text-gray-900 mb-3">Behandelt Erkrankungen:</h4>
-          <ul className="space-y-2">
-            {service.conditions.map((condition, idx) => (
-              <li key={idx} className="flex items-center text-sm text-gray-600">
-                <CheckCircle className="w-4 h-4 text-pink-600 mr-2 flex-shrink-0" />
-                {condition}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </>
-  )
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -207,10 +177,10 @@ export default function ServicesPage() {
                       <DialogTitle>{service.title}</DialogTitle>
                       <DialogDescription className="flex items-center gap-2">
                         <Clock className="w-4 h-4" />
-                        {service.duration}
+                        {SERVICE_CONTENT[service.title]?.duration || service.duration}
                       </DialogDescription>
                     </DialogHeader>
-                    <ServiceDetails service={service} />
+                    <ServiceModalContent name={service.title} />
                   </DialogContent>
                 </Dialog>
               </Card>
