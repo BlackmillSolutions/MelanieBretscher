@@ -188,9 +188,8 @@ export default function HistoryTimeline() {
               <div className="flex items-center">
                 {/* Mobile icon position - centered next to tiles */}
                 <div className="mr-4 flex-shrink-0">
-                  <div className="relative w-10 h-10 rounded-full bg-white/20 border-2 border-pink-600 flex items-center justify-center">
-                    <div className="text-pink-600">{event.icon}</div>
-                    <div className="absolute inset-0 rounded-full animate-pulse bg-pink-600/20" />
+                  <div className="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center shadow-md">
+                    {event.icon}
                   </div>
                 </div>
 
