@@ -217,20 +217,7 @@ export default function HomePage() {
                 Mit über 15 Jahren Erfahrung kombiniert unser Team aus Heilpraktikerin, Osteopathin und Physiotherapeutin 
                 evidenzbasierte Behandlungen mit mitfühlender Fürsorge, um Ihnen zu optimaler Gesundheit und Wohlbefinden zu verhelfen.
               </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-white mr-3" />
-                  <span className="text-white/90">Lizenzierte und zertifizierte Fachkräfte</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-white mr-3" />
-                  <span className="text-white/90">Moderne Ausstattung und Einrichtungen</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-white mr-3" />
-                  <span className="text-white/90">Persönliche Behandlungspläne</span>
-                </div>
-              </div>
+              
             </div>
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden glass-card">
