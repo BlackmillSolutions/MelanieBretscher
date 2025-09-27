@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Phone, MapPin, Clock } from "lucide-react"
+import { Menu, X, Phone, MapPin, Clock, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/components/ui/carousel"
 
@@ -51,6 +51,13 @@ export default function Navigation() {
     { name: "Kontakt", href: "contact" },
   ]
 
+  const CONTACT = {
+    phone: "0241 - 4464848",
+    email: "melaniebretscher@netcologne.de",
+    address: "Krefelder Str. 97a, 52070 Aachen",
+    hoursShort: "Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00",
+  }
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -71,19 +78,19 @@ export default function Navigation() {
                 <CarouselItem>
                   <div className="flex items-center justify-center gap-2 py-1">
                     <Phone className="w-4 h-4" />
-                    <span>0241 - 4464848</span>
+                    <span>{CONTACT.phone}</span>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
                   <div className="flex items-center justify-center gap-2 py-1">
                     <MapPin className="w-4 h-4" />
-                    <span>Krefelder Str. 97a, 52070 Aachen</span>
+                    <span>{CONTACT.address}</span>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
                   <div className="flex items-center justify-center gap-2 py-1">
                     <Clock className="w-4 h-4" />
-                    <span>Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00</span>
+                    <span>{CONTACT.hoursShort}</span>
                   </div>
                 </CarouselItem>
               </CarouselContent>
@@ -95,15 +102,15 @@ export default function Navigation() {
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
-                <span>0241 - 4464848</span>
+                <span>{CONTACT.phone}</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2" />
-                <span>Krefelder Str. 97a, 52070 Aachen</span>
+                <span>{CONTACT.address}</span>
               </div>
             </div>
             <div className="text-center sm:text-right">
-              <span>Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00</span>
+              <span>{CONTACT.hoursShort}</span>
             </div>
           </div>
         </div>
@@ -169,13 +176,13 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
-            <div className="container mx-auto px-4 sm:px-6 py-4">
+            <div className="container mx-auto px-4 sm:px-6 py-4 text-center">
               <div className="space-y-4">
                 {navigation.map((item) => (
                   <button
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
-                    className={`block w-full text-left font-medium transition-colors duration-200 ${
+                    className={`block w-full text-center font-medium transition-colors duration-200 ${
                       activeSection === item.href ? "text-pink-600" : "text-gray-700 hover:text-pink-600"
                     }`}
                   >
@@ -188,6 +195,29 @@ export default function Navigation() {
                 >
                   Termin vereinbaren
                 </Button>
+
+                <div className="pt-4 mt-4 border-t border-gray-200 space-y-3">
+                  <div className="flex items-center justify-center gap-2">
+                    <Phone className="w-5 h-5 text-pink-600" />
+                    <a href={`tel:${CONTACT.phone.replace(/\s|-/g, "")}`} className="text-gray-800 hover:text-pink-600">
+                      {CONTACT.phone}
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <Mail className="w-5 h-5 text-pink-600" />
+                    <a href={`mailto:${CONTACT.email}`} className="text-gray-800 hover:text-pink-600">
+                      {CONTACT.email}
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <MapPin className="w-5 h-5 text-pink-600" />
+                    <span className="text-gray-800">{CONTACT.address}</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <Clock className="w-5 h-5 text-pink-600" />
+                    <span className="text-gray-800">{CONTACT.hoursShort}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
