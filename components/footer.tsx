@@ -51,7 +51,7 @@ export default function Footer() {
               />
               <div>
                 <div className="text-xl font-bold">Melanie Bretscher</div>
-                <div className="text-sm text-gray-400">Osteopathie & Naturheilkunde</div>
+                <div className="text-sm text-gray-400">Osteopathie | Naturheilkunde | Physiotherapie</div>
               </div>
             </div>
 

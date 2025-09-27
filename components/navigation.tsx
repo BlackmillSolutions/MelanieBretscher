@@ -116,7 +116,7 @@ export default function Navigation() {
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center py-4 relative justify-center lg:justify-between">
+          <div className="flex items-center py-4 relative justify-center md:justify-between">
             {/* Logo */}
             <button
               onClick={() => scrollToSection("home")}
@@ -127,9 +127,9 @@ export default function Navigation() {
                 alt="Praxis für Osteopathie u. Naturheilkunde Logo" 
                 className="w-10 h-10 object-contain"
               />
-              <div className="leading-tight">
-                <div className="text-xl font-bold text-gray-900 whitespace-nowrap">Melanie Bretscher</div>
-                <div className="text-xs text-gray-600 whitespace-nowrap">Osteopathie & Naturheilkunde</div>
+              <div className="leading-tight text-left">
+                <div className="text-xl font-bold text-gray-900 whitespace-nowrap text-left">Melanie Bretscher</div>
+                <div className="text-xs text-gray-600 whitespace-nowrap text-left">Osteopathie | Naturheilkunde | Physiotherapie</div>
               </div>
             </button>
 
