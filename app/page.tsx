@@ -283,7 +283,11 @@ export default function HomePage() {
                 className="relative group glass-card border-white/20 hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-6">
-                  <div className="mb-4 text-center flex justify-center">{service.icon}</div>
+                  <div className="mb-4 text-center flex justify-center">
+                    <div className="w-16 h-16 rounded-full bg-pink-600 flex items-center justify-center shadow-md">
+                      {service.icon}
+                    </div>
+                  </div>
                   <h3 className="text-xl font-semibold text-white mb-3 text-center">{service.title}</h3>
                   <p className="text-white/80 text-sm leading-relaxed mb-4 text-center">{service.description}</p>
 
