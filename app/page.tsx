@@ -338,10 +338,10 @@ export default function HomePage() {
           {/* Expand/Collapse Button */}
           {services.length > 3 && (
             <div className="text-center mt-8">
-                             <Button
+               <Button
                  onClick={toggleServices}
                  variant="outline"
-                 className="glass-card border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+                 className="glass-card border-white/20 text-white rounded-full hover:bg-pink-600 hover:text-white hover:border-transparent hover:shadow-md transition-all duration-300"
                >
                 {showAllServices ? (
                   <>
