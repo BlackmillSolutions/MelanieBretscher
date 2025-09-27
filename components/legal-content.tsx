@@ -136,7 +136,7 @@ export function ImpressumContent() {
           <div className="space-y-2">
             <p><strong className="text-white">Melanie Bretscher</strong></p>
             <p>Praxis für Osteopathie und Naturheilkunde</p>
-            <p>Krefelderstr. 193</p>
+            <p>Krefelder Str. 97a</p>
             <p>52070 Aachen</p>
           </div>
         </section>
@@ -166,7 +166,7 @@ export function ImpressumContent() {
         <section>
           <h3 className="text-md font-medium text-pink-600 mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
           <p>Melanie Bretscher<br />
-          Krefelderstr. 193<br />
+          Krefelder Str. 97a<br />
           52070 Aachen</p>
         </section>
       </div>

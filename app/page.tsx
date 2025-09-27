@@ -182,7 +182,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2 text-white" />
-                <span>Krefelderstr. 193, 52070 Aachen</span>
+                <span>Krefelder Str. 97a, 52070 Aachen</span>
               </div>
               <div className="flex items-center">
                 <Clock className="w-4 h-4 mr-2 text-white" />
@@ -426,7 +426,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 text-sm mb-1">Adresse</h4>
-                        <p className="text-gray-700 font-medium text-sm">Krefelderstr. 193</p>
+                        <p className="text-gray-700 font-medium text-sm">Krefelder Str. 97a</p>
                         <p className="text-xs text-gray-600">52070 Aachen</p>
                       </div>
                     </div>
@@ -466,21 +466,21 @@ export default function HomePage() {
               <Card className="glass-card-light border-gray-200/50 shadow-xl overflow-hidden">
                 <div className="aspect-[4/3] relative">
                   <iframe
-                    src="https://maps.google.com/maps?q=Krefelderstr.+193,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Krefelder+Str.+97a,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelderstr. 193, 52070 Aachen"
+                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelder Str. 97a, 52070 Aachen"
                     className="absolute inset-0"
                   ></iframe>
                   <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                     <div className="text-center">
                       <MapPin className="w-5 h-5 text-pink-600 mx-auto mb-2" />
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Praxis für Osteopathie u. Naturheilkunde</h3>
-                      <p className="text-gray-700 font-medium">Krefelderstr. 193, 52070 Aachen</p>
+                      <p className="text-gray-700 font-medium">Krefelder Str. 97a, 52070 Aachen</p>
                     </div>
                   </div>
                 </div>

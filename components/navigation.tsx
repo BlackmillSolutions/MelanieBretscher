@@ -77,7 +77,7 @@ export default function Navigation() {
                 <CarouselItem>
                   <div className="flex items-center justify-center gap-2 py-1">
                     <MapPin className="w-4 h-4" />
-                    <span>Krefelderstr. 193, 52070 Aachen</span>
+                    <span>Krefelder Str. 97a, 52070 Aachen</span>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
@@ -99,7 +99,7 @@ export default function Navigation() {
               </div>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2" />
-                <span>Krefelderstr. 193, 52070 Aachen</span>
+                <span>Krefelder Str. 97a, 52070 Aachen</span>
               </div>
             </div>
             <div className="text-center sm:text-right">
