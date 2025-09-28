@@ -39,6 +39,8 @@ export default function AboutPage() {
     },
   ]
 
+  const PRIMARY_VALUE_TITLE = "Ganzheitliche Behandlung"
+
   const credentials = [
     "Heilpraktikerin mit umfassender Ausbildung",
     "Osteopathin mit spezialisierter Weiterbildung",
@@ -81,16 +83,16 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <AnimatedCounter 
-                    value="15+" 
-                    className="text-3xl font-bold text-green-600 mb-2"
+                    value="30+" 
+                    className="text-3xl font-bold text-pink-600 mb-2"
                     duration={2500}
                   />
                   <div className="text-gray-600">Jahre im Dienst</div>
                 </div>
                 <div className="text-center">
                   <AnimatedCounter 
-                    value="2000+" 
-                    className="text-3xl font-bold text-green-600 mb-2"
+                    value="10K+" 
+                    className="text-3xl font-bold text-pink-600 mb-2"
                     duration={2500}
                   />
                   <div className="text-gray-600">Patienten geholfen</div>
@@ -117,7 +119,22 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Mobile-only: show primary value as text (no card) */}
+          <div className="md:hidden">
+            {values
+              .filter((v) => v.title === PRIMARY_VALUE_TITLE)
+              .map((v) => (
+                <div key={v.title} className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-pink-600 mx-auto mb-3 flex items-center justify-center">
+                    <Image src="/green_spiral.svg" alt="Green Spiral" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{v.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{v.description}</p>
+                </div>
+              ))}
+          </div>
+
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <Card
                 key={index}
@@ -166,7 +183,7 @@ export default function AboutPage() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-green-600 font-semibold mb-2">{member.role}</p>
+                  <p className="text-pink-600 font-semibold mb-2">{member.role}</p>
                   <p className="text-sm text-gray-600 mb-3">
                     {member.credentials} • {member.experience}
                   </p>
@@ -174,7 +191,7 @@ export default function AboutPage() {
                     <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
+                        <span key={idx} className="px-3 py-1 bg-pink-50 text-pink-600 text-xs rounded-full">
                           {specialty}
                         </span>
                       ))}

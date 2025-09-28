@@ -44,7 +44,7 @@ function parsePreferences(raw: string | null): ConsentPreferences | null {
   }
 }
 
-export function CookieConsentBanner(): JSX.Element | null {
+export function CookieConsentBanner(): React.ReactElement | null {
   const [isVisible, setIsVisible] = React.useState(false);
   const [analytics, setAnalytics] = React.useState(false);
   const [marketing, setMarketing] = React.useState(false);
@@ -102,13 +102,23 @@ export function CookieConsentBanner(): JSX.Element | null {
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <div className="flex items-center gap-3">
-                <Switch id="analytics" checked={analytics} onCheckedChange={setAnalytics} />
+                <Switch
+                  id="analytics"
+                  checked={analytics}
+                  onCheckedChange={setAnalytics}
+                  className="data-[state=checked]:!bg-pink-600"
+                />
                 <label htmlFor="analytics" className="text-sm text-muted-foreground">
                   Analyse-Cookies
                 </label>
               </div>
               <div className="flex items-center gap-3">
-                <Switch id="marketing" checked={marketing} onCheckedChange={setMarketing} />
+                <Switch
+                  id="marketing"
+                  checked={marketing}
+                  onCheckedChange={setMarketing}
+                  className="data-[state=checked]:!bg-pink-600"
+                />
                 <label htmlFor="marketing" className="text-sm text-muted-foreground">
                   Marketing-Cookies
                 </label>
@@ -130,6 +140,7 @@ export function CookieConsentBanner(): JSX.Element | null {
               Auswahl speichern
             </Button>
             <Button
+              className="bg-pink-600 text-white hover:bg-pink-700"
               onClick={() => {
                 setAnalytics(true);
                 setMarketing(true);

@@ -4,6 +4,8 @@ import Image from "next/image"
 import { ArrowRight, Phone, MapPin, Clock, CheckCircle, Award, Users, Heart, Send, HandHeart, Ear, Leaf, Syringe, Droplets, Footprints, Sparkles, Activity, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { ServiceModalContent, SERVICE_CONTENT } from "@/components/services-content"
 import ContactForm from "@/components/contact-form"
 import React from "react"
 import PracticeSlider from "@/components/practice-slider"
@@ -21,14 +23,13 @@ export default function HomePage() {
     }
     setShowAllServices(!showAllServices)
   }
-  
   const services = [
     {
       title: "Osteopathische Behandlung",
       description: "Ganzheitliche manuelle Therapie zur Behandlung von Funktionsstörungen und Schmerzen",
       icon: <HandHeart className="w-12 h-12 text-white" />,
       duration: "45-60 Minuten",
-      benefits: ["Verbesserte Beweglichkeit", "Schmerzlinderung", "Ganzheitliche Behandlung", "Natürliche Heilung"],
+      benefits: ["Verbesserte Beweglichkeit", "Schmerzlinderung", "Entspannung & Regulation des Nervensystems", "Natürliche Heilung"],
     },
     {
       title: "Ohrakupunktur",
@@ -81,11 +82,13 @@ export default function HomePage() {
     },
   ]
 
+  type HomeService = (typeof services)[number]
+
   const stats = [
-    { number: "15+", label: "Jahre Erfahrung" },
-    { number: "2000+", label: "Behandelte Patienten" },
+    { number: "30+", label: "Jahre Erfahrung" },
+    { number: "10K+", label: "Behandelte Patienten" },
     { number: "95%", label: "Erfolgsrate" },
-    { number: "24/7", label: "Support verfügbar" },
+    { number: "24/7", label: "Terminbuchung möglich" },
   ]
 
 
@@ -113,6 +116,8 @@ export default function HomePage() {
         "Unsere effizienten Behandlungsmethoden helfen Ihnen, so schnell und sicher wie möglich zu Ihren Aktivitäten zurückzukehren.",
     },
   ]
+
+  const PRIMARY_VALUE_TITLE = "Ganzheitliche Behandlung"
 
 
 
@@ -143,12 +148,12 @@ export default function HomePage() {
                 </svg>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Ihr Weg zu einem
-                <span className="block">schmerzfreien Leben</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight">
+                Alles Leben ist Bewegung.
+                <span className="block">Dort, wo Bewegung gestört ist, beginnt Krankheit</span>
               </h1>
-              <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Expertenteam für Osteopathie und Naturheilkunde kombiniert moderne Techniken mit persönlichen Behandlungsplänen.
+              <p className="text-sm text-white/80 italic mb-8 max-w-2xl mx-auto">
+                Dr. Andrew Taylor Still
               </p>
             </div>
 
@@ -172,18 +177,18 @@ export default function HomePage() {
             </div>
 
             {/* Quick Contact Info */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/80">
+            <div className="hidden md:flex md:flex-row items-center justify-center gap-6 text-sm text-white/80">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-white" />
                 <span>0241 - 4464848</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2 text-white" />
-                <span>Krefelderstr. 193, 52070 Aachen</span>
+                <span>Krefelder Str. 97a, 52070 Aachen</span>
               </div>
               <div className="flex items-center">
                 <Clock className="w-4 h-4 mr-2 text-white" />
-                <span>Mo-Fr 8:00-18:00</span>
+                <span>Mo-Dr: 8:00-18:00 | Fr-Sa: Termine nach Vereinbarung</span>
               </div>
             </div>
           </div>
@@ -198,7 +203,7 @@ export default function HomePage() {
               <div key={index} className="text-center glass-card-light p-4 rounded-xl">
                 <AnimatedCounter 
                   value={stat.number} 
-                  className="text-2xl lg:text-3xl font-bold text-green-600 mb-2"
+                  className="text-2xl lg:text-3xl font-bold text-pink-600 mb-2"
                   duration={2500}
                 />
                 <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
@@ -213,25 +218,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Expertenteam dem Sie vertrauen können</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Schön dass sie mich besuchen!</h2>
               <p className="text-lg text-white/90 mb-6 leading-relaxed">
-                Mit über 15 Jahren Erfahrung kombiniert unser Team aus Heilpraktikerin, Osteopathin und Physiotherapeutin 
+                Mit über 30 Jahren Erfahrung kombiniert unser Team aus Heilpraktikerin, Osteopathin und Physiotherapeutin 
                 evidenzbasierte Behandlungen mit mitfühlender Fürsorge, um Ihnen zu optimaler Gesundheit und Wohlbefinden zu verhelfen.
               </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-white mr-3" />
-                  <span className="text-white/90">Lizenzierte und zertifizierte Fachkräfte</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-white mr-3" />
-                  <span className="text-white/90">Moderne Ausstattung und Einrichtungen</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-white mr-3" />
-                  <span className="text-white/90">Persönliche Behandlungspläne</span>
-                </div>
-              </div>
+              
             </div>
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden glass-card">
@@ -254,7 +246,22 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Mobile-only: show primary value as text (no card) */}
+          <div className="md:hidden">
+            {values
+              .filter((v) => v.title === PRIMARY_VALUE_TITLE)
+              .map((v) => (
+                <div key={v.title} className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-pink-600 mx-auto mb-3 flex items-center justify-center">
+                    <Image src="/green_spiral.svg" alt="Green Spiral" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-gray-900 mb-2">{v.title}</h4>
+                  <p className="text-gray-600 leading-relaxed">{v.description}</p>
+                </div>
+              ))}
+          </div>
+
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <Card
                 key={index}
@@ -290,10 +297,14 @@ export default function HomePage() {
             {services.slice(0, showAllServices ? services.length : 3).map((service, index) => (
               <Card
                 key={index}
-                className="group glass-card border-white/20 hover:shadow-xl transition-all duration-300"
+                className="relative group glass-card border-white/20 hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-6">
-                  <div className="mb-4 text-center flex justify-center">{service.icon}</div>
+                  <div className="mb-4 text-center flex justify-center">
+                    <div className="w-16 h-16 rounded-full bg-pink-600 flex items-center justify-center shadow-md">
+                      {service.icon}
+                    </div>
+                  </div>
                   <h3 className="text-xl font-semibold text-white mb-3 text-center">{service.title}</h3>
                   <p className="text-white/80 text-sm leading-relaxed mb-4 text-center">{service.description}</p>
 
@@ -314,8 +325,29 @@ export default function HomePage() {
                         ))}
                       </ul>
                     </div>
+                    
                   </div>
                 </CardContent>
+                {/* Bottom-right subtle action */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button size="sm" variant="ghost" className="absolute bottom-4 right-4 text-white rounded-full hover:bg-pink-600 hover:text-white hover:shadow-md transition-colors">
+                      Mehr
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                    <DialogHeader className="border-b border-gray-800 pb-4">
+                      <DialogTitle className="text-xl font-semibold text-pink-600">{service.title}</DialogTitle>
+                      <DialogDescription className="flex items-center gap-2 text-gray-300">
+                        <Clock className="w-4 h-4 text-pink-600" />
+                        {SERVICE_CONTENT[service.title]?.duration || service.duration}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="py-6">
+                      <ServiceModalContent name={service.title} variant="dark" />
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </Card>
             ))}
           </div>
@@ -323,10 +355,10 @@ export default function HomePage() {
           {/* Expand/Collapse Button */}
           {services.length > 3 && (
             <div className="text-center mt-8">
-                             <Button
+               <Button
                  onClick={toggleServices}
                  variant="outline"
-                 className="glass-card border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+                 className="glass-card border-white/20 text-white rounded-full hover:bg-pink-600 hover:text-white hover:border-transparent hover:shadow-md transition-all duration-300"
                >
                 {showAllServices ? (
                   <>
@@ -349,9 +381,9 @@ export default function HomePage() {
       <section id="gallery" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Besuchen Sie unsere moderne Praxis</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Unsere Praxis</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Machen Sie eine virtuelle Tour durch unsere moderne Osteopathie-Praxis. Unsere einladende Umgebung ist 
+              Machen Sie eine virtuelle Tour durch unsere Praxis. Unsere einladende Umgebung ist 
               darauf ausgerichtet, Ihren Heilungs- und Genesungsprozess zu unterstützen.
             </p>
           </div>
@@ -399,7 +431,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Kontaktinformationen</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
                         <Phone className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -410,29 +442,29 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-4 h-4 text-white" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 text-sm mb-1">Adresse</h4>
-                        <p className="text-gray-700 font-medium text-sm">Krefelderstr. 193</p>
+                        <p className="text-gray-700 font-medium text-sm">Krefelder Str. 97a</p>
                         <p className="text-xs text-gray-600">52070 Aachen</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
                         <Clock className="w-4 h-4 text-white" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 text-sm mb-1">Öffnungszeiten</h4>
-                        <p className="text-gray-700 font-medium text-sm">Mo-Fr: 8:00-18:00</p>
-                        <p className="text-xs text-gray-600">Sa: 9:00-15:00</p>
+                        <p className="text-gray-700 font-medium text-sm">Mo-Dr: 8:00-18:00</p>
+                        <p className="text-xs text-gray-600">Fr-Sa: Termine nach Vereinbarung</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
                         <Send className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -455,21 +487,21 @@ export default function HomePage() {
               <Card className="glass-card-light border-gray-200/50 shadow-xl overflow-hidden">
                 <div className="aspect-[4/3] relative">
                   <iframe
-                    src="https://maps.google.com/maps?q=Krefelderstr.+193,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Krefelder+Str.+97a,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelderstr. 193, 52070 Aachen"
+                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelder Str. 97a, 52070 Aachen"
                     className="absolute inset-0"
                   ></iframe>
                   <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                     <div className="text-center">
-                      <MapPin className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                      <MapPin className="w-5 h-5 text-pink-600 mx-auto mb-2" />
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Praxis für Osteopathie u. Naturheilkunde</h3>
-                      <p className="text-gray-700 font-medium">Krefelderstr. 193, 52070 Aachen</p>
+                      <p className="text-gray-700 font-medium">Krefelder Str. 97a, 52070 Aachen</p>
                     </div>
                   </div>
                 </div>
@@ -485,12 +517,12 @@ export default function HomePage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full border-2 border-green-600 text-green-600 hover:bg-green-50 rounded-full bg-transparent"
+                    className="w-full border-2 border-pink-600 text-pink-600 hover:bg-pink-50 rounded-full bg-transparent"
                   >
                     <Phone className="mr-2 w-5 h-5" />
                     Anrufen 0241 - 4464848
                   </Button>
-                  <div className="text-center text-sm text-gray-600 mt-3">Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00</div>
+                  <div className="text-center text-sm text-gray-600 mt-3">Mo-Dr: 8:00-18:00 | Fr-Sa: Termine nach Vereinbarung</div>
                 </CardContent>
               </Card>
             </div>
@@ -501,29 +533,14 @@ export default function HomePage() {
       {/* Final CTA Section */}
       <section className="py-20 animated-gradient">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Bereit, Ihren Genesungsweg zu beginnen?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Lassen Sie sich nicht von Schmerzen zurückhalten. Vereinbaren Sie heute Ihre Beratung und machen Sie den ersten Schritt 
-            zu einem gesünderen, aktiveren Lebensstil.
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+            Die wirksamste Medizin ist die natürliche Heilkraft,
+            <span className="block">die im Inneren eines jeden von uns liegt.</span>
+          </h2>
+          <p className="text-sm text-white/80 italic mb-8">
+            Hippokrates von Kos (460 - etwa 377 v. Chr.), griechischer Arzt, »Vater der Heilkunde«
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white border border-white/30 px-8 py-4 rounded-full text-lg font-semibold"
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Termin vereinbaren
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-white/50 text-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-semibold bg-transparent backdrop-blur-md"
-            >
-              <Phone className="mr-2 w-5 h-5" />
-              0241 - 4464848
-            </Button>
-          </div>
+          
         </div>
       </section>
     </div>

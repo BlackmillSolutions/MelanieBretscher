@@ -96,7 +96,7 @@ export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-green-100/20">
+      <section className="py-20 bg-gradient-to-br from-white via-teal-50/30 to-teal-100/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Patientenerfolgsgeschichten</h1>
@@ -111,7 +111,7 @@ export default function TestimonialsPage() {
                 <div key={index} className="text-center">
                   <AnimatedCounter 
                     value={stat.number} 
-                    className="text-3xl lg:text-4xl font-bold text-green-600 mb-2"
+                    className="text-3xl lg:text-4xl font-bold text-pink-600 mb-2"
                     duration={2500}
                   />
                   <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
@@ -125,10 +125,10 @@ export default function TestimonialsPage() {
       {/* Featured Testimonial */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-green-50 to-green-100/50 shadow-xl">
+          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-teal-50 to-teal-100/50 shadow-xl">
             <CardContent className="p-8 lg:p-12">
               <div className="flex justify-center mb-6">
-                <Quote className="w-12 h-12 text-green-600" />
+                <Quote className="w-12 h-12 text-pink-600" />
               </div>
               <blockquote className="text-2xl lg:text-3xl text-gray-700 text-center mb-8 italic leading-relaxed">
                 "Diese Praxis hat mein Leben komplett verändert. Nach Jahren chronischer Schmerzen habe ich endlich ein Team gefunden, 
@@ -155,7 +155,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Testimonials Grid */}
-      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-teal-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Was unsere Patienten sagen</h2>
@@ -224,10 +224,10 @@ export default function TestimonialsPage() {
                 key={index}
                 className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 relative group cursor-pointer">
+                <div className="aspect-video bg-gradient-to-br from-teal-100 to-teal-200 relative group cursor-pointer">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                      <div className="w-0 h-0 border-l-[12px] border-l-green-600 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                      <div className="w-0 h-0 border-l-[12px] border-l-pink-600 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
@@ -243,17 +243,17 @@ export default function TestimonialsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700">
+      <section className="py-20 bg-gradient-to-r from-teal-600 to-teal-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Bereit, Ihre Erfolgsgeschichte zu schreiben?</h2>
-          <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
             Schließen Sie sich den Tausenden von Patienten an, die ihr Leben durch unsere personalisierte osteopathische 
             und naturheilkundliche Versorgung verändert haben. Ihr Weg zur Genesung beginnt hier.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-green-600 hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold"
+              className="bg-white text-pink-600 hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold"
             >
               Ihre Beratung vereinbaren
               <ArrowRight className="ml-2 w-5 h-5" />

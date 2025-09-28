@@ -1,9 +1,11 @@
 "use client"
 
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, ChevronDown, ChevronUp } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, ChevronDown, ChevronUp } from "lucide-react"
 import { useState } from "react"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { PrivacyContent, TermsContent, ImpressumContent, PatientRightsContent } from "@/components/legal-content"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { SERVICE_CONTENT, ServiceModalContent } from "@/components/services-content"
 
 export default function Footer() {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
@@ -26,12 +28,7 @@ export default function Footer() {
     "Schröpfen",
   ]
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
+  
 
   const toggleSection = (section: string) => {
     setOpenSections(prev => ({
@@ -47,31 +44,18 @@ export default function Footer() {
           {/* Company Info - Always visible */}
           <div className="space-y-6 text-center md:text-left">
             <div className="flex items-center space-x-3 justify-center md:justify-start">
-              <img 
-                src="/Logo-400.png" 
+            <img 
+                src="/Logo.svg" 
                 alt="Praxis für Osteopathie u. Naturheilkunde Logo" 
                 className="w-10 h-10 object-contain"
               />
               <div>
                 <div className="text-xl font-bold">Melanie Bretscher</div>
-                <div className="text-sm text-gray-400">Osteopathie & Naturheilkunde</div>
+                <div className="text-sm text-gray-400">Osteopathie | Naturheilkunde | Physiotherapie</div>
               </div>
             </div>
 
-            <div className="flex space-x-4 justify-center md:justify-start">
-              <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
+            
           </div>
 
           {/* Services Block 1 */}
@@ -95,12 +79,25 @@ export default function Footer() {
                   <ul className="space-y-3 text-center">
                     {services1.map((service, index) => (
                       <li key={index}>
-                        <button
-                          onClick={() => scrollToSection("services")}
-                          className="text-gray-300 hover:text-green-400 transition-colors text-sm w-full"
-                        >
-                          {service}
-                        </button>
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <button className="text-gray-300 hover:text-pink-600 transition-colors text-sm w-full">
+                              {service}
+                            </button>
+                          </DialogTrigger>
+                          <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                            <DialogHeader className="border-b border-gray-800 pb-4">
+                              <DialogTitle className="text-xl font-semibold text-pink-600">{service}</DialogTitle>
+                              <DialogDescription className="flex items-center gap-2 text-gray-300">
+                                <Clock className="w-4 h-4 text-pink-600" />
+                                {SERVICE_CONTENT[service]?.duration}
+                              </DialogDescription>
+                            </DialogHeader>
+                            <div className="py-6">
+                              <ServiceModalContent name={service} variant="dark" />
+                            </div>
+                          </DialogContent>
+                        </Dialog>
                       </li>
                     ))}
                   </ul>
@@ -114,12 +111,25 @@ export default function Footer() {
               <ul className="space-y-3">
                 {services1.map((service, index) => (
                   <li key={index}>
-                    <button
-                      onClick={() => scrollToSection("services")}
-                      className="text-gray-300 hover:text-green-400 transition-colors text-sm text-left"
-                    >
-                      {service}
-                    </button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="text-gray-300 hover:text-pink-600 transition-colors text-sm text-left">
+                          {service}
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader className="border-b border-gray-800 pb-4">
+                          <DialogTitle className="text-xl font-semibold text-pink-600">{service}</DialogTitle>
+                          <DialogDescription className="flex items-center gap-2 text-gray-300">
+                            <Clock className="w-4 h-4 text-pink-600" />
+                            {SERVICE_CONTENT[service]?.duration}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="py-6">
+                          <ServiceModalContent name={service} variant="dark" />
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </li>
                 ))}
               </ul>
@@ -147,12 +157,25 @@ export default function Footer() {
                   <ul className="space-y-3 text-center">
                     {services2.map((service, index) => (
                       <li key={index}>
-                        <button
-                          onClick={() => scrollToSection("services")}
-                          className="text-gray-300 hover:text-green-400 transition-colors text-sm w-full"
-                        >
-                          {service}
-                        </button>
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <button className="text-gray-300 hover:text-pink-600 transition-colors text-sm w-full">
+                              {service}
+                            </button>
+                          </DialogTrigger>
+                          <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                            <DialogHeader className="border-b border-gray-800 pb-4">
+                              <DialogTitle className="text-xl font-semibold text-pink-600">{service}</DialogTitle>
+                              <DialogDescription className="flex items-center gap-2 text-gray-300">
+                                <Clock className="w-4 h-4 text-pink-600" />
+                                {SERVICE_CONTENT[service]?.duration}
+                              </DialogDescription>
+                            </DialogHeader>
+                            <div className="py-6">
+                              <ServiceModalContent name={service} variant="dark" />
+                            </div>
+                          </DialogContent>
+                        </Dialog>
                       </li>
                     ))}
                   </ul>
@@ -166,12 +189,25 @@ export default function Footer() {
               <ul className="space-y-3">
                 {services2.map((service, index) => (
                   <li key={index}>
-                    <button
-                      onClick={() => scrollToSection("services")}
-                      className="text-gray-300 hover:text-green-400 transition-colors text-sm text-left"
-                    >
-                      {service}
-                    </button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="text-gray-300 hover:text-pink-600 transition-colors text-sm text-left">
+                          {service}
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader className="border-b border-gray-800 pb-4">
+                          <DialogTitle className="text-xl font-semibold text-pink-600">{service}</DialogTitle>
+                          <DialogDescription className="flex items-center gap-2 text-gray-300">
+                            <Clock className="w-4 h-4 text-pink-600" />
+                            {SERVICE_CONTENT[service]?.duration}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="py-6">
+                          <ServiceModalContent name={service} variant="dark" />
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </li>
                 ))}
               </ul>
@@ -198,26 +234,26 @@ export default function Footer() {
                 <CollapsibleContent>
                   <div className="space-y-4 text-center">
                     <div className="flex items-start space-x-3 justify-center">
-                      <MapPin className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <MapPin className="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" />
                       <div className="text-sm text-gray-300">
-                        <p>Krefelderstr. 193</p>
+                      <p>Krefelder Str. 97a</p>
                         <p>52070 Aachen</p>
                         <p>Praxis für Osteopathie u. Naturheilkunde</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3 justify-center">
-                      <Phone className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <Phone className="w-5 h-5 text-pink-600 flex-shrink-0" />
                       <span className="text-sm text-gray-300">0241 - 4464848</span>
                     </div>
                     <div className="flex items-center space-x-3 justify-center">
-                      <Mail className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <Mail className="w-5 h-5 text-pink-600 flex-shrink-0" />
                       <span className="text-sm text-gray-300">melaniebretscher@netcologne.de</span>
                     </div>
                     <div className="flex items-start space-x-3 justify-center">
-                      <Clock className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <Clock className="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" />
                       <div className="text-sm text-gray-300">
-                        <p>Mo-Fr: 8:00-18:00</p>
-                        <p>Samstag: 9:00-15:00</p>
+                        <p>Mo-Dr: 8:00-18:00</p>
+                        <p>Fr-Sa: Termine nach Vereinbarung</p>
                         <p>Sonntag: Geschlossen</p>
                       </div>
                     </div>
@@ -231,26 +267,26 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-6">Kontaktinformationen</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                  <MapPin className="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" />
                   <div className="text-sm text-gray-300">
-                    <p>Krefelderstr. 193</p>
+                    <p>Krefelder Str. 97a</p>
                     <p>52070 Aachen</p>
                     <p>Praxis für Osteopathie u. Naturheilkunde</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <Phone className="w-5 h-5 text-pink-600 flex-shrink-0" />
                   <span className="text-sm text-gray-300">0241 - 4464848</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <Mail className="w-5 h-5 text-pink-600 flex-shrink-0" />
                   <span className="text-sm text-gray-300">melaniebretscher@netcologne.de</span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Clock className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                  <Clock className="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" />
                   <div className="text-sm text-gray-300">
-                    <p>Mo-Fr: 8:00-18:00</p>
-                    <p>Samstag: 9:00-15:00</p>
+                    <p>Mo-Dr: 8:00-18:00</p>
+                    <p>Fr-Sa: Termine nach Vereinbarung</p>
                     <p>Sonntag: Geschlossen</p>
                   </div>
                 </div>

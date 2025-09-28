@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -55,7 +56,7 @@ export default function ContactForm() {
       <CardContent className="p-6">
         {isSubmitted ? (
           <div className="text-center py-8">
-            <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+            <CheckCircle className="w-16 h-16 text-pink-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Nachricht gesendet!</h3>
             <p className="text-gray-600">Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns bald bei Ihnen.</p>
           </div>
@@ -73,7 +74,7 @@ export default function ContactForm() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                  className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                   placeholder="Ihr vollständiger Name"
                 />
               </div>
@@ -88,7 +89,7 @@ export default function ContactForm() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                  className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                   placeholder="ihre.email@beispiel.de"
                 />
               </div>
@@ -105,7 +106,7 @@ export default function ContactForm() {
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                  className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                   placeholder="0241 - 4464848"
                 />
               </div>
@@ -113,20 +114,30 @@ export default function ContactForm() {
                 <Label htmlFor="service" className="text-gray-700 font-medium">
                   Interessierte Leistung
                 </Label>
-                <select
-                  id="service"
-                  name="service"
+                <Select
                   value={formData.service}
-                  onChange={handleChange}
-                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-green-500 focus:ring-green-500 bg-white"
+                  onValueChange={(value) =>
+                    setFormData({ ...formData, service: value })
+                  }
                 >
-                  <option value="">Leistung auswählen</option>
-                  {services.map((service, index) => (
-                    <option key={index} value={service}>
-                      {service}
-                    </option>
-                  ))}
-                </select>
+                  <SelectTrigger
+                    id="service"
+                    className="mt-1 w-full border border-gray-300 rounded-md focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0"
+                  >
+                    <SelectValue placeholder="Leistung auswählen" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white">
+                    {services.map((service, index) => (
+                      <SelectItem
+                        key={index}
+                        value={service}
+                        className="hover:bg-pink-50 focus:bg-pink-100 focus:text-pink-700 data-[highlighted]:bg-pink-100 data-[highlighted]:text-pink-700 data-[state=checked]:bg-pink-100 data-[state=checked]:text-pink-700"
+                      >
+                        {service}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             </div>
 
@@ -141,7 +152,7 @@ export default function ContactForm() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                 placeholder="Erzählen Sie uns von Ihrem Zustand, Symptomen oder Fragen, die Sie haben..."
               />
             </div>
@@ -149,7 +160,7 @@ export default function ContactForm() {
             <Button
               type="submit"
               size="lg"
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-full text-lg font-semibold"
+              className="w-full bg-pink-600 hover:bg-pink-700 text-white py-3 rounded-full text-lg font-semibold"
             >
               Nachricht senden
               <Send className="ml-2 w-5 h-5" />

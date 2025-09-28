@@ -9,7 +9,7 @@ import CookieConsentBanner from "@/components/cookie-consent"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Melanie Bretscher - Osteopathie & Naturheilkunde in Aachen",
+  title: "Melanie Bretscher | Osteopathie | Naturheilkunde | Physiotherapie",
   description:
     "Professionelle osteopathische und naturheilkundliche Versorgung mit personalisierten Behandlungsplänen. Spezialisiert auf Osteopathie, Ohrakupunktur, Phytotherapie und Physiotherapie.",
   keywords:

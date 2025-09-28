@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -50,13 +51,13 @@ export default function ContactPage() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Adresse",
-      details: "Krefelderstr. 193, 52070 Aachen",
+      details: "Krefelder Str. 97a, 52070 Aachen",
       subtitle: "Praxis für Osteopathie u. Naturheilkunde",
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Öffnungszeiten",
-      details: "Mo-Fr: 8:00-18:00, Sa: 9:00-15:00",
+      details: "Mo-Dr: 8:00-18:00 | Fr-Sa: Termine nach Vereinbarung",
       subtitle: "Sonntags geschlossen",
     },
   ]
@@ -76,7 +77,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-green-100/20">
+      <section className="py-20 bg-gradient-to-br from-white via-teal-50/30 to-teal-100/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Vereinbaren Sie Ihren Termin</h1>
@@ -95,10 +96,10 @@ export default function ContactPage() {
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
-                className="text-center border-0 bg-gradient-to-b from-white to-green-50/30 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-center border-0 bg-gradient-to-b from-white to-teal-50/30 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-6">
-                  <div className="flex justify-center mb-4 text-green-600">{info.icon}</div>
+                  <div className="flex justify-center mb-4 text-pink-600">{info.icon}</div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h3>
                   <p className="text-gray-700 font-medium mb-1">{info.details}</p>
                   <p className="text-sm text-gray-600">{info.subtitle}</p>
@@ -110,7 +111,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form and Map */}
-      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-teal-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -122,7 +123,7 @@ export default function ContactPage() {
               <CardContent className="p-6">
                 {isSubmitted ? (
                   <div className="text-center py-8">
-                    <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                    <CheckCircle className="w-16 h-16 text-pink-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Nachricht gesendet!</h3>
                     <p className="text-gray-600">Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns bald bei Ihnen.</p>
                   </div>
@@ -140,7 +141,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                          className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="Ihr vollständiger Name"
                         />
                       </div>
@@ -155,7 +156,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                          className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="ihre.email@beispiel.de"
                         />
                       </div>
@@ -172,7 +173,7 @@ export default function ContactPage() {
                           type="tel"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                          className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="0241 - 4464848"
                         />
                       </div>
@@ -180,20 +181,30 @@ export default function ContactPage() {
                         <Label htmlFor="service" className="text-gray-700 font-medium">
                           Interessierte Leistung
                         </Label>
-                        <select
-                          id="service"
-                          name="service"
+                        <Select
                           value={formData.service}
-                          onChange={handleChange}
-                          className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:border-green-500 focus:ring-green-500 bg-white"
+                          onValueChange={(value) =>
+                            setFormData({ ...formData, service: value })
+                          }
                         >
-                          <option value="">Leistung auswählen</option>
-                          {services.map((service, index) => (
-                            <option key={index} value={service}>
-                              {service}
-                            </option>
-                          ))}
-                        </select>
+                          <SelectTrigger
+                            id="service"
+                            className="mt-1 w-full border border-gray-300 rounded-md focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0"
+                          >
+                            <SelectValue placeholder="Leistung auswählen" />
+                          </SelectTrigger>
+                          <SelectContent className="bg-white">
+                            {services.map((service, index) => (
+                              <SelectItem
+                                key={index}
+                                value={service}
+                                className="hover:bg-pink-50 focus:bg-pink-100 focus:text-pink-700 data-[highlighted]:bg-pink-100 data-[highlighted]:text-pink-700 data-[state=checked]:bg-pink-100 data-[state=checked]:text-pink-700"
+                              >
+                                {service}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                       </div>
                     </div>
 
@@ -208,7 +219,7 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="mt-1 border-gray-300 focus:border-green-500 focus:ring-green-500"
+                        className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                         placeholder="Erzählen Sie uns von Ihrem Zustand, Symptomen oder Fragen, die Sie haben..."
                       />
                     </div>
@@ -216,7 +227,7 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-full text-lg font-semibold"
+                      className="w-full bg-pink-600 hover:bg-pink-700 text-white py-3 rounded-full text-lg font-semibold"
                     >
                       Nachricht senden
                       <Send className="ml-2 w-5 h-5" />
@@ -232,43 +243,43 @@ export default function ContactPage() {
               <Card className="border-0 shadow-xl overflow-hidden">
                 <div className="aspect-[4/3] relative">
                   <iframe
-                    src="https://maps.google.com/maps?q=Krefelderstr.+193,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Krefelder+Str.+97a,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelderstr. 193, 52070 Aachen"
+                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelder Str. 97a, 52070 Aachen"
                     className="absolute inset-0"
                   ></iframe>
                   <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                     <div className="text-center">
-                      <MapPin className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                      <MapPin className="w-5 h-5 text-pink-600 mx-auto mb-2" />
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Praxis für Osteopathie u. Naturheilkunde</h3>
-                      <p className="text-gray-700 font-medium">Krefelderstr. 193, 52070 Aachen</p>
+                      <p className="text-gray-700 font-medium">Krefelder Str. 97a, 52070 Aachen</p>
                     </div>
                   </div>
                 </div>
               </Card>
 
               {/* Quick Contact */}
-              <Card className="border-0 bg-gradient-to-r from-green-600 to-green-700 text-white shadow-xl">
+              <Card className="border-0 bg-gradient-to-r from-teal-600 to-teal-700 text-white shadow-xl">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Sofortige Hilfe benötigt?</h3>
-                  <p className="mb-6 text-green-100">
+                  <p className="mb-6 text-teal-100">
                     Für dringende Angelegenheiten oder um sofort mit jemandem zu sprechen, rufen Sie uns während der Geschäftszeiten an.
                   </p>
                   <div className="space-y-3">
                     <Button
                       variant="outline"
                       size="lg"
-                      className="w-full border-2 border-white text-white hover:bg-white hover:text-green-600 rounded-full bg-transparent"
+                      className="w-full border-2 border-white text-white hover:bg-white hover:text-pink-600 rounded-full bg-transparent"
                     >
                       <Phone className="mr-2 w-5 h-5" />
                       Anrufen 0241 - 4464848
                     </Button>
-                    <div className="text-center text-sm text-green-100">Mo-Fr: 8:00-18:00 | Sa: 9:00-15:00</div>
+                    <div className="text-center text-sm text-teal-100">Mo-Dr: 8:00-18:00 | Fr-Sa: Termine nach Vereinbarung</div>
                   </div>
                 </CardContent>
               </Card>
