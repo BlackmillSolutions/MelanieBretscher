@@ -131,9 +131,9 @@ export function ImpressumContent() {
     >
       <div className="space-y-6">
         <section>
-          <h2 className="text-lg font-semibold text-white mb-3">Angaben gemäß § 5 TMG</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">Angaben gemäß § 5 TMG</h2>
           <div className="space-y-2">
-            <p><strong className="text-white">Melanie Bretscher</strong></p>
+            <p><strong className="text-gray-900">Melanie Bretscher</strong></p>
             <p>Praxis für Osteopathie und Naturheilkunde</p>
             <p>Krefelder Str. 97a</p>
             <p>52070 Aachen</p>
@@ -151,9 +151,9 @@ export function ImpressumContent() {
         <section>
           <h3 className="text-md font-medium text-[#f8b5c1] mb-2">Berufsbezeichnung und berufsrechtliche Regelungen</h3>
           <div className="space-y-2">
-            <p><strong className="text-white">Berufsbezeichnung:</strong> Heilpraktikerin</p>
-            <p><strong className="text-white">Zuständige Kammer:</strong> Gesundheitsamt Aachen</p>
-            <p><strong className="text-white">Verliehen durch:</strong> Deutschland</p>
+            <p><strong className="text-gray-900">Berufsbezeichnung:</strong> Heilpraktikerin</p>
+            <p><strong className="text-gray-900">Zuständige Kammer:</strong> Gesundheitsamt Köln</p>
+            <p><strong className="text-gray-900">Verliehen durch:</strong> VDO Verband der Osteopathen e.V.</p>
           </div>
         </section>
 
@@ -185,7 +185,7 @@ export function PatientRightsContent() {
     >
       <div className="space-y-6">
         <section>
-          <h2 className="text-lg font-semibold text-white mb-3">Ihre Rechte als Patient</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">Ihre Rechte als Patient</h2>
           <p className="mb-4">
             Als Patient haben Sie bestimmte Rechte, die wir respektieren und fördern. 
             Hier finden Sie eine Übersicht über Ihre wichtigsten Patientenrechte.
