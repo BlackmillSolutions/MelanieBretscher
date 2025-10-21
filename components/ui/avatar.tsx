@@ -81,7 +81,7 @@ const InitialsAvatar = React.forwardRef<HTMLDivElement, InitialsAvatarProps>(
       <div
         ref={ref}
         className={cn(
-          "flex items-center justify-center rounded-full bg-pink-600 text-white font-semibold",
+          "flex items-center justify-center rounded-full bg-[#f8b5c1] text-white font-semibold",
           sizeClasses,
           className
         )}

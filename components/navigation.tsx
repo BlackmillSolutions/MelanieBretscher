@@ -121,14 +121,14 @@ export default function Navigation() {
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={`font-medium transition-colors duration-200 text-sm ${
-                    activeSection === item.href ? "text-pink-600" : "text-gray-700 hover:text-pink-600"
+                    activeSection === item.href ? "text-[#f8b5c1]" : "text-gray-700 hover:text-[#f8b5c1]"
                   }`}
                 >
                   {item.name}
                 </button>
               ))}
               <Button
-                className="bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-600 hover:to-pink-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-[#f8b5c1] to-[#f4a6b3] hover:from-[#f8b5c1] hover:to-[#f4a6b3] text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => scrollToSection("contact")}
               >
                 Termin vereinbaren
@@ -139,7 +139,7 @@ export default function Navigation() {
             <div className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 hover:text-pink-600 transition-colors"
+                className="text-gray-700 hover:text-[#f8b5c1] transition-colors"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -157,14 +157,14 @@ export default function Navigation() {
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
                     className={`block w-full text-center font-medium transition-colors duration-200 ${
-                      activeSection === item.href ? "text-pink-600" : "text-gray-700 hover:text-pink-600"
+                      activeSection === item.href ? "text-[#f8b5c1]" : "text-gray-700 hover:text-[#f8b5c1]"
                     }`}
                   >
                     {item.name}
                   </button>
                 ))}
                 <Button
-                  className="w-full bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-600 hover:to-pink-700 text-white py-3 rounded-full mt-4 shadow-lg"
+                  className="w-full bg-gradient-to-r from-[#f8b5c1] to-[#f4a6b3] hover:from-[#f8b5c1] hover:to-[#f4a6b3] text-white py-3 rounded-full mt-4 shadow-lg"
                   onClick={() => scrollToSection("contact")}
                 >
                   Termin vereinbaren
@@ -172,23 +172,23 @@ export default function Navigation() {
 
                 <div className="pt-4 mt-4 border-t border-gray-200 space-y-3">
                   <div className="flex items-center justify-center gap-2">
-                    <Phone className="w-5 h-5 text-pink-600" />
-                    <a href={`tel:${CONTACT.phone.replace(/\s|-/g, "")}`} className="text-gray-800 hover:text-pink-600">
+                    <Phone className="w-5 h-5 text-[#f8b5c1]" />
+                    <a href={`tel:${CONTACT.phone.replace(/\s|-/g, "")}`} className="text-gray-800 hover:text-[#f8b5c1]">
                       {CONTACT.phone}
                     </a>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <Mail className="w-5 h-5 text-pink-600" />
-                    <a href={`mailto:${CONTACT.email}`} className="text-gray-800 hover:text-pink-600">
+                    <Mail className="w-5 h-5 text-[#f8b5c1]" />
+                    <a href={`mailto:${CONTACT.email}`} className="text-gray-800 hover:text-[#f8b5c1]">
                       {CONTACT.email}
                     </a>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <MapPin className="w-5 h-5 text-pink-600" />
+                    <MapPin className="w-5 h-5 text-[#f8b5c1]" />
                     <span className="text-gray-800">{CONTACT.address}</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <Clock className="w-5 h-5 text-pink-600" />
+                    <Clock className="w-5 h-5 text-[#f8b5c1]" />
                     <span className="text-gray-800">{CONTACT.hoursShort}</span>
                   </div>
                 </div>

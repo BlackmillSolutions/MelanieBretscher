@@ -111,7 +111,7 @@ export default function TestimonialsPage() {
                 <div key={index} className="text-center">
                   <AnimatedCounter 
                     value={stat.number} 
-                    className="text-3xl lg:text-4xl font-bold text-pink-600 mb-2"
+                    className="text-3xl lg:text-4xl font-bold text-[#f8b5c1] mb-2"
                     duration={2500}
                   />
                   <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
@@ -128,7 +128,7 @@ export default function TestimonialsPage() {
           <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-teal-50 to-teal-100/50 shadow-xl">
             <CardContent className="p-8 lg:p-12">
               <div className="flex justify-center mb-6">
-                <Quote className="w-12 h-12 text-pink-600" />
+                <Quote className="w-12 h-12 text-[#f8b5c1]" />
               </div>
               <blockquote className="text-2xl lg:text-3xl text-gray-700 text-center mb-8 italic leading-relaxed">
                 "Diese Praxis hat mein Leben komplett verändert. Nach Jahren chronischer Schmerzen habe ich endlich ein Team gefunden, 
@@ -227,7 +227,7 @@ export default function TestimonialsPage() {
                 <div className="aspect-video bg-gradient-to-br from-teal-100 to-teal-200 relative group cursor-pointer">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                      <div className="w-0 h-0 border-l-[12px] border-l-pink-600 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                      <div className="w-0 h-0 border-l-[12px] border-l-[#f8b5c1] border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
@@ -253,7 +253,7 @@ export default function TestimonialsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-pink-600 hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold"
+              className="bg-white text-[#f8b5c1] hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold"
             >
               Ihre Beratung vereinbaren
               <ArrowRight className="ml-2 w-5 h-5" />
