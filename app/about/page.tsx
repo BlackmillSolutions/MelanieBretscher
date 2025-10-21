@@ -52,7 +52,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-green-100/20">
+      <section className="py-20 bg-gradient-to-br from-white via-teal-100/40 to-teal-200/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Über unsere Praxis</h1>
@@ -100,7 +100,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-green-100 to-green-200">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-teal-200 to-teal-300">
                 <Image
                   src="/placeholder.svg?height=400&width=500"
                   alt="Moderne Osteopathie-Praxis Innenraum"
@@ -115,7 +115,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-teal-100/40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
 
@@ -172,7 +172,7 @@ export default function AboutPage() {
                 key={index}
                 className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200">
+                <div className="aspect-square bg-gradient-to-br from-teal-200 to-teal-300">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
@@ -205,7 +205,7 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials */}
-      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-teal-100/40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -222,7 +222,7 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   {credentials.map((credential, index) => (
                     <div key={index} className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-4 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-teal-700 mr-4 flex-shrink-0" />
                       <span className="text-gray-700">{credential}</span>
                     </div>
                   ))}
@@ -236,7 +236,7 @@ export default function AboutPage() {
       {/* Patient Testimonial */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-green-50 to-green-100/50 shadow-lg">
+          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-teal-100 to-teal-200/60 shadow-lg">
             <CardContent className="p-8 lg:p-12 text-center">
               <div className="flex justify-center mb-6">
                 {[...Array(5)].map((_, i) => (

@@ -84,13 +84,13 @@
 }
 
 .animated-gradient {
-  background: linear-gradient(-45deg, #2ec4b6, #1bb3a9, #159e97, #0f827d, #2ec4b6, #3ad7c9);
+  background: linear-gradient(-45deg, #6ee7b7, #4ade80, #2dd4bf, #14b8a6, #6ee7b7, #5eead4);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
 }
 
 .animated-gradient-reverse {
-  background: linear-gradient(45deg, #2ec4b6, #1bb3a9, #159e97, #0f827d, #2ec4b6, #3ad7c9);
+  background: linear-gradient(45deg, #6ee7b7, #4ade80, #2dd4bf, #14b8a6, #6ee7b7, #5eead4);
   background-size: 400% 400%;
   animation: gradientShiftReverse 10s ease infinite;
 }
@@ -100,14 +100,14 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(46, 196, 182, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(45, 212, 191, 0.37);
 }
 
 .glass-card-light {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(46, 196, 182, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(45, 212, 191, 0.15);
 }
 
 /* Custom scrollbar */
