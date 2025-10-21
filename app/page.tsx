@@ -335,16 +335,16 @@ export default function HomePage() {
                       Mehr
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
-                    <DialogHeader className="border-b border-gray-800 pb-4">
+                  <DialogContent className="bg-white text-gray-800 border-gray-200 max-w-4xl max-h-[80vh] overflow-y-auto shadow-xl">
+                    <DialogHeader className="border-b border-gray-300 pb-4">
                       <DialogTitle className="text-xl font-semibold text-[#f8b5c1]">{service.title}</DialogTitle>
-                      <DialogDescription className="flex items-center gap-2 text-gray-300">
+                      <DialogDescription className="flex items-center gap-2 text-gray-600">
                         <Clock className="w-4 h-4 text-[#f8b5c1]" />
                         {SERVICE_CONTENT[service.title]?.duration || service.duration}
                       </DialogDescription>
                     </DialogHeader>
                     <div className="py-6">
-                      <ServiceModalContent name={service.title} variant="dark" />
+                      <ServiceModalContent name={service.title} variant="light" />
                     </div>
                   </DialogContent>
                 </Dialog>
