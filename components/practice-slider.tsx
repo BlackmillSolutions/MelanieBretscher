@@ -18,7 +18,7 @@ export default function PracticeSlider() {
     },
     {
       id: 2,
-      title: "Rezeption und Wartebereich",
+      title: "Rezeption",
       description: "Detailansicht unseres modernen Empfangsbereichs",
       image: "/images/Rezeption und Wartebereich (2).jpeg",
     },

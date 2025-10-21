@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Award, Users, Building, Star, Zap, Heart, Trophy } from "lucide-react"
+import { Award, Users, Building, Star, Zap, Heart, Trophy, ChevronDown, ChevronUp } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function HistoryTimeline() {
   const [animatedItems, setAnimatedItems] = useState<number[]>([])
+  const [isExpanded, setIsExpanded] = useState(false)
+  const initialVisibleCount = 4 // Show first 4 events initially
 
   const timelineEvents = [
     {
@@ -64,8 +67,19 @@ export default function HistoryTimeline() {
     },
   ]
 
+  // Determine which events to show
+  const visibleEvents = isExpanded 
+    ? timelineEvents 
+    : timelineEvents.slice(0, initialVisibleCount)
+  
+  const hasMoreEvents = timelineEvents.length > initialVisibleCount
+
+  const toggleExpansion = () => {
+    setIsExpanded(!isExpanded)
+  }
+
   useEffect(() => {
-    const totalItems = timelineEvents.length
+    const totalItems = visibleEvents.length
 
     // Respect reduced motion preferences: show all items immediately
     if (typeof window !== "undefined" && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -100,7 +114,7 @@ export default function HistoryTimeline() {
 
     // Fallback: sequential reveal
     const timerIds: number[] = []
-    timelineEvents.forEach((_, index) => {
+    visibleEvents.forEach((_, index) => {
       const id = window.setTimeout(() => {
         setAnimatedItems((prev) => (prev.includes(index) ? prev : [...prev, index]))
       }, 400 + index * 150)
@@ -109,7 +123,7 @@ export default function HistoryTimeline() {
     return () => {
       timerIds.forEach((id) => clearTimeout(id))
     }
-  }, [])
+  }, [visibleEvents])
 
   return (
     <div className="relative max-w-4xl mx-auto">
@@ -117,7 +131,7 @@ export default function HistoryTimeline() {
       <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-white/30 h-full rounded-full"></div>
 
       <div className="space-y-6">
-        {timelineEvents.map((event, index) => (
+        {visibleEvents.map((event, index) => (
           <div 
             key={index} 
             data-tl-item="true"
@@ -207,6 +221,29 @@ export default function HistoryTimeline() {
             </div>
           </div>
         ))}
+        
+        {/* Expand/Collapse Button */}
+        {hasMoreEvents && (
+          <div className="flex justify-center mt-8">
+            <Button
+              onClick={toggleExpansion}
+              variant="outline"
+              className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 px-6 py-3 rounded-lg"
+            >
+              {isExpanded ? (
+                <>
+                  <ChevronUp className="w-4 h-4 mr-2" />
+                  Weniger anzeigen
+                </>
+              ) : (
+                <>
+                  <ChevronDown className="w-4 h-4 mr-2" />
+                  Mehr anzeigen ({timelineEvents.length - initialVisibleCount} weitere)
+                </>
+              )}
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   )
