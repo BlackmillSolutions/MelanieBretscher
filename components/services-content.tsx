@@ -202,7 +202,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
 export function ServiceModalContent({ name, variant = "light" }: { name: string; variant?: "light" | "dark" }) {
   const content = SERVICE_CONTENT[name]
-  const headingClass = variant === "dark" ? "font-semibold text-pink-600 mb-1" : "font-semibold text-gray-900 mb-1"
+  const headingClass = variant === "dark" ? "font-semibold text-[#f8b5c1] mb-1" : "font-semibold text-gray-900 mb-1"
   const textClass = variant === "dark" ? "text-gray-300 leading-relaxed text-sm" : "text-gray-700 leading-relaxed text-sm"
   if (!content) return null
   return (

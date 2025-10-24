@@ -99,7 +99,7 @@ export default function ContactPage() {
                 className="text-center border-0 bg-gradient-to-b from-white to-teal-50/30 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-6">
-                  <div className="flex justify-center mb-4 text-pink-600">{info.icon}</div>
+                  <div className="flex justify-center mb-4 text-[#f8b5c1]">{info.icon}</div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h3>
                   <p className="text-gray-700 font-medium mb-1">{info.details}</p>
                   <p className="text-sm text-gray-600">{info.subtitle}</p>
@@ -123,7 +123,7 @@ export default function ContactPage() {
               <CardContent className="p-6">
                 {isSubmitted ? (
                   <div className="text-center py-8">
-                    <CheckCircle className="w-16 h-16 text-pink-600 mx-auto mb-4" />
+                    <CheckCircle className="w-16 h-16 text-[#f8b5c1] mx-auto mb-4" />
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Nachricht gesendet!</h3>
                     <p className="text-gray-600">Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns bald bei Ihnen.</p>
                   </div>
@@ -141,7 +141,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                          className="mt-1 border-gray-300 focus:border-[#f8b5c1] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="Ihr vollständiger Name"
                         />
                       </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                          className="mt-1 border-gray-300 focus:border-[#f8b5c1] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="ihre.email@beispiel.de"
                         />
                       </div>
@@ -173,7 +173,7 @@ export default function ContactPage() {
                           type="tel"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                          className="mt-1 border-gray-300 focus:border-[#f8b5c1] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                           placeholder="0241 - 4464848"
                         />
                       </div>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                         >
                           <SelectTrigger
                             id="service"
-                            className="mt-1 w-full border border-gray-300 rounded-md focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0"
+                            className="mt-1 w-full border border-gray-300 rounded-md focus:border-[#f8b5c1] focus:ring-0 focus-visible:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0"
                           >
                             <SelectValue placeholder="Leistung auswählen" />
                           </SelectTrigger>
@@ -198,7 +198,7 @@ export default function ContactPage() {
                               <SelectItem
                                 key={index}
                                 value={service}
-                                className="hover:bg-pink-50 focus:bg-pink-100 focus:text-pink-700 data-[highlighted]:bg-pink-100 data-[highlighted]:text-pink-700 data-[state=checked]:bg-pink-100 data-[state=checked]:text-pink-700"
+                                className="hover:bg-[#f8b5c1]/10 focus:bg-[#f8b5c1]/20 focus:text-[#f4a6b3] data-[highlighted]:bg-[#f8b5c1]/20 data-[highlighted]:text-[#f4a6b3] data-[state=checked]:bg-[#f8b5c1]/20 data-[state=checked]:text-[#f4a6b3]"
                               >
                                 {service}
                               </SelectItem>
@@ -219,7 +219,7 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="mt-1 border-gray-300 focus:border-pink-600 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                        className="mt-1 border-gray-300 focus:border-[#f8b5c1] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                         placeholder="Erzählen Sie uns von Ihrem Zustand, Symptomen oder Fragen, die Sie haben..."
                       />
                     </div>
@@ -227,7 +227,7 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-pink-600 hover:bg-pink-700 text-white py-3 rounded-full text-lg font-semibold"
+                      className="w-full bg-[#f8b5c1] hover:bg-[#f4a6b3] text-white py-3 rounded-full text-lg font-semibold"
                     >
                       Nachricht senden
                       <Send className="ml-2 w-5 h-5" />
@@ -255,7 +255,7 @@ export default function ContactPage() {
                   ></iframe>
                   <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                     <div className="text-center">
-                      <MapPin className="w-5 h-5 text-pink-600 mx-auto mb-2" />
+                      <MapPin className="w-5 h-5 text-[#f8b5c1] mx-auto mb-2" />
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Praxis für Osteopathie u. Naturheilkunde</h3>
                       <p className="text-gray-700 font-medium">Krefelder Str. 97a, 52070 Aachen</p>
                     </div>
@@ -274,7 +274,7 @@ export default function ContactPage() {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="w-full border-2 border-white text-white hover:bg-white hover:text-pink-600 rounded-full bg-transparent"
+                      className="w-full border-2 border-white text-white hover:bg-white hover:text-[#f8b5c1] rounded-full bg-transparent"
                     >
                       <Phone className="mr-2 w-5 h-5" />
                       Anrufen 0241 - 4464848

@@ -106,7 +106,7 @@ export function CookieConsentBanner(): React.ReactElement | null {
                   id="analytics"
                   checked={analytics}
                   onCheckedChange={setAnalytics}
-                  className="data-[state=checked]:!bg-pink-600"
+                  className="data-[state=checked]:!bg-[#f8b5c1]"
                 />
                 <label htmlFor="analytics" className="text-sm text-muted-foreground">
                   Analyse-Cookies
@@ -117,7 +117,7 @@ export function CookieConsentBanner(): React.ReactElement | null {
                   id="marketing"
                   checked={marketing}
                   onCheckedChange={setMarketing}
-                  className="data-[state=checked]:!bg-pink-600"
+                  className="data-[state=checked]:!bg-[#f8b5c1]"
                 />
                 <label htmlFor="marketing" className="text-sm text-muted-foreground">
                   Marketing-Cookies
@@ -140,7 +140,7 @@ export function CookieConsentBanner(): React.ReactElement | null {
               Auswahl speichern
             </Button>
             <Button
-              className="bg-pink-600 text-white hover:bg-pink-700"
+              className="bg-[#f8b5c1] text-white hover:bg-[#f4a6b3]"
               onClick={() => {
                 setAnalytics(true);
                 setMarketing(true);

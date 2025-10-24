@@ -17,13 +17,13 @@ export default function LegalModal({ title, children, trigger }: LegalModalProps
       <DialogTrigger asChild>
         {trigger}
       </DialogTrigger>
-      <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
-        <DialogHeader className="border-b border-gray-800 pb-4">
-          <DialogTitle className="text-xl font-semibold text-white">
+      <DialogContent className="bg-white text-gray-800 border-gray-200 max-w-4xl max-h-[80vh] overflow-y-auto shadow-xl">
+        <DialogHeader className="border-b border-gray-300 pb-4">
+          <DialogTitle className="text-xl font-semibold text-gray-900">
             {title}
           </DialogTitle>
         </DialogHeader>
-        <div className="py-6 text-gray-300 leading-relaxed">
+        <div className="py-6 text-gray-700 leading-relaxed">
           {children}
         </div>
       </DialogContent>

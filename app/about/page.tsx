@@ -52,7 +52,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-green-100/20">
+      <section className="py-20 bg-gradient-to-br from-white via-teal-100/40 to-teal-200/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Über unsere Praxis</h1>
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 <div className="text-center">
                   <AnimatedCounter 
                     value="30+" 
-                    className="text-3xl font-bold text-pink-600 mb-2"
+                    className="text-3xl font-bold text-[#f8b5c1] mb-2"
                     duration={2500}
                   />
                   <div className="text-gray-600">Jahre im Dienst</div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 <div className="text-center">
                   <AnimatedCounter 
                     value="10K+" 
-                    className="text-3xl font-bold text-pink-600 mb-2"
+                    className="text-3xl font-bold text-[#f8b5c1] mb-2"
                     duration={2500}
                   />
                   <div className="text-gray-600">Patienten geholfen</div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-green-100 to-green-200">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-teal-200 to-teal-300">
                 <Image
                   src="/placeholder.svg?height=400&width=500"
                   alt="Moderne Osteopathie-Praxis Innenraum"
@@ -115,7 +115,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-teal-100/40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
 
@@ -125,7 +125,7 @@ export default function AboutPage() {
               .filter((v) => v.title === PRIMARY_VALUE_TITLE)
               .map((v) => (
                 <div key={v.title} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-pink-600 mx-auto mb-3 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-[#f8b5c1] mx-auto mb-3 flex items-center justify-center">
                     <Image src="/green_spiral.svg" alt="Green Spiral" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{v.title}</h3>
@@ -172,7 +172,7 @@ export default function AboutPage() {
                 key={index}
                 className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200">
+                <div className="aspect-square bg-gradient-to-br from-teal-200 to-teal-300">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
@@ -183,7 +183,7 @@ export default function AboutPage() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-pink-600 font-semibold mb-2">{member.role}</p>
+                  <p className="text-[#f8b5c1] font-semibold mb-2">{member.role}</p>
                   <p className="text-sm text-gray-600 mb-3">
                     {member.credentials} • {member.experience}
                   </p>
@@ -191,7 +191,7 @@ export default function AboutPage() {
                     <p className="text-sm font-semibold text-gray-900">Spezialisierungen:</p>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-pink-50 text-pink-600 text-xs rounded-full">
+                        <span key={idx} className="px-3 py-1 bg-[#f8b5c1]/10 text-[#f8b5c1] text-xs rounded-full">
                           {specialty}
                         </span>
                       ))}
@@ -205,7 +205,7 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials */}
-      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-teal-100/40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -222,7 +222,7 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   {credentials.map((credential, index) => (
                     <div key={index} className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-4 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-teal-700 mr-4 flex-shrink-0" />
                       <span className="text-gray-700">{credential}</span>
                     </div>
                   ))}
@@ -236,7 +236,7 @@ export default function AboutPage() {
       {/* Patient Testimonial */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-green-50 to-green-100/50 shadow-lg">
+          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-teal-100 to-teal-200/60 shadow-lg">
             <CardContent className="p-8 lg:p-12 text-center">
               <div className="flex justify-center mb-6">
                 {[...Array(5)].map((_, i) => (

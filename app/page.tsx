@@ -88,7 +88,7 @@ export default function HomePage() {
     { number: "30+", label: "Jahre Erfahrung" },
     { number: "10K+", label: "Behandelte Patienten" },
     { number: "95%", label: "Erfolgsrate" },
-    { number: "24/7", label: "Terminbuchung möglich" },
+    { number: "ONLINE", label: "Terminbuchung möglich" },
   ]
 
 
@@ -148,13 +148,9 @@ export default function HomePage() {
                 </svg>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight">
-                Alles Leben ist Bewegung.
-                <span className="block">Dort, wo Bewegung gestört ist, beginnt Krankheit</span>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
+                Mir liegt viel daran, Sie auf dem Weg zu Ihren inneren Selbstheilungskräften zu begleiten.
               </h1>
-              <p className="text-sm text-white/80 italic mb-8 max-w-2xl mx-auto">
-                Dr. Andrew Taylor Still
-              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -203,7 +199,7 @@ export default function HomePage() {
               <div key={index} className="text-center glass-card-light p-4 rounded-xl">
                 <AnimatedCounter 
                   value={stat.number} 
-                  className="text-2xl lg:text-3xl font-bold text-pink-600 mb-2"
+                  className="text-2xl lg:text-3xl font-bold text-[#f8b5c1] mb-2"
                   duration={2500}
                 />
                 <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
@@ -252,7 +248,7 @@ export default function HomePage() {
               .filter((v) => v.title === PRIMARY_VALUE_TITLE)
               .map((v) => (
                 <div key={v.title} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-pink-600 mx-auto mb-3 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-[#f8b5c1] mx-auto mb-3 flex items-center justify-center">
                     <Image src="/green_spiral.svg" alt="Green Spiral" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-2">{v.title}</h4>
@@ -301,7 +297,7 @@ export default function HomePage() {
               >
                 <CardContent className="p-6">
                   <div className="mb-4 text-center flex justify-center">
-                    <div className="w-16 h-16 rounded-full bg-pink-600 flex items-center justify-center shadow-md">
+                    <div className="w-16 h-16 rounded-full bg-[#f8b5c1] flex items-center justify-center shadow-md">
                       {service.icon}
                     </div>
                   </div>
@@ -331,20 +327,20 @@ export default function HomePage() {
                 {/* Bottom-right subtle action */}
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button size="sm" variant="ghost" className="absolute bottom-4 right-4 text-white rounded-full hover:bg-pink-600 hover:text-white hover:shadow-md transition-colors">
+                    <Button size="sm" variant="ghost" className="absolute bottom-4 right-4 text-white rounded-full hover:bg-[#f8b5c1] hover:text-white hover:shadow-md transition-colors">
                       Mehr
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-4xl max-h-[80vh] overflow-y-auto">
-                    <DialogHeader className="border-b border-gray-800 pb-4">
-                      <DialogTitle className="text-xl font-semibold text-pink-600">{service.title}</DialogTitle>
-                      <DialogDescription className="flex items-center gap-2 text-gray-300">
-                        <Clock className="w-4 h-4 text-pink-600" />
+                  <DialogContent className="bg-white text-gray-800 border-gray-200 max-w-4xl max-h-[80vh] overflow-y-auto shadow-xl">
+                    <DialogHeader className="border-b border-gray-300 pb-4">
+                      <DialogTitle className="text-xl font-semibold text-[#f8b5c1]">{service.title}</DialogTitle>
+                      <DialogDescription className="flex items-center gap-2 text-gray-600">
+                        <Clock className="w-4 h-4 text-[#f8b5c1]" />
                         {SERVICE_CONTENT[service.title]?.duration || service.duration}
                       </DialogDescription>
                     </DialogHeader>
                     <div className="py-6">
-                      <ServiceModalContent name={service.title} variant="dark" />
+                      <ServiceModalContent name={service.title} variant="light" />
                     </div>
                   </DialogContent>
                 </Dialog>
@@ -358,7 +354,7 @@ export default function HomePage() {
                <Button
                  onClick={toggleServices}
                  variant="outline"
-                 className="glass-card border-white/20 text-white rounded-full hover:bg-pink-600 hover:text-white hover:border-transparent hover:shadow-md transition-all duration-300"
+                 className="glass-card border-white/20 text-white rounded-full hover:bg-[#f8b5c1] hover:text-white hover:border-transparent hover:shadow-md transition-all duration-300"
                >
                 {showAllServices ? (
                   <>
@@ -431,7 +427,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Kontaktinformationen</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#f8b5c1] to-[#f4a6b3] rounded-full flex items-center justify-center flex-shrink-0">
                         <Phone className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -442,7 +438,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#f8b5c1] to-[#f4a6b3] rounded-full flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -453,7 +449,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#f8b5c1] to-[#f4a6b3] rounded-full flex items-center justify-center flex-shrink-0">
                         <Clock className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -464,7 +460,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#f8b5c1] to-[#f4a6b3] rounded-full flex items-center justify-center flex-shrink-0">
                         <Send className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -499,7 +495,7 @@ export default function HomePage() {
                   ></iframe>
                   <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                     <div className="text-center">
-                      <MapPin className="w-5 h-5 text-pink-600 mx-auto mb-2" />
+                      <MapPin className="w-5 h-5 text-[#f8b5c1] mx-auto mb-2" />
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Praxis für Osteopathie u. Naturheilkunde</h3>
                       <p className="text-gray-700 font-medium">Krefelder Str. 97a, 52070 Aachen</p>
                     </div>
@@ -517,7 +513,7 @@ export default function HomePage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full border-2 border-pink-600 text-pink-600 hover:bg-pink-50 rounded-full bg-transparent"
+                    className="w-full border-2 border-[#f8b5c1] text-[#f8b5c1] hover:bg-[#f8b5c1]/10 rounded-full bg-transparent"
                   >
                     <Phone className="mr-2 w-5 h-5" />
                     Anrufen 0241 - 4464848
