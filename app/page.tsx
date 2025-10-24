@@ -88,7 +88,7 @@ export default function HomePage() {
     { number: "30+", label: "Jahre Erfahrung" },
     { number: "10K+", label: "Behandelte Patienten" },
     { number: "95%", label: "Erfolgsrate" },
-    { number: "24/7", label: "Terminbuchung möglich" },
+    { number: "ONLINE", label: "Terminbuchung möglich" },
   ]
 
 
@@ -148,13 +148,9 @@ export default function HomePage() {
                 </svg>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight">
-                Alles Leben ist Bewegung.
-                <span className="block">Dort, wo Bewegung gestört ist, beginnt Krankheit</span>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
+                Mir liegt viel daran, Sie auf dem Weg zu Ihren inneren Selbstheilungskräften zu begleiten.
               </h1>
-              <p className="text-sm text-white/80 italic mb-8 max-w-2xl mx-auto">
-                Dr. Andrew Taylor Still
-              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
