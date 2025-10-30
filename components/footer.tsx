@@ -236,7 +236,7 @@ export default function Footer() {
                     <div className="flex items-start space-x-3 justify-center">
                       <MapPin className="w-5 h-5 text-[#f8b5c1] mt-0.5 flex-shrink-0" />
                       <div className="text-sm text-gray-700">
-                      <p>Krefelder Str. 97a</p>
+                      <p>Krefelder Str. 79a</p>
                         <p>52070 Aachen</p>
                         <p>Praxis für Osteopathie u. Naturheilkunde</p>
                       </div>
@@ -269,7 +269,7 @@ export default function Footer() {
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-[#f8b5c1] mt-0.5 flex-shrink-0" />
                   <div className="text-sm text-gray-700">
-                    <p>Krefelder Str. 97a</p>
+                    <p>Krefelder Str. 79a</p>
                     <p>52070 Aachen</p>
                     <p>Praxis für Osteopathie u. Naturheilkunde</p>
                   </div>

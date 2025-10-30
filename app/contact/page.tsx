@@ -51,7 +51,7 @@ export default function ContactPage() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Adresse",
-      details: "Krefelder Str. 97a, 52070 Aachen",
+      details: "Krefelder Str. 79a, 52070 Aachen",
       subtitle: "Praxis für Osteopathie u. Naturheilkunde",
     },
     {
@@ -243,21 +243,21 @@ export default function ContactPage() {
               <Card className="border-0 shadow-xl overflow-hidden">
                 <div className="aspect-[4/3] relative">
                   <iframe
-                    src="https://maps.google.com/maps?q=Krefelder+Str.+97a,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Krefelder+Str.+79a,+52070+Aachen,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelder Str. 97a, 52070 Aachen"
+                    title="Praxis für Osteopathie u. Naturheilkunde - Krefelder Str. 79a, 52070 Aachen"
                     className="absolute inset-0"
                   ></iframe>
                   <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4">
                     <div className="text-center">
                       <MapPin className="w-5 h-5 text-[#f8b5c1] mx-auto mb-2" />
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Praxis für Osteopathie u. Naturheilkunde</h3>
-                      <p className="text-gray-700 font-medium">Krefelder Str. 97a, 52070 Aachen</p>
+                      <p className="text-gray-700 font-medium">Krefelder Str. 79a, 52070 Aachen</p>
                     </div>
                   </div>
                 </div>
