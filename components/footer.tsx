@@ -252,9 +252,7 @@ export default function Footer() {
                     <div className="flex items-start space-x-3 justify-center">
                       <Clock className="w-5 h-5 text-[#f8b5c1] mt-0.5 flex-shrink-0" />
                       <div className="text-sm text-gray-700">
-                        <p>Mo-Dr: 8:00-18:00</p>
-                        <p>Fr-Sa: Termine nach Vereinbarung</p>
-                        <p>Sonntag: Geschlossen</p>
+                        <p>Mo–Fr: Termine nach Vereinbarung</p>
                       </div>
                     </div>
                   </div>
@@ -285,9 +283,7 @@ export default function Footer() {
                 <div className="flex items-start space-x-3">
                   <Clock className="w-5 h-5 text-[#f8b5c1] mt-0.5 flex-shrink-0" />
                   <div className="text-sm text-gray-700">
-                    <p>Mo-Dr: 8:00-18:00</p>
-                    <p>Fr-Sa: Termine nach Vereinbarung</p>
-                    <p>Sonntag: Geschlossen</p>
+                    <p>Mo–Fr: Termine nach Vereinbarung</p>
                   </div>
                 </div>
               </div>
