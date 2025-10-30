@@ -192,20 +192,9 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center glass-card-light p-4 rounded-xl">
-                <AnimatedCounter 
-                  value={stat.number} 
-                  className="text-2xl lg:text-3xl font-bold text-[#f8b5c1] mb-2"
-                  duration={2500}
-                />
-                <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+          {/* Hier war vorher das Statistik-Grid, jetzt leer für Trennung */}
         </div>
       </section>
 
@@ -239,42 +228,14 @@ export default function HomePage() {
 
       {/* Core Values Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-
-
-          {/* Mobile-only: show primary value as text (no card) */}
-          <div className="md:hidden">
-            {values
-              .filter((v) => v.title === PRIMARY_VALUE_TITLE)
-              .map((v) => (
-                <div key={v.title} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#f8b5c1] mx-auto mb-3 flex items-center justify-center">
-                    <Image src="/green_spiral.svg" alt="Green Spiral" width={24} height={24} className="w-6 h-6 brightness-0 invert" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">{v.title}</h4>
-                  <p className="text-gray-600 leading-relaxed">{v.description}</p>
-                </div>
-              ))}
-          </div>
-
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card
-                key={index}
-                className="text-center glass-card-light border-gray-200/50 hover:shadow-lg transition-all duration-300"
-              >
-                <CardContent className="p-6">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-8 h-8 flex items-center justify-center">
-                      {value.icon}
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
+            Die wirksamste Medizin ist die natürliche Heilkraft,
+            <span className="block">die im Inneren eines jeden von uns liegt.</span>
+          </h2>
+          <p className="text-sm text-gray-500 italic mb-2">
+            Hippokrates von Kos (460 - etwa 377 v. Chr.), griechischer Arzt, »Vater der Heilkunde«
+          </p>
         </div>
       </section>
 
@@ -528,15 +489,8 @@ export default function HomePage() {
 
       {/* Final CTA Section */}
       <section className="py-20 animated-gradient">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Die wirksamste Medizin ist die natürliche Heilkraft,
-            <span className="block">die im Inneren eines jeden von uns liegt.</span>
-          </h2>
-          <p className="text-sm text-white/80 italic mb-8">
-            Hippokrates von Kos (460 - etwa 377 v. Chr.), griechischer Arzt, »Vater der Heilkunde«
-          </p>
-          
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Leer als grünliche Trennfläche */}
         </div>
       </section>
     </div>
