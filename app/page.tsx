@@ -149,7 +149,7 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
-                Es macht mir Freude, Sie auf dem Weg zu Ihren Selbstheilungskräften zu begleiten.
+                Es macht uns Freude, Sie auf dem Weg zu Ihren Selbstheilungskräften zu begleiten.
               </h1>
             </div>
 
