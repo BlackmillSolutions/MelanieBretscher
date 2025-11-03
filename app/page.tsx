@@ -156,7 +156,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button
                 size="lg"
-                className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white border border-white/30 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-[#f8b5c1] to-[#f4a6b3] hover:from-[#f8b5c1] hover:to-[#f4a6b3] text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Termin vereinbaren
@@ -165,7 +165,7 @@ export default function HomePage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-white/50 text-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-semibold bg-transparent backdrop-blur-md"
+                className="border-2 border-[#f8b5c1] text-[#f8b5c1] hover:bg-[#f8b5c1]/10 px-8 py-4 rounded-full text-lg font-semibold bg-white"
               >
                 <Phone className="mr-2 w-5 h-5" />
                 Jetzt anrufen
