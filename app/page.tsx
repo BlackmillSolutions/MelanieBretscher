@@ -163,9 +163,8 @@ export default function HomePage() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
-                variant="outline"
                 size="lg"
-                className="border-2 border-[#f8b5c1] text-[#f8b5c1] hover:bg-[#f8b5c1]/10 px-8 py-4 rounded-full text-lg font-semibold bg-white"
+                className="bg-gradient-to-r from-[#f8b5c1] to-[#f4a6b3] hover:from-[#f8b5c1] hover:to-[#f4a6b3] text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Phone className="mr-2 w-5 h-5" />
                 Jetzt anrufen
