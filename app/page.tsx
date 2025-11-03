@@ -203,10 +203,9 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Schön dass sie mich besuchen!</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Schön, dass Sie uns besuchen!</h2>
               <p className="text-lg text-white/90 mb-6 leading-relaxed">
-                Mit über 30 Jahren Erfahrung kombiniert unser Team aus Heilpraktikerin, Osteopathin und Physiotherapeutin 
-                evidenzbasierte Behandlungen mit mitfühlender Fürsorge, um Ihnen zu optimaler Gesundheit und Wohlbefinden zu verhelfen.
+                Unsere Praxis besteht mittlerweile seit über 20 Jahren. Mit unserem Team aus Physiotherapeuten, Osteopathen und Heilpraktikern bieten wir Ihnen ein breites Therapieangebot, um gemeinsam mit Ihnen eine individuelle Lösung für Ihre Gesundheit zu finden.
               </p>
               
             </div>
